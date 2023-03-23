@@ -1,0 +1,25 @@
+<div class="container destinations">
+<br>
+  <div class="row">
+    <div class="col-7">
+      <div class="d-flex destination">
+      <% @articles.each do |article| %>
+        <div class="destination-cards">
+              <%= link_to article_path(article), style: "text-decoration: none;" do %>
+              <% if article.image1.attached? %>
+                  <%= image_tag article.image1 %>
+              <% end %>
+                <h5><%= article.title %></h5>
+            <% end %>
+        </div>
+          <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+      <% @articles.each do |article| %>
+     <li> <%=  article.country %></li>
+        <% end %>
+    </div>
+
+  </div>
+</div>

@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+.home-page {
+  text-align: center;
+}
+
+.home-wrap {
+  flex-wrap: wrap;
+
+}
+
+
+.banner {
+  text-align: center;
+
+  img {
+  width: 150px !important;
+  height: 150px;
+  object-fit: cover;
+}
+}
