@@ -30,4 +30,6 @@ class Article < ApplicationRecord
   has_one_attached :image28
   has_one_attached :image29
   has_one_attached :image30
+  has_many :countries
+  has_many :locations, through: :countries
 end

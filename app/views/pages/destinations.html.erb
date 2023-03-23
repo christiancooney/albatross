@@ -16,8 +16,15 @@
       </div>
     </div>
     <div class="col-4">
-      <% @articles.each do |article| %>
-     <li> <%=  article.country %></li>
+      <% @countries.each do |country| %>
+      <ol class="country-list">
+     <li> <%=  country.name %></li>
+     </ol>
+     <%  country.locations.each do |loc| %>
+      <ul class="location-list">
+     <li> <%= loc.name %></li>
+     </ul>
+        <% end %>
         <% end %>
     </div>
 

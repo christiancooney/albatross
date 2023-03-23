@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_countries
+  before_action :set_locations
+
 
   # GET /articles or /articles.json
   def index
@@ -63,6 +66,14 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def set_countries
+      @countries = Country.all
+    end
+    def set_locations
+      @locations = Location.all
+    end
+
+
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(
@@ -75,7 +86,7 @@ class ArticlesController < ApplicationController
         :image7, :image8, :image9, :image10, :image11, :image12, :image13,
         :image14, :image15, :image16, :image17, :image18, :image19,
         :image20, :image21, :image22, :image23, :image24, :image25,
-        :image26, :image27, :image28, :image29, :image30
+        :image26, :image27, :image28, :image29, :image30, :country_id, :location_id
       )
     end
 end

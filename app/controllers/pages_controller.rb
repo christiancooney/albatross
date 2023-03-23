@@ -3,10 +3,13 @@ class PagesController < ApplicationController
 
   def home
     @articles = Article.all
+    @countries = Country.all
   end
 
   def destinations
     @articles = Article.all
+    @countries = Country.all
+
   end
 
   def inspiration
