@@ -1,17 +1,15 @@
+<div class="container">
 <p style="color: green"><%= notice %></p>
 
 <h1>Articles</h1>
 
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= article.title %>
-    <%= article.country %>
-    <%= article.city %>
 
-    <p>
-      <%= link_to "Show this article", article %>
+      <% @articles.each do |article| %>
+      <ol style="list-style-type: none">
+     <li class="article-list"><%= link_to article.title, article_path(article), :method => "get"  %></li>
+     </ol>
     </p>
   <% end %>
-</div>
 
-<%= link_to "New article", new_article_path %>
+<%= button_to "New article", new_article_path, :method => "get"   %>
+</div>

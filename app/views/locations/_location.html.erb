@@ -1,7 +1,25 @@
-<div id="<%= dom_id location %>">
-  <p>
-    <strong>Name:</strong>
-    <%= location.name %>
-  </p>
-
-</div>
+<div class="container">
+  <div id="<%= dom_id location %>">
+    <div class="col-4">
+      <h1> <%=  location.name %></h1>
+      <div class="d-flex destination">
+        <% location.articles.each do |article|%>
+        <div class="destination-cards">
+          <%= link_to article_path(article), style: "text-decoration: none;" do %>
+          <% if article.imagecover.attached? %>
+          <%= image_tag article.imagecover %>
+          <% end %>
+            <div class="home-middle">
+              <div class="home-text">
+                <h5> <%= article.title  %></h5>
+                <p><%= article.date.to_formatted_s(:long) %></p>
+                <p>by <%= article.author  %> </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

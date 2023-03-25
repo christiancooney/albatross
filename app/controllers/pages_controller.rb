@@ -8,7 +8,8 @@ class PagesController < ApplicationController
 
   def destinations
     @articles = Article.all
-    @countries = Country.all
+    @countries = Country.all.order(:name)
+
 
   end
 

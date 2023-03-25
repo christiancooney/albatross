@@ -1,14 +1,22 @@
+<div class="container">
 <p style="color: green"><%= notice %></p>
 
 <h1>Locations</h1>
 
-<div id="locations">
-  <% @locations.each do |location| %>
-    <%= render location %>
-    <p>
-      <%= link_to "Show this location", location %>
-    </p>
-  <% end %>
-</div>
+      <% @countries.each do |country| %>
+      <ol style="list-style-type: none">
+     <li class="country-list"><%= link_to country.name, country_path(country), :method => "get"  %></li>
+     </ol>
+     <hr>
+      <ul style="list-style-type: square">
+     <%  country.locations.each do |location| %>
+     <li class="location-list" ><%= link_to location.name, location_path(location), :method => "get"  %></li>
+        <% end %>
+     <hr>
 
-<%= link_to "New location", new_location_path %>
+     </ul>
+        <% end %>
+
+
+<%= button_to "New location", new_location_path %>
+</div>

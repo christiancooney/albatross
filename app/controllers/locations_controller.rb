@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
   before_action :set_location, only: %i[ show edit update destroy ]
   before_action :set_countries
 
+
   # GET /locations or /locations.json
   def index
     @locations = Location.all
@@ -9,6 +10,7 @@ class LocationsController < ApplicationController
 
   # GET /locations/1 or /locations/1.json
   def show
+
   end
 
   # GET /locations/new
@@ -66,7 +68,6 @@ class LocationsController < ApplicationController
 
     def set_countries
       @countries = Country.all
-
     end
 
     # Only allow a list of trusted parameters through.

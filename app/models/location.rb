@@ -1,5 +1,5 @@
 class Location < ApplicationRecord
   validates :name, presence: true, uniqueness: true
-  belongs_to :country
-  has_many :articles, through: :countries
+  has_many :countries
+  has_many :articles
 end

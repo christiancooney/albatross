@@ -1,3 +1,47 @@
-.destinations {
 
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.country-list {
+  font-size: 22px;
+}
+
+
+.country-list:hover {
+  transition: 3s;
+  a {color: rgb(90, 110, 78)!important;
+  }
+}
+
+.location-list {
+  margin-left: 10px;
+  // display: inline;
+}
+
+.location-list:hover {
+  transition: 3s;
+   a {color: rgb(90, 110, 78)!important;
+  }
 }

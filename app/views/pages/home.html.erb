@@ -4,13 +4,13 @@
     <% @articles.each do |article| %>
     <div class="home-cards">
       <%= link_to article_path(article), style: "text-decoration: none;" do %>
-        <% if article.image1.attached? %>
-          <%= image_tag article.image1 %>
+        <% if article.imagecover.attached? %>
+          <%= image_tag article.imagecover %>
         <% end %>
         <div class="home-middle">
           <div class="home-text">
             <h5> <%= article.title  %></h5>
-            <p><%= article.date  %></p>
+            <p><%= article.date.to_formatted_s(:long) %></p>
             <p>by <%= article.author  %> </p>
           </div>
         </div>

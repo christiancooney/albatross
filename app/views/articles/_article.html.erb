@@ -1,18 +1,33 @@
-<div class="container article">
   <div id="<%= dom_id article %>">
     <p>
       <strong><%= article.title %></strong>
+      <strong><%= article.country %></strong>
 
     </p>
 
     <p>
-      <%= article.city %>,
-      <%= article.country %>
+
+      <% article.locations do |location| %>
+     <h1> <%= location.name %></h1>
+     <h1> <%= location.id %></h1>
+      <% end %>
+
+
+
+      <%= article.countries.name %>
+
+         <% article.country_id do |x| %>
+         <%= x.name %>
+<% end %>
+      <% @countries.each do |x| %>
+      <%= x.name  %>
+      <% end %>
     </p>
     <p>
       <strong>By:</strong>
       <%= article.author %>
-      <%= article.date %>
+      <br>
+      <%= article.date.to_formatted_s(:long) %>
     </p>
 
       <% if article.image1.attached? %>
@@ -198,6 +213,4 @@
     <p>
       <%= simple_format article.text30 %>
     </p>
-
-  </div>
 </div>

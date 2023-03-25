@@ -1,5 +1,7 @@
 class CountriesController < ApplicationController
   before_action :set_country, only: %i[ show edit update destroy ]
+  before_action :set_articles
+  before_action :set_locations
 
   # GET /countries or /countries.json
   def index
@@ -63,8 +65,20 @@ class CountriesController < ApplicationController
       @country = Country.find(params[:id])
     end
 
+    def set_articles
+      @articles = Article.all
+
+    end
+
+
+
+    def set_locations
+      @locations = Location.all
+
+    end
+
     # Only allow a list of trusted parameters through.
     def country_params
-      params.require(:country).permit(:name)
+      params.require(:country).permit(:name, :article_id, :location_id)
     end
 end

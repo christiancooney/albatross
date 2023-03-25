@@ -82,7 +82,7 @@ class ArticlesController < ApplicationController
         :text9, :text10, :text11, :text12, :text13, :text14, :text15,
         :text16, :text17, :text18, :text19, :text20, :text21, :text22,
         :text23, :text24, :text25, :text26, :text27, :text28, :text29,
-        :text30, :image1, :image2, :image3, :image4, :image5, :image6,
+        :text30, :imagecover, :image1, :image2, :image3, :image4, :image5, :image6,
         :image7, :image8, :image9, :image10, :image11, :image12, :image13,
         :image14, :image15, :image16, :image17, :image18, :image19,
         :image20, :image21, :image22, :image23, :image24, :image25,

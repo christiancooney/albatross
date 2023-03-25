@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @location %>
-
-<div>
-  <%= link_to "Edit this location", edit_location_path(@location) %> |
-  <%= link_to "Back to locations", locations_path %>
-
-  <%= button_to "Destroy this location", @location, method: :delete %>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+  <%= render @location %>
+  <div>
+    <%= link_to "Back to destinations", destinations_path %>
+    <br>
+    <br>
+    <br>
+    <%= button_to "Edit this location", edit_location_path(@location), :method => "get"   %>
+    <%= button_to "Destroy this location", @location, method: :delete %>
+  </div>
 </div>

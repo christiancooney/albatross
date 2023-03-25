@@ -22,7 +22,12 @@ h1,h2,h3,h4,h5,h6,p,a {
 }
 
 
-p,a {
+p,a,button {
   font-family: 'Lora', serif;
     color: black;
+}
+
+a {
+ text-decoration: none !important;
+ color: black !important;
 }

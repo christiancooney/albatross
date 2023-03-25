@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  has_one_attached :imagecover
   has_one_attached :image1
   has_one_attached :image2
   has_one_attached :image3
@@ -31,5 +32,5 @@ class Article < ApplicationRecord
   has_one_attached :image29
   has_one_attached :image30
   has_many :countries
-  has_many :locations, through: :countries
+  has_many :locations
 end
