@@ -4,10 +4,10 @@
 <%= render @article %>
 
 <div>
-  <%= link_to "Back to articles", articles_path %>
+  <%= link_to "Back to destinations", destinations_path %>
 <br>
 <br>
-  <%= button_to "Edit this article", edit_article_path(@article), :method => "get"   %>
+  <%= button_to "Edit this article", edit_article_path(@article), method: :get %>
   <br>
   <%= button_to "Destroy this article", @article, method: :delete %>
 </div>

@@ -1,33 +1,16 @@
   <div id="<%= dom_id article %>">
+
+<p> <%= article.date.to_formatted_s(:long) %></p>
+     <h1 class="grand-title"><%= article.title %></h1>
+    <h5><%= @location.name %>,
+<%= @country.name %></h5>
+
+
     <p>
-      <strong><%= article.title %></strong>
-      <strong><%= article.country %></strong>
-
-    </p>
-
-    <p>
-
-      <% article.locations do |location| %>
-     <h1> <%= location.name %></h1>
-     <h1> <%= location.id %></h1>
-      <% end %>
-
-
-
-      <%= article.countries.name %>
-
-         <% article.country_id do |x| %>
-         <%= x.name %>
-<% end %>
-      <% @countries.each do |x| %>
-      <%= x.name  %>
-      <% end %>
-    </p>
-    <p>
-      <strong>By:</strong>
-      <%= article.author %>
+      By:
+     <%= article.author %>
       <br>
-      <%= article.date.to_formatted_s(:long) %>
+
     </p>
 
       <% if article.image1.attached? %>

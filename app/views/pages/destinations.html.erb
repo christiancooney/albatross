@@ -9,8 +9,8 @@
         <% if article.imagecover.attached? %>
           <%= image_tag article.imagecover %>
         <% end %>
-        <div class="home-middle">
-          <div class="home-text">
+        <div class="d-card-middle">
+          <div class="d-card-text">
             <h5> <%= article.title  %></h5>
             <p><%= article.date.to_formatted_s(:long)   %></p>
             <p>by <%= article.author  %> </p>

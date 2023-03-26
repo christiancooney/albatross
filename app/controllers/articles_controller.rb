@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    @location = Location.find(@article.location_id)
+    @country = Country.find(@article.country_id)
   end
 
   # GET /articles/new

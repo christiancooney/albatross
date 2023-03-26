@@ -17,6 +17,8 @@ class PagesController < ApplicationController
   end
 
   def recipes
+    @christian = Article.where(author: "Christian")
+
   end
 
   def merchandise
