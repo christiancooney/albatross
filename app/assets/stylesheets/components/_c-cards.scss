@@ -1,0 +1,31 @@
+
+
+.c-card {
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+
+ a{margin: 10px;
+  }
+  h1,h2,h3,h4,h5,h6,p,a,i {
+    color: rgb(237,235,223) !important;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border: solid 1px #ffffff;
+    border-radius: 1px;
+
+  }
+
+  img:hover {
+    opacity: 0.3;
+  }
+  }

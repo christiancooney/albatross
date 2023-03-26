@@ -1,14 +1,45 @@
-<div class="container">
-<p style="color: green"><%= notice %></p>
+<div class="container center">
+<h1><%= @country.name %></h1>
+<hr>
+  <%  @country.locations.each do |location| %>
+ <h2> <%= link_to  location.name, location_path(location), :method => "get"  %></h2>
 
-<%= render @country %>
+         <div class="d-flex destination">
+    <% location.articles.each do |article|%>
+        <div class="destination-cards">
+         <%= link_to article_path(article), style: "text-decoration: none;" do %>
+        <% if article.imagecover.attached? %>
+          <%= image_tag article.imagecover %>
+        <% end %>
+        <div class="d-card-middle">
+          <div class="d-card-text">
+              <% case article.category %>
+            <% when "Health" %>
+              <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i>
+            <% when "Life" %>
+              <i class="fa-solid fa-mountain fa-fw circle-icon"></i>
+            <% when "Recipe" %>
+              <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i>
+            <% when "Restaurant" %>
+              <i class="fa-solid fa-utensils fa-fw circle-icon"></i>
+            <% when "Style" %>
+              <i class="fa-solid fa-shirt fa-fw circle-icon"></i>
+              <% when "Travel" %>
+              <i class="fa-solid fa-suitcase fa-fw circle-icon"></i>
+            <% end %>
+            <br>
+            <h5> <%= article.title  %></h5>
+            <p><%= article.date.to_formatted_s(:long) %> <br>
+            by <%= article.author  %> </p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+      </div>
+        <hr>
+      <% end %>
 
-    <%= link_to "Back to destinations", destinations_path %>
-<br>
-<br>
-
-  <%= button_to "Edit this country", edit_country_path(@country), :method => "get"   %>
-  <br>
-  <%= button_to "Destroy this country", @country, method: :delete %>
-</div>
+       <%= button_to "Edit this country", edit_country_path(@country), method: :get   %>
+    <%= button_to "Destroy this country", @country, method: :delete %>
 </div>

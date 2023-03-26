@@ -1,3 +1,8 @@
+.destination {
+ flex-wrap: wrap;
+ justify-content: center;
+
+}
 .destination-cards {
   text-align: center;
   margin: 10px;
@@ -6,7 +11,7 @@
   border-radius: 1px;
   background-color: rgb(48,48,48);
 
-  h1,h2,h3,h4,h5,h6,p,a {
+  h1,h2,h3,h4,h5,h6,p,a,i {
     color: rgb(237,235,223) !important;
   }
 
@@ -19,20 +24,14 @@
     backface-visibility: hidden;
   }
 
-  .destination-text {
-    background-color: rgba(80,111,99,0.7);
-    border: solid 1px #ffffff;
-    font-size: 16px;
-    padding: 5px 5px;
+  .d-card-text {
+    padding: 5px 0px;
+    font-size: 14px;
 
   }
   }
 
 
-   .destination {
-    flex-wrap: wrap;
-
-  }
 
   .d-card-middle {
     transition: .5s ease;

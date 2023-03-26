@@ -9,9 +9,25 @@
         <% end %>
         <div class="home-middle">
           <div class="home-text">
+               <% case article.category %>
+            <% when "Health" %>
+              <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i>
+            <% when "Life" %>
+              <i class="fa-solid fa-mountain fa-fw circle-icon"></i>
+            <% when "Recipe" %>
+              <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i>
+            <% when "Restaurant" %>
+              <i class="fa-solid fa-utensils fa-fw circle-icon"></i>
+            <% when "Style" %>
+              <i class="fa-solid fa-shirt fa-fw circle-icon"></i>
+              <% when "Travel" %>
+              <i class="fa-solid fa-suitcase fa-fw circle-icon"></i>
+            <% end %>
+            <br>
             <h5> <%= article.title  %></h5>
             <p><%= article.date.to_formatted_s(:long) %></p>
             <p>by <%= article.author  %> </p>
+
           </div>
         </div>
       </div>

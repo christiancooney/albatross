@@ -88,7 +88,8 @@ class ArticlesController < ApplicationController
         :image7, :image8, :image9, :image10, :image11, :image12, :image13,
         :image14, :image15, :image16, :image17, :image18, :image19,
         :image20, :image21, :image22, :image23, :image24, :image25,
-        :image26, :image27, :image28, :image29, :image30, :country_id, :location_id
+        :image26, :image27, :image28, :image29, :image30, :country_id,
+        :location_id, :category, :subcategory, :feature, :subfeature, :cuisine
       )
     end
 end

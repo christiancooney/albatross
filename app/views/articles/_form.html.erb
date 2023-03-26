@@ -5,7 +5,8 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <div class="d-flex gap-5" style="width: 750px;">
-
+    <%= f.input :date, as: :date, html5: true %>
+<br>
      <div class="form-inputs">
     <%= f.input :country_id, collection: @countries %>
   </div>
@@ -13,15 +14,14 @@
     <%= f.input :location_id, collection: @locations %>
   </div>
 
+<br>
+    <%= f.input :category, collection: [ "Health", "Life", "Recipe", "Restaurant", "Style", "Travel"] %>
+    <%= f.input :subcategory, collection: [ "Drinks", "Starters", "Mains", "Sweets", "Sides", "Snacks", "Beauty", "Fashion", "Interiors"] %>
+    <%= f.input :feature, collection: [ "Health", "Life", "Recipe", "Restaurant", "Style", "Travel"] %>
+    <%= f.input :subfeature, collection: [ "Ignore for now"] %>
+    <%= f.input :cuisine, collection: [ "Med", "Asian", "Middle Eastern"] %>
 
 
-
-
-    <%= f.input :country %>
-    <%= f.input :city %>
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
-    <%= f.input :date, as: :date, html5: true %>
     </div>
     <%= f.input :author, collection: [ "Christian", "Rosie"] %>
     <p>Cover Image Upload</p>

@@ -1,36 +1,31 @@
-<div id="<%= dom_id country %>">
+<h1><%= country.name %></h1>
+  <%  country.locations.each do |location| %>
+  <%= link_to  location.name, location_path(location), :method => "get"  %>
 
-    <h1><%= country.name %></h1>
-      <div class="col-4">
-     <%  country.locations.each do |location| %>
-         <ul style="list-style-type: none">
-     <li class="country-list"><%= link_to  location.name, location_path(location), :method => "get"  %></li>
-     </ul>
+   <div class="c-card" >
 
-     <div class="d-flex destination">
+
+
+
+
+
      <% location.articles.each do |article|%>
-   <div class="destination-cards">
       <%= link_to article_path(article), style: "text-decoration: none;" do %>
         <% if article.imagecover.attached? %>
           <%= image_tag article.imagecover %>
         <% end %>
-        <div class="home-middle">
-          <div class="home-text">
-            <h5> <%= article.title  %></h5>
-            <p><%= article.date.to_formatted_s(:long) %></p>
-            <p>by <%= article.author  %> </p>
-          </div>
-        </div>
-      </div>
       <% end %>
       <% end %>
 
-        <% end %>
 
 
 
 
-      </div>
 
-</div>
-</div>
+
+
+
+
+  </div>
+
+  <% end %>
