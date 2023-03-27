@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @articles = Article.all
+    # @articles = Article.all.where.not(category: "Recipe")
     @countries = Country.all
   end
 
