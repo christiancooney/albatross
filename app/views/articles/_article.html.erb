@@ -3,8 +3,11 @@
 <p> <%= article.date.to_formatted_s(:long) %></p>
      <h1 class="grand-title"><%= article.title %></h1>
      <hr>
-    <h5><%= @location.name %>,
-<%= @country.name %></h5>
+
+  <%  if  @article.country_id.present? %>
+  <h5><%= @location_name.name %>,
+     <%= @country_name.name %></h5>
+    <% end %>
 
 
     <p>
@@ -20,6 +23,10 @@
 
     <p>
 
+  <%  if  @article.category == "Recipe" %>
+  <h3> Ingredients
+   </h3>
+    <% end %>
       <%= simple_format article.text1 %>
     </p>
       <% if article.image2.attached? %>
@@ -38,6 +45,11 @@
       <% if article.image4.attached? %>
       <%= image_tag @article.image4 %>
       <% end %>
+        <%  if  @article.category == "Recipe" %>
+        <br>
+  <h3> Method
+   </h3>
+    <% end %>
     <p>
       <%= simple_format article.text4 %>
     </p>

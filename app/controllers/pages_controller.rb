@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def destinations
-    @articles = Article.all
+    @articles = Article.all.where.not(category: "Recipe")
     @countries = Country.all.order(:name)
 
 
@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def recipes
-    @christian = Article.where(author: "Christian")
+    @recipes = Article.where(category: "Recipe")
 
   end
 

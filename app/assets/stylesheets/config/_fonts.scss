@@ -16,7 +16,7 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-h1,h2,h3,h4,h5,h6,p,a {
+h1,h2,h3,h4,h5,h6,p,a,li {
   font-family: 'Playfair Display', serif !important;
   color: black;
 }
@@ -33,5 +33,5 @@ a {
 }
 
 .grand-title {
-  font-size: 64px;
+  font-size: 54px;
 }

@@ -11,8 +11,23 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
-    @location = Location.find(@article.location_id)
-    @country = Country.find(@article.country_id)
+
+    # @location = Location.all
+    # if @location.name.present?
+    # @articlewithid = Article.find(params[:id])
+    # @articlewithid2 = @articlewithid.where.not(category: "Recipe")
+    # else
+    # end
+    # @country = Country.all
+    # if @country.name.present?
+    # else
+    # end
+   if  @article.country_id.present?
+    @location_name = Location.find(@article.location_id)
+    @country_name = Country.find(@article.country_id)
+   else
+
+   end
   end
 
   # GET /articles/new
@@ -27,6 +42,12 @@ class ArticlesController < ApplicationController
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
+    # if @article.location_id == nil
+    #   then @article.location_id = 0
+    # end
+    # if @article.country_id == nil
+    #   then @article.country_id = 0
+    # end
 
     respond_to do |format|
       if @article.save
