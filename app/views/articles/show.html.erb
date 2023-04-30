@@ -4,7 +4,11 @@
 <%= render @article %>
 
 <div>
+<% if @article.category == "Recipe" %>
+  <%= link_to "Back to Recipes", recipes_path %>
+  <% else %>
   <%= link_to "Back to destinations", destinations_path %>
+<% end %>
 <br>
 <br>
   <%= button_to "Edit this article", edit_article_path(@article), method: :get %>

@@ -26,3 +26,21 @@
     color: rgb(84, 105, 84);
   }
 }
+
+
+.recipe-tabs {
+  justify-content: center;
+  border-bottom: solid 2px black;
+  background-image: linear-gradient( rgba(247, 247, 247, 0.367), #f9f7ea);
+
+
+  a {
+    color: black;
+    font-weight: bold;
+    padding: 5px 70px 5px;
+  }
+  a:hover {
+    transition: 1s;
+    color: rgb(84, 105, 84);
+  }
+}

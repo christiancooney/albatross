@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[ print show edit update destroy ]
   before_action :set_countries
   before_action :set_locations
 
@@ -12,26 +12,22 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
 
-    # @location = Location.all
-    # if @location.name.present?
-    # @articlewithid = Article.find(params[:id])
-    # @articlewithid2 = @articlewithid.where.not(category: "Recipe")
-    # else
-    # end
-    # @country = Country.all
-    # if @country.name.present?
-    # else
-    # end
+
    if  @article.country_id.present?
     @location_name = Location.find(@article.location_id)
     @country_name = Country.find(@article.country_id)
    else
 
    end
+
   end
 
   # GET /articles/new
   def new
+    @article = Article.new
+  end
+
+  def newrecipe
     @article = Article.new
   end
 
@@ -81,6 +77,10 @@ class ArticlesController < ApplicationController
       format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def print
+
   end
 
   private

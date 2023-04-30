@@ -1,5 +1,14 @@
-
+ <div class="container">
  <h1 class="grand-title" style="text-align: center;"> Recipes</h1>
+<hr>
+<div class="tabs">
+    <a href="/recipes/starters">Starters</a>
+    <a href="/recipes/mains">Mains</a>
+    <a href="/recipes/sweets">Sweets</a>
+    <a href="/recipes/drinks">Drinks</a>
+    <a href="/recipes/snacks">Snacks</a>
+    </div>
+<hr>
 <div class="d-flex destination">
       <% @recipes.each do |article| %>
         <div class="destination-cards">
@@ -32,4 +41,5 @@
       </div>
       <% end %>
       <% end %>
+      </div>
       </div>

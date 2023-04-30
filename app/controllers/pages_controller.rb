@@ -19,7 +19,23 @@ class PagesController < ApplicationController
 
   def recipes
     @recipes = Article.where(category: "Recipe")
+  end
 
+  def starters
+    @starters = Article.where(subcategory: "Starters")
+  end
+
+  def mains
+    @mains = Article.where(subcategory: "Mains")
+  end
+  def sweets
+    @sweets = Article.where(subcategory: "Sweets")
+  end
+  def drinks
+    @drinks = Article.where(subcategory: "Drinks")
+  end
+  def snacks
+    @snacks = Article.where(subcategory: "Snacks")
   end
 
   def merchandise

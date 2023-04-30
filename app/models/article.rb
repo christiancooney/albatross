@@ -1,4 +1,7 @@
 class Article < ApplicationRecord
+  validates :date, presence: true
+  validates :category, presence: true
+
   has_one_attached :imagecover
   has_one_attached :image1
   has_one_attached :image2
@@ -33,4 +36,8 @@ class Article < ApplicationRecord
   has_one_attached :image30
   has_many :countries
   has_many :locations
+
+
+
+
 end

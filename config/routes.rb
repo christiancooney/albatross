@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   get '/destinations', to: 'pages#destinations'
   get '/inspiration', to: 'pages#inspiration'
   get '/recipes', to: 'pages#recipes'
+  get '/recipes/starters', to: 'pages#starters'
+  get '/recipes/mains', to: 'pages#mains'
+  get '/recipes/sweets', to: 'pages#sweets'
+  get '/recipes/drinks', to: 'pages#drinks'
+  get '/recipes/snacks', to: 'pages#snacks'
   get '/merchandise', to: 'pages#merchandise'
+  get "articles/:id/print", to: "articles#print"
 
 end

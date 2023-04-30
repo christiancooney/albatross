@@ -22,8 +22,9 @@
       <% end %>
 
     <p>
-
   <%  if  @article.category == "Recipe" %>
+  <br>
+<button class="print-link-button"><a href= "#print-card-link" class="bottom">Recipe <i class="fa-solid fa-angle-down"></i></a></button>
   <h3> Ingredients
    </h3>
     <% end %>
@@ -210,3 +211,31 @@
       <%= simple_format article.text30 %>
     </p>
 </div>
+
+
+<%  if  @article.category == "Recipe" %>
+  <div id="print-card-link">
+<%= button_to "Print friendly view", "/articles/ #{@article.id} /print", class:"print-link-button", method: :get %>
+
+<br>
+<div class="card">
+<div class="row">
+<div class="col-4 print-ingredients">
+      <%= simple_format article.text1 %>
+      <%= simple_format article.text2 %>
+      <%= simple_format article.text3 %>
+      <%= simple_format article.text4 %>
+
+</div>
+
+<div class="col-8 print-method">
+      <%= simple_format article.text5 %>
+      <%= simple_format article.text6 %>
+      <%= simple_format article.text7 %>
+      <%= simple_format article.text8 %>
+</div>
+</div>
+</div>
+
+   </div>
+    <% end %>

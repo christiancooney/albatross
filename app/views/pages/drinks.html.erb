@@ -1,11 +1,7 @@
-<div class="container destinations">
-<br>
- <h1 class="grand-title" style="text-align: center;"> Articles</h1>
-     <hr>
-  <div class="row">
-    <div class="col-7">
-      <div class="d-flex destination">
-      <% @articles.each do |article| %>
+ <h1 class="grand-title" style="text-align: center;"> Drinks</h1>
+<hr>
+<div class="d-flex destination">
+      <% @drinks.each do |article| %>
         <div class="destination-cards">
            <%= link_to article_path(article), style: "text-decoration: none;" do %>
         <% if article.imagecover.attached? %>
@@ -37,15 +33,3 @@
       <% end %>
       <% end %>
       </div>
-    </div>
-    <div class="col-4">
-  <h3>Filters</h3>
-
-
-
-    </div>
-
-<%= button_to "New article", new_article_path, :method => "get"   %>
-  </div>
-
-</div>

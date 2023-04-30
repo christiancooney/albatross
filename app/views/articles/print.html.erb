@@ -1,0 +1,42 @@
+  <div class="container print">
+<%= button_to 'Print', "#", :onclick => 'window.print();return false;'%>
+  <div id="<%= dom_id @article %>">
+  <div class="print-card">
+     <h1 class="grand-title"><%= @article.title %></h1>
+     <hr>
+
+
+
+      <% if @article.image1.attached? %>
+      <%= image_tag @article.image1 %>
+      <% end %>
+
+
+<%  if  @article.category == "Recipe" %>
+  <div class="printcard">
+
+<div class="row">
+<div class="col-6 print-ingredients">
+<h3>Ingredients</h3>
+      <%= simple_format @article.text1 %>
+      <%= simple_format @article.text2 %>
+      <%= simple_format @article.text3 %>
+      <%= simple_format @article.text4 %>
+
+</div>
+
+<div class="col-6 print-method">
+<h3>Method</h3>
+
+      <%= simple_format @article.text5 %>
+      <%= simple_format @article.text6 %>
+      <%= simple_format @article.text7 %>
+      <%= simple_format @article.text8 %>
+</div>
+</div>
+
+   </div>
+    <% end %>
+</div>
+</div>
+</div>
