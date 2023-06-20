@@ -11,7 +11,6 @@ class PagesController < ApplicationController
     @articles = Article.all.where.not(category: "Recipe")
     @countries = Country.all.order(:name)
 
-
   end
 
   def inspiration

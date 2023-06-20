@@ -15,17 +15,23 @@
         <div class="d-card-text">
           <% case article.category %>
             <% when "Health" %>
-              <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i>
+            <p>Health</p>
+              <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
             <% when "Life" %>
-              <i class="fa-solid fa-mountain fa-fw circle-icon"></i>
+            <p>Life</p>
+              <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
             <% when "Recipe" %>
-              <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i>
+            <p>Recipe</p>
+              <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
             <% when "Restaurant" %>
-              <i class="fa-solid fa-utensils fa-fw circle-icon"></i>
+            <p>Restaurant</p>
+              <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
             <% when "Style" %>
-              <i class="fa-solid fa-shirt fa-fw circle-icon"></i>
+            <p>Style</p>
+              <%# <i class="fa-solid fa-shirt fa-fw circle-icon"></i> %>
             <% when "Travel" %>
-              <i class="fa-solid fa-suitcase fa-fw circle-icon"></i>
+            <p>Travel</p>
+              <%# <i class="fa-solid fa-suitcase fa-fw circle-icon"></i> %>
           <% end %>
           <br>
           <h5> <%= article.title  %></h5>
@@ -37,4 +43,5 @@
       <% end %>
       <% end %>
     </div>
+    <br>
   </div>
