@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_28_162613) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_20_103444) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -89,6 +89,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_162613) do
     t.text "feature"
     t.text "subfeature"
     t.text "cuisine"
+    t.text "recipe_title1"
+    t.text "recipe_title2"
+    t.text "recipe_title3"
+    t.text "recipe_title4"
+    t.text "recipe_title5"
+    t.text "recipe_title6"
+    t.text "recipe_list1"
+    t.text "recipe_list2"
+    t.text "recipe_list3"
+    t.text "recipe_list4"
+    t.text "recipe_list5"
+    t.text "recipe_list6"
+    t.text "method1"
+    t.text "method2"
+    t.text "method3"
+    t.text "method4"
+    t.text "method5"
+    t.text "method6"
+    t.text "method7"
+    t.text "method8"
+    t.text "method9"
+    t.text "method10"
     t.index ["country_id"], name: "index_articles_on_country_id"
     t.index ["location_id"], name: "index_articles_on_location_id"
   end

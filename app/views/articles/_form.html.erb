@@ -23,7 +23,11 @@
 
 
     </div>
+
     <%= f.input :author, collection: [ "Christian", "Rosie"] %>
+
+    <div class="row">
+    <div class="col-6">
     <p>Cover Image Upload</p>
     <%= f.file_field :imagecover, direct_upload: true %><hr>
     <p>Image Upload</p>
@@ -116,9 +120,17 @@
     <p>Image Upload</p>
     <%= f.file_field :image30, direct_upload: true %><hr>
     <%= f.input :text30, label: "Paragraph 30" %><hr>
+<div class="col-6">
 
+
+
+</div>
 
   </div>
+  </div>
+  </div>
+</div>
+
 
   <div class="form-actions">
     <%= f.button :submit %>
