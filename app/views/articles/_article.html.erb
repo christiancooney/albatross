@@ -24,10 +24,33 @@
     <p>
   <%  if  @article.category == "Recipe" %>
   <br>
-<button class="print-link-button"><a href= "#print-card-link" class="bottom">Recipe <i class="fa-solid fa-angle-down"></i></a></button>
-  <h3> Ingredients
-   </h3>
+    <button class="print-link-button"><a href= "#print-card-link" class="bottom">Recipe <i class="fa-solid fa-angle-down"></i></a></button>
+    <h3>Ingredients</h3>
+    <%=simple_format article.recipe_title1 %>
+    <%=simple_format article.recipe_list1 %>
+    <%=simple_format article.recipe_title2 %>
+    <%=simple_format article.recipe_list2 %>
+    <%=simple_format article.recipe_title3 %>
+    <%=simple_format article.recipe_list3 %>
+    <%=simple_format article.recipe_title4 %>
+    <%=simple_format article.recipe_list4 %>
+    <%=simple_format article.recipe_title5 %>
+    <%=simple_format article.recipe_list5 %>
+    <%=simple_format article.recipe_title6 %>
+    <%=simple_format article.recipe_list6 %>
+    <h3>Method</h3>
+    <%=simple_format article.method1 %>
+    <%=simple_format article.method2 %>
+    <%=simple_format article.method3 %>
+    <%=simple_format article.method4 %>
+    <%=simple_format article.method5 %>
+    <%=simple_format article.method6 %>
+    <%=simple_format article.method7 %>
+    <%=simple_format article.method8 %>
+    <%=simple_format article.method9 %>
+    <%=simple_format article.method10 %>
     <% end %>
+
       <%= simple_format article.text1 %>
     </p>
       <% if article.image2.attached? %>
@@ -46,11 +69,6 @@
       <% if article.image4.attached? %>
       <%= image_tag @article.image4 %>
       <% end %>
-        <%  if  @article.category == "Recipe" %>
-        <br>
-  <h3> Method
-   </h3>
-    <% end %>
     <p>
       <%= simple_format article.text4 %>
     </p>
@@ -219,22 +237,38 @@
 
 <br>
 <div class="card">
-<div class="row">
-<div class="col-4 print-ingredients">
-      <%= simple_format article.text1 %>
-      <%= simple_format article.text2 %>
-      <%= simple_format article.text3 %>
-      <%= simple_format article.text4 %>
+  <div class="row">
+      <div class="col-4 print-ingredients">
+      <h4>Ingredients</h4>
+        <%=simple_format article.recipe_title1 %>
+        <%=simple_format article.recipe_list1 %>
+        <%=simple_format article.recipe_title2 %>
+        <%=simple_format article.recipe_list2 %>
+        <%=simple_format article.recipe_title3 %>
+        <%=simple_format article.recipe_list3 %>
+        <%=simple_format article.recipe_title4 %>
+        <%=simple_format article.recipe_list4 %>
+        <%=simple_format article.recipe_title5 %>
+        <%=simple_format article.recipe_list5 %>
+        <%=simple_format article.recipe_title6 %>
+        <%=simple_format article.recipe_list6 %>
+      </div>
 
-</div>
+      <div class="col-8 print-method">
+      <h4>Method</h4>
+        <%= simple_format article.method1 %>
+        <%= simple_format article.method2 %>
+        <%= simple_format article.method3 %>
+        <%= simple_format article.method4 %>
+        <%= simple_format article.method5 %>
+        <%= simple_format article.method6 %>
+        <%= simple_format article.method7 %>
+        <%= simple_format article.method8 %>
+        <%= simple_format article.method9 %>
+        <%= simple_format article.method10 %>
 
-<div class="col-8 print-method">
-      <%= simple_format article.text5 %>
-      <%= simple_format article.text6 %>
-      <%= simple_format article.text7 %>
-      <%= simple_format article.text8 %>
-</div>
-</div>
+      </div>
+  </div>
 </div>
 
    </div>

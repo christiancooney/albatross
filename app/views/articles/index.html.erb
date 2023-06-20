@@ -1,19 +1,19 @@
 <div class="container destinations">
-<br>
- <h1 class="grand-title" style="text-align: center;"> Articles</h1>
-     <hr>
-  <div class="row">
-    <div class="col-7">
-      <div class="d-flex destination">
-      <% @articles.each do |article| %>
-        <div class="destination-cards">
-           <%= link_to article_path(article), style: "text-decoration: none;" do %>
-        <% if article.imagecover.attached? %>
-          <%= image_tag article.imagecover %>
-        <% end %>
-        <div class="d-card-middle">
-          <div class="d-card-text">
-              <% case article.category %>
+  <br>
+  <h1 class="grand-title" style="text-align: center;"> Articles</h1>
+  <hr>
+      <%= button_to "New article", new_article_path, :method => "get"   %>
+
+  <div class="d-flex destination">
+    <% @articles.each do |article| %>
+    <div class="destination-cards">
+      <%= link_to article_path(article), style: "text-decoration: none;" do %>
+      <% if article.imagecover.attached? %>
+        <%= image_tag article.imagecover %>
+      <% end %>
+      <div class="d-card-middle">
+        <div class="d-card-text">
+          <% case article.category %>
             <% when "Health" %>
               <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i>
             <% when "Life" %>
@@ -24,28 +24,17 @@
               <i class="fa-solid fa-utensils fa-fw circle-icon"></i>
             <% when "Style" %>
               <i class="fa-solid fa-shirt fa-fw circle-icon"></i>
-              <% when "Travel" %>
+            <% when "Travel" %>
               <i class="fa-solid fa-suitcase fa-fw circle-icon"></i>
-            <% end %>
-            <br>
-            <h5> <%= article.title  %></h5>
-            <p><%= article.date.to_formatted_s(:long) %> <br>
-            by <%= article.author  %> </p>
+          <% end %>
+          <br>
+          <h5> <%= article.title  %></h5>
+          <p><%= article.date.to_formatted_s(:long) %> <br>
+          by <%= article.author  %> </p>
           </div>
         </div>
       </div>
       <% end %>
       <% end %>
-      </div>
     </div>
-    <div class="col-4">
-  <h3>Filters</h3>
-
-
-
-    </div>
-
-<%= button_to "New article", new_article_path, :method => "get"   %>
   </div>
-
-</div>

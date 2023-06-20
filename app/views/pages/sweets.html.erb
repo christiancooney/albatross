@@ -1,4 +1,4 @@
- <h1 class="grand-title" style="text-align: center;"> Sweets</h1>
+ <h1 class="grand-title" style="text-align: center;"> sweets</h1>
 <hr>
 <div class="d-flex destination">
       <% @sweets.each do |article| %>
@@ -9,19 +9,13 @@
         <% end %>
         <div class="d-card-middle">
           <div class="d-card-text">
-              <% case article.category %>
-            <% when "Health" %>
-              <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i>
-            <% when "Life" %>
-              <i class="fa-solid fa-mountain fa-fw circle-icon"></i>
-            <% when "Recipe" %>
-              <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i>
-            <% when "Restaurant" %>
-              <i class="fa-solid fa-utensils fa-fw circle-icon"></i>
-            <% when "Style" %>
-              <i class="fa-solid fa-shirt fa-fw circle-icon"></i>
-              <% when "Travel" %>
-              <i class="fa-solid fa-suitcase fa-fw circle-icon"></i>
+            <% case article.cuisine %>
+            <% when "Med" %>
+              <p>Mediteranean</p>
+            <% when "Asian" %>
+              <p>Asian</p>
+            <% when "Middle Eastern" %>
+              <p>Middle Eastern</p>
             <% end %>
             <br>
             <h5> <%= article.title  %></h5>
