@@ -30,6 +30,7 @@
 
               <p>Cover Image Upload</p>
     <%= f.file_field :imagecover, direct_upload: true %><hr>
+    <%= f.input :text1, label: "Introduction" %> <hr>
 
 
     <div class="row">
@@ -40,7 +41,6 @@
 
     <p>Image Upload</p>
     <%= f.file_field :image1, direct_upload: true %><hr>
-    <%= f.input :text1, label: "Paragraph 1" %> <hr>
       <p>Image Upload</p>
     <%= f.file_field :image2, direct_upload: true %> <hr>
     <%= f.input :text2, label: "Paragraph 2"  %><hr>
@@ -133,7 +133,6 @@
       <div class="col article-split">
       <h3>New Recipe Article</h3>
       <hr>
-       <%= f.input :text1, label: "Introduction" %> <hr>
         <%= f.input :recipe_title1, label: "Ingredients List Title" %><hr>
         <%= f.input :recipe_list1, label: "Ingredients List" %><hr>
         <%= f.input :recipe_title2, label: "Ingredients List Title" %><hr>

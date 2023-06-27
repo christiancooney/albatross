@@ -1,5 +1,8 @@
   <div id="<%= dom_id article %>">
 
+       <%  if  @article.category == "Recipe" %>
+    <button class="print-link-button", id="upper-print-link"><a href= "#print-card-link" class="bottom">Skip to recipe card  <i class="fa-solid fa-angle-down"></i></a></button>
+<% end %>
 <p> <%= article.date.to_formatted_s(:long) %></p>
      <h1 class="grand-title"><%= article.title %></h1>
      <hr>
@@ -11,25 +14,26 @@
     <% end %>
 
 
-    <p>
-      By:
-     <%= article.author %>
-      <br>
+    <p>By: <%= article.author %></p>
 
-    </p>
 
+
+
+
+
+
+
+<div class="cover-image-article">
       <% if article.imagecover.attached? %>
       <%= image_tag @article.imagecover %>
       <% end %>
- <%  if  @article.category == "Recipe" %>
- <div class="recipe-right">
+      </div>
+
  <%= simple_format article.text1 %>
- </div>
- <% end %>
+
     <p>
   <%  if  @article.category == "Recipe" %>
   <br>
-    <button class="print-link-button"><a href= "#print-card-link" class="bottom">Recipe <i class="fa-solid fa-angle-down"></i></a></button>
     <h3>Ingredients</h3>
     <hr>
     <div class="row">
@@ -123,11 +127,8 @@
     <% end %>
 
 <%  if  @article.category != "Recipe" %>
-    <% if article.image1.attached? %>
-      <%= image_tag @article.image1 %>
-      <% end %>
 
-      <%= simple_format article.text1 %>
+
     </p>
       <% if article.image2.attached? %>
       <%= image_tag @article.image2 %>
@@ -301,8 +302,9 @@
     <% if article.image30.attached? %>
       <%= image_tag @article.image30 %>
       <% end %>
-    <p>
+     <h3>Summary</h3>
+    <hr>
       <%= simple_format article.text30 %>
-    </p>
+
 <% end %>
 </div>
