@@ -1,9 +1,5 @@
 .article {
-  img {
-    height: 350px;
-    width: 500px;
-    object-fit: cover;
-  }
+
 }
 
 .article-split {
@@ -14,5 +10,35 @@
 
 .cover-image-article {
   float: left;
+  img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+  }
   padding: 0px 30px 20px 0px;
+}
+
+
+.article-image-article {
+  img {
+    width: 500px;
+    height: 550px;
+    object-fit: cover;
+ border: 10px solid white;
+ border-bottom: 50px solid white;
+  }
+  padding: 0px 30px 20px 0px;
+
+}
+
+
+.article-image-text-combo {
+display: flex;
+}
+
+
+@media screen and (max-width: 1300px) {
+  .article-image-text-combo  {
+    display: inline;
+  }
 }

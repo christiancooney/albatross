@@ -22,16 +22,18 @@
 
 
 
-
-<div class="cover-image-article">
+  <div class="article-image-text-combo">
+    <div class="cover-image-article">
       <% if article.imagecover.attached? %>
       <%= image_tag @article.imagecover %>
       <% end %>
-      </div>
+    </div>
+    <div class="article-intro">
+      <%= simple_format article.text1 %>
+    </div>
+  </div>
 
- <%= simple_format article.text1 %>
 
-    <p>
   <%  if  @article.category == "Recipe" %>
   <br>
     <h3>Ingredients</h3>
@@ -127,184 +129,172 @@
     <% end %>
 
 <%  if  @article.category != "Recipe" %>
-
-
-    </p>
+<br><br>
+  <div class="article-image-text-combo">
+    <div class="article-image-article">
       <% if article.image2.attached? %>
       <%= image_tag @article.image2 %>
       <% end %>
-    <p>
-
-      <%=simple_format article.text2 %>
-    </p>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text2 %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+    <div class="article-image-article">
       <% if article.image3.attached? %>
       <%= image_tag @article.image3 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text3 %>
-    </p>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
       <% if article.image4.attached? %>
       <%= image_tag @article.image4 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text4 %>
-    </p>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
       <% if article.image5.attached? %>
       <%= image_tag @article.image5 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text5 %>
-    </p>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
       <% if article.image6.attached? %>
       <%= image_tag @article.image6 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text6 %>
-    </p>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
       <% if article.image7.attached? %>
       <%= image_tag @article.image7 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text7 %>
-    </p>
-    <% if article.image8.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image8.attached? %>
       <%= image_tag @article.image8 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text8 %>
-    </p>
-    <% if article.image9.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image9.attached? %>
       <%= image_tag @article.image9 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text9 %>
-    </p>
-    <% if article.image10.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image10.attached? %>
       <%= image_tag @article.image10 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text10 %>
-    </p>
-    <% if article.image11.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image11.attached? %>
       <%= image_tag @article.image11 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text11 %>
-    </p>
-    <% if article.image12.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image12.attached? %>
       <%= image_tag @article.image12 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text12 %>
-    </p>
-    <% if article.image13.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image13.attached? %>
       <%= image_tag @article.image13 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text13 %>
-    </p>
-    <% if article.image14.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image14.attached? %>
       <%= image_tag @article.image14 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text14 %>
-    </p>
-    <% if article.image15.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image15.attached? %>
       <%= image_tag @article.image15 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text15 %>
-    </p>
-    <% if article.image16.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image16.attached? %>
       <%= image_tag @article.image16 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text16 %>
-    </p>
-    <% if article.image17.attached? %>
+    </div>
+  </div>
+  <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image17.attached? %>
       <%= image_tag @article.image17 %>
       <% end %>
-    <p>
+    </div>
+    <div class="article-image-description">
       <%= simple_format article.text17 %>
-    </p>
-    <% if article.image18.attached? %>
-      <%= image_tag @article.image18 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text18 %>
-    </p>
-    <% if article.image19.attached? %>
-      <%= image_tag @article.image19 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text19 %>
-    </p>
-    <% if article.image20.attached? %>
-      <%= image_tag @article.image20 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text20 %>
-    </p>
-    <% if article.image21.attached? %>
-      <%= image_tag @article.image21 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text21 %>
-    </p>
-    <% if article.image22.attached? %>
-      <%= image_tag @article.image22 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text22 %>
-    </p>
-    <% if article.image23.attached? %>
-      <%= image_tag @article.image23 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text23 %>
-    </p>
-    <% if article.image24.attached? %>
-      <%= image_tag @article.image24 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text24 %>
-    </p>
-    <% if article.image25.attached? %>
-      <%= image_tag @article.image25 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text25 %>
-    </p>
-    <% if article.image26.attached? %>
-      <%= image_tag @article.image26 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text26 %>
-    </p>
-    <% if article.image27.attached? %>
-      <%= image_tag @article.image27 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text27 %>
-    </p>
-    <% if article.image28.attached? %>
-      <%= image_tag @article.image28 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text28 %>
-    </p>
-    <% if article.image29.attached? %>
-      <%= image_tag @article.image29 %>
-      <% end %>
-    <p>
-      <%= simple_format article.text29 %>
-    </p>
-    <% if article.image30.attached? %>
-      <%= image_tag @article.image30 %>
-      <% end %>
-     <h3>Summary</h3>
-    <hr>
-      <%= simple_format article.text30 %>
+    </div>
+  </div>
+
+ <h3>Summary</h3>
+ <hr>
+  <%= simple_format article.text30 %>
+
 
 <% end %>
 </div>
