@@ -1,7 +1,13 @@
 .article {
   img {
-    text-align: center;
-
-    width: 250px;
+    height: 350px;
+    width: 300px;
+    object-fit: cover;
   }
+}
+
+.article-split {
+  margin: 2px;
+  background-color: rgb(248, 244, 235);
+  border: 1px solid black;
 }

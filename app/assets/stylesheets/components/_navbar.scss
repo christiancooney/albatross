@@ -1,32 +1,50 @@
 .navigation {
-  background-color:#f9f7ea;
-  text-align: center;
-  border-top: solid 1px black;
-  padding: 5px 0px 5px ;
-  border-bottom: solid 2px black;
+  // background-color:#f9f7ea;
 
+  background: rgba(255, 255, 255, .6);
+
+  text-align: center;
+  padding: 5px 0px 5px ;
+  box-shadow: 0px 10px 0px 0px rgba(88, 117, 94, 0.1);
+  // border-bottom: solid 2px black;
 }
 
 #logo {
   width: 250px;
+  background-color: transparent !important;
+
 }
 
 .nav-tabs {
-  justify-content: center;
-border: none;
+    border: none;
+
+  .nav-link {
+    padding-top: 20px;
+    width: 150px;
+  }
 
   a {
+    padding: 5px;
     color: black;
     font-weight: bold;
-    padding: 5px 70px 5px;
+
   }
   a:hover {
     transition: 1s;
     color: rgb(84, 105, 84);
     border: none;
   }
+
+
 }
 
+
+.instagram {
+  float: right;
+  margin-right: 50px;
+  padding-top: 20px;
+
+}
 
 .recipe-tabs {
   justify-content: center;
@@ -45,7 +63,38 @@ border: none;
   }
 }
 
-.nav-links {
-float: right;
-padding-right: 10px;
+
+@media screen and (max-width: 1300px) {
+  .large-screen-menu {
+    display: none;
+  }
+
+  #logo {
+    justify-content: center;
+    width: 200px;
+  }
+  .nav-tabs {
+    display: none;
+  }
+
+  .small-screen-menu {
+    display: contents;
+    float: right;
+
+  }
+  .nav-social {
+display: none;
+  }
+  .navigation {
+
+    justify-content: center;
+  }
+}
+
+
+
+@media screen and (min-width: 1300px) {
+  .small-screen-menu {
+    display: none;
+  }
 }

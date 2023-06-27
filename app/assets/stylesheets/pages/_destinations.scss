@@ -6,8 +6,30 @@
 
 .location-list {
   margin-left: 10px;
+  list-style: none;
 }
 
 .accordion-button {
 background-color: transparent;
 }
+
+.destination-accordion {
+  padding: 10px;
+}
+
+.destination-entry {
+  width: 200px;
+  padding: 10px;
+}
+
+.location-list:hover {
+  background-color: transparent !important;
+}
+
+
+
+// @media screen and (max-width: 930px) {
+//   .destination-accordion {
+//     position: absolute;
+//   }
+// }

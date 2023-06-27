@@ -1,24 +1,46 @@
 <nav class="navigation">
-        <%= link_to root_path, class: "navigation-logo" do %>
-      <%= image_tag "alb-cr.png", id: "logo" %>
-    <% end %>
-      <div class="nav-links">
-  <a href="https://www.instagram.com/christiancooney/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <div class="row">
+    <div class="col large-screen-menu">
+
+        <ul class="nav nav-tabs">
+          <li></li>
+            <li class="nav-item">
+                <%= link_to root_path, class: "nav-link", style: "text-decoration: none;" do %>
+                  <p>HOME</p>
+                <% end %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/destinations">DESTINATIONS</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/recipes">RECIPES</a>
+            </li>
+            </ul>
+        </div>
+
+
+
+
+    <div class="col">
+      <%= link_to root_path, class: "navigation-logo" do %>
+       <%= image_tag "ALWg.png", id: "logo" %>
+      <% end %>
+    </div>
+
+    <div class="col nav-social">
+      <a class="instagram" href="https://www.instagram.com/christiancooney/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+
 </div>
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-      <%= link_to root_path, class: "nav-link", style: "text-decoration: none;" do %>
-             home
-              <% end %>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/destinations">destinations</a>
-  </li>
-
-
-    <li class="nav-item">
-    <a class="nav-link" href="/recipes">recipes</a>
-  </li>
-  </ul>
-
+  <div class="ml-auto small-screen-menu">
+              <a class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <p>MENU</p>
+              </a>
+            <ul class="dropdown-menu" >
+              <li class="dropdown-item location-list" ><%= link_to "HOME", root_path, :method => "get"  %></li>
+              <li class="dropdown-item location-list" ><%= link_to "DESTINATIONS", destinations_path, :method => "get"  %></li>
+              <li class="dropdown-item location-list" ><%= link_to "RECIPES", recipes_path, :method => "get"  %></li>
+              <li class="dropdown-item location-list" ><a href="https://www.instagram.com/christiancooney/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          </div>
 </nav>

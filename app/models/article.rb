@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
-  validates :date, presence: true
-  validates :category, presence: true
+  validates :date, :category, :imagecover, presence: true
 
   has_one_attached :imagecover
   has_one_attached :image1
