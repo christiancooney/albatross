@@ -1,9 +1,9 @@
- <div class="container">
 
- <br><h1 class="grand-title" style="text-align: center;"> SWEETS</h1>
+ <div class="container">
+ <br><h1 class="grand-title" style="text-align: center;"> SNACKS</h1>
 <hr>
 <div class="d-flex destination">
-      <% @sweets.each do |article| %>
+      <% @snacks.each do |article| %>
         <div class="destination-cards">
            <%= link_to article_path(article), style: "text-decoration: none;" do %>
         <% if article.imagecover.attached? %>

@@ -8,8 +8,7 @@
       <div class="destination-entry">
 
       <a class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-   <%= country.name %>
-  </a>
+   <%= country.name %></a>
 
 
             <ul class="dropdown-menu" >
@@ -20,7 +19,7 @@
 
           <% end %>
           <hr>
-            <li class="dropdown-item location-list" ><%= link_to "View all country articles", country_path(country), :method => "get"  %></li>
+            <li class="dropdown-item location-list" ><%= link_to "View all posts", country_path(country), :method => "get"  %></li>
             </ul>
       </div>
       <% end %>
@@ -37,35 +36,38 @@
           <%= image_tag article.imagecover %>
         <% end %>
         <div class="d-card-middle">
+        </div>
           <div class="d-card-text">
+            <h4> <%= article.title  %></h4>
+             <div class="d-flex justify-content-between italic-cards">
               <% case article.category %>
             <% when "Health" %>
-            <p>Health</p>
+            <h6>Health</h6>
               <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
             <% when "Life" %>
-            <p>Life</p>
+            <h6>Life</h6>
               <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
             <% when "Recipe" %>
-            <p>Recipe</p>
+            <h6>Recipe</h6>
               <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
             <% when "Restaurant" %>
-            <p>Restaurant</p>
+            <h6>Restaurant</h6>
               <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
             <% when "Style" %>
-            <p>Style</p>
+            <h6>Style</h6>
               <%# <i class="fa-solid fa-shirt fa-fw circle-icon"></i> %>
               <% when "Travel" %>
-              <p>Travel</p>
+              <h6>Travel</h6>
               <%# <i class="fa-solid fa-suitcase fa-fw circle-icon"></i> %>
             <% end %>
-            <br>
-            <h5> <%= article.title  %></h5>
-            <p><%= article.date.to_formatted_s(:long) %> <br>
-            by <%= article.author  %> </p>
+
+            <%# <p><%= article.date.to_formatted_s(:long) %>
+         <p>by <%= article.author  %></p>
           </div>
-        </div>
+          </div>
       </div>
       <% end %>
       <% end %>
       </div>
+      <br>
 </div>

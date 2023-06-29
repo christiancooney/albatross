@@ -11,34 +11,38 @@
           <%= image_tag article.imagecover %>
         <% end %>
         <div class="home-middle">
+        </div>
           <div class="home-text">
+
+            <h4> <%= article.title  %></h4>
+  <%# <p><%= article.date.to_formatted_s(:long) %>
+
+               <div class="d-flex justify-content-between italic-cards">
                <% case article.category %>
             <% when "Health" %>
-            <p>Health</p>
+            <h6>Health</h6>
               <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
             <% when "Life" %>
-            <p>Life</p>
+            <h6>Life</h6>
               <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
             <% when "Recipe" %>
-            <p>Recipe</p>
+            <h6>Recipe</h6>
               <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
             <% when "Restaurant" %>
-            <p>Restaurant</p>
+            <h6>Restaurant</h6>
               <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
             <% when "Style" %>
-            <p>Style</p>
+            <h6>Style</h6>
               <%# <i class="fa-solid fa-shirt fa-fw circle-icon"></i> %>
               <% when "Travel" %>
-              <p>Travel</p>
+              <h6>Travel</h6>
               <%# <i class="fa-solid fa-suitcase fa-fw circle-icon"></i> %>
             <% end %>
 
-            <h5> <%= article.title  %></h5>
-            <p><%= article.date.to_formatted_s(:long) %></p>
-            <p>by <%= article.author  %> </p>
+            <p>by <%= article.author  %></p>
 
           </div>
-        </div>
+          </div>
       </div>
       <% end %>
       <% end %>

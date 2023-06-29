@@ -18,27 +18,31 @@
           <%= image_tag article.imagecover %>
         <% end %>
         <div class="d-card-middle">
+        </div>
           <div class="d-card-text">
-              <% case article.subcategory %>
+            <h4> <%= article.title  %></h4>
+
+                  <div class="d-flex justify-content-between italic-cards">
+                <% case article.subcategory %>
             <% when "Drinks" %>
-            <p>Drinks</p>
+            <h6>Drinks</h6>
               <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
             <% when "Starters" %>
-            <p>Starters</p>
+            <h6>Starters</h6>
               <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
             <% when "Mains" %>
-            <p>Mains</p>
+            <h6>Mains</h6>
               <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
             <% when "Sweets" %>
-            <p>Sweets</p>
+            <h6>Sweets</h6>
               <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
             <% end %>
-            <br>
-            <h5> <%= article.title  %></h5>
-            <p><%= article.date.to_formatted_s(:long) %> <br>
-            by <%= article.author  %> </p>
+
+            <%# <p><%= article.date.to_formatted_s(:long) %>
+         <p>by <%= article.author  %></p>
           </div>
-        </div>
+
+          </div>
       </div>
       <% end %>
       <% end %>

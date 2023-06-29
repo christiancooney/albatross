@@ -4,16 +4,19 @@
 
 }
 .destination-cards {
+  width: 315px;
+  height: 370px;
   text-align: center;
-  margin: 10px;
+  margin: 5px;
+  padding: 5px;
   position: relative;
-  border: solid 1px #ffffff;
-  border-radius: 1px;
-  background-color: rgb(48,48,48);
+  // border: solid 1px #ffffff;
+  // border-radius: 1px;
+  background-color: white;
+  // background-color: rgb(48,48,48);
 
-  h1,h2,h3,h4,h5,h6,p,a,i {
-    color: rgb(237,235,223) !important;
-  }
+  // h1,h2,h3,h4,h5,h6,p,a,i {
+  //   color: rgb(237,235,223) !important; }
 
   img {
     width: 300px;
@@ -25,12 +28,24 @@
   }
 
   .d-card-text {
-    padding: 5px 0px;
-    font-size: 14px;
+    color: $footer !important;
+    text-align: left !important;
+    padding: 2px 5px 0px!important;
+    margin: 0px !important;
+    h1,h2,h3,h4,h5,h6,p,a,i {
+      padding: 2px 0px 2px!important;
+      margin: 0px !important; }
 
   }
-  }
 
+
+}
+
+
+
+.italic-cards {
+  font-style: italic;
+}
 
 
   .d-card-middle {
