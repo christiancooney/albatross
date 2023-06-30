@@ -35,3 +35,9 @@ a {
 .grand-title {
   font-size: 40px;
 }
+
+@media screen and (max-width: 930px) {
+  .grand-title {
+font-size: 28px;
+    }
+  }

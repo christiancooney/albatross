@@ -35,13 +35,8 @@
     h1,h2,h3,h4,h5,h6,p,a,i {
       padding: 2px 0px 2px!important;
       margin: 0px !important; }
-
   }
-
-
 }
-
-
 
 .italic-cards {
   font-weight: 500;
@@ -68,4 +63,22 @@
       opacity: 0.3;
     }
 
+  }
+
+
+  @media screen and (max-width: 930px) {
+    .destination-cards {
+      width: 335px;
+      height: 390px;
+
+
+      img {
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+        opacity: 1;
+        transition: .5s ease;
+        backface-visibility: hidden;
+      }
+    }
   }

@@ -10,10 +10,13 @@
                 <% end %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/destinations">DESTINATIONS</a>
+              <a class="nav-link" href="/destinations">TRAVEL</a>
             </li>
               <li class="nav-item">
               <a class="nav-link" href="/recipes">RECIPES</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/about">ABOUT</a>
             </li>
             </ul>
         </div>
@@ -39,8 +42,9 @@
               </a>
             <ul class="dropdown-menu" >
               <li class="dropdown-item location-list" ><%= link_to "HOME", root_path, :method => "get"  %></li>
-              <li class="dropdown-item location-list" ><%= link_to "DESTINATIONS", destinations_path, :method => "get"  %></li>
+              <li class="dropdown-item location-list" ><%= link_to "TRAVEL", destinations_path, :method => "get"  %></li>
               <li class="dropdown-item location-list" ><%= link_to "RECIPES", recipes_path, :method => "get"  %></li>
+              <li class="dropdown-item location-list" ><%= link_to "ABOUT", about_path, :method => "get"  %></li>
               <li class="dropdown-item location-list" ><a href="https://www.instagram.com/christiancooney/" target="_blank"><i class="fab fa-instagram"></i></a></li>
           </div>
 </nav>
