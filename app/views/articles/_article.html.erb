@@ -66,16 +66,117 @@
     </div>
     <h3>Method</h3>
     <hr>
-    <%=simple_format article.method1 %>
-    <%=simple_format article.method2 %>
-    <%=simple_format article.method3 %>
-    <%=simple_format article.method4 %>
-    <%=simple_format article.method5 %>
-    <%=simple_format article.method6 %>
-    <%=simple_format article.method7 %>
-    <%=simple_format article.method8 %>
-    <%=simple_format article.method9 %>
-    <%=simple_format article.method10 %>
+
+    <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image20.attached? %>
+      <%= image_tag @article.image20 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text20 %>
+    </div>
+    </div>
+    <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image21.attached? %>
+      <%= image_tag @article.image21 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text21 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image22.attached? %>
+      <%= image_tag @article.image22 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text22 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image23.attached? %>
+      <%= image_tag @article.image23 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text23 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image24.attached? %>
+      <%= image_tag @article.image24 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text24 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image25.attached? %>
+      <%= image_tag @article.image25 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text25 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image26.attached? %>
+      <%= image_tag @article.image26 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text26 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image27.attached? %>
+      <%= image_tag @article.image27 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text27 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image28.attached? %>
+      <%= image_tag @article.image28 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text28 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image29.attached? %>
+      <%= image_tag @article.image29 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text29 %>
+    </div>
+   </div>
+      <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image30.attached? %>
+      <%= image_tag @article.image30 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text30 %>
+    </div>
+   </div>
     <% end %>
 
 
@@ -110,16 +211,17 @@
       <div class="col-8 print-method">
       <h4>Method</h4>
       <hr>
-        <%= simple_format article.method1 %>
-        <%= simple_format article.method2 %>
-        <%= simple_format article.method3 %>
-        <%= simple_format article.method4 %>
-        <%= simple_format article.method5 %>
-        <%= simple_format article.method6 %>
-        <%= simple_format article.method7 %>
-        <%= simple_format article.method8 %>
-        <%= simple_format article.method9 %>
-        <%= simple_format article.method10 %>
+    <%= simple_format article.text20 %>
+    <%= simple_format article.text21 %>
+    <%= simple_format article.text22 %>
+    <%= simple_format article.text23 %>
+    <%= simple_format article.text24 %>
+    <%= simple_format article.text25 %>
+    <%= simple_format article.text26 %>
+    <%= simple_format article.text27 %>
+    <%= simple_format article.text28 %>
+    <%= simple_format article.text29 %>
+    <%= simple_format article.text30 %>
 
       </div>
   </div>
@@ -290,11 +392,52 @@
       <%= simple_format article.text17 %>
     </div>
   </div>
+    <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image18.attached? %>
+      <%= image_tag @article.image18 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text18 %>
+    </div>
+  </div>
+    <div class="article-image-text-combo">
+      <div class="article-image-article">
+      <% if article.image19.attached? %>
+      <%= image_tag @article.image19 %>
+      <% end %>
+    </div>
+    <div class="article-image-description">
+      <%= simple_format article.text19 %>
+    </div>
+  </div>
 
+
+<%  if  @article.category == "Restaurant" %>
  <h3>Summary</h3>
  <hr>
-  <%= simple_format article.text30 %>
 
+
+<div class="row">
+<div class="col-1">
+<p>Price: </p>
+<p>Atmosphere: </p>
+<p>Drinks: </p>
+<p>Service: </p>
+<p>Food: </p>
+<p>Value: </p>
+</div>
+<div class="col-1">
+ <p><% article.price.to_i.times do  %>£<% end %> / ££££ </p>
+ <p><%=  article.atmosphere %> / 10 </p>
+ <p><%=  article.drinks %> / 10 </p>
+ <p><%=  article.service %> / 10 </p>
+ <p><%=  article.food %> / 10 </p>
+ <p><%=  article.value %> / 10 </p>
+</div>
+</div>
+<% end %>
 
 <% end %>
 </div>

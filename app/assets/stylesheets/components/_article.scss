@@ -11,7 +11,7 @@
 .cover-image-article {
   float: left;
   img {
-    width: 500px;
+    width: 450px;
     height: 500px;
     object-fit: cover;
     border: 10px solid white;
@@ -23,8 +23,8 @@
 
 .article-image-article {
   img {
-    width: 500px;
-    height: 550px;
+    width: 450px;
+    height: 500px;
     object-fit: cover;
  border: 10px solid white;
  border-bottom: 50px solid white;
@@ -37,6 +37,7 @@
 .article-image-text-combo {
 display: flex;
 }
+
 
 
 @media screen and (max-width: 1300px) {

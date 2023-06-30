@@ -115,7 +115,8 @@ class ArticlesController < ApplicationController
         :recipe_title3, :recipe_list3, :recipe_title4, :recipe_list4,
         :recipe_title5, :recipe_list5, :recipe_title6, :recipe_list6,
         :method1, :method2, :method3, :method4, :method5, :method6, :method7,
-        :method8, :method9, :method10
+        :method8, :method9, :method10, :price, :atmosphere, :drinks, :food,
+        :service, :value
       )
     end
 end

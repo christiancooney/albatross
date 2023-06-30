@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_20_103444) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_30_130921) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -111,6 +111,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_103444) do
     t.text "method8"
     t.text "method9"
     t.text "method10"
+    t.float "price"
+    t.float "atmosphere"
+    t.float "drinks"
+    t.float "food"
+    t.float "service"
+    t.float "value"
     t.index ["country_id"], name: "index_articles_on_country_id"
     t.index ["location_id"], name: "index_articles_on_location_id"
   end
