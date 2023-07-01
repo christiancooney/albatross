@@ -24,4 +24,8 @@ Rails.application.routes.draw do
   get '/merchandise', to: 'pages#merchandise'
   get "articles/:id/print", to: "articles#print"
 
+  get '/404', to: 'errors#not_found'
+get '/500', to: 'errors#internal_server'
+get '/422', to: 'errors#unprocessable'
+
 end

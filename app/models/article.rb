@@ -37,6 +37,8 @@ class Article < ApplicationRecord
   has_many :locations
 
 
+  include PgSearch::Model
+  multisearchable against: [:country, :location, :title]
 
 
 end

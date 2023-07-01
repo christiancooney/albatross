@@ -23,5 +23,6 @@ country1 = Country.create!(
 
 
 location1 = Location.create!(
-  name: "London"
+  name: "London",
+  country_id: 1
 )
