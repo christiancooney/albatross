@@ -4,15 +4,19 @@
 <%= render @article %>
 
 <div>
+<br>
 <% if @article.category == "Recipe" %>
   <%= link_to "Back to Recipes", recipes_path %>
   <% else %>
-  <%= link_to "Back to destinations", destinations_path %>
+  <%= link_to "Back to travel section", travel_path %>
 <% end %>
 <br>
 <br>
+  <% if current_user %>
   <%= button_to "Edit this article", edit_article_path(@article), method: :get %>
   <br>
   <%= button_to "Destroy this article", @article, method: :delete %>
+  <br>
+  <% end %>
 </div>
 </div>

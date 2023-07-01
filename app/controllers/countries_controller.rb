@@ -1,4 +1,5 @@
 class CountriesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[ show index ]
   before_action :set_country, only: %i[ show edit update destroy ]
   before_action :set_articles
   before_action :set_locations

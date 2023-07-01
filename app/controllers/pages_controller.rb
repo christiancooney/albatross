@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[ home destinations inspiration recipes merchandise]
+  skip_before_action :authenticate_user!, only: %i[ home travel recipes about starters mains sweets drinks snacks]
 
   def home
     @articles = Article.all
@@ -7,13 +7,16 @@ class PagesController < ApplicationController
     @countries = Country.all
   end
 
-  def destinations
+  def travel
     @articles = Article.all.where.not(category: "Recipe")
     @countries = Country.all.order(:name)
 
   end
 
   def about
+  end
+
+  def admin
   end
 
   def inspiration

@@ -43,10 +43,13 @@
       <% end %>
       <% end %>
         </div>
-    <%= link_to "Back to destinations", destinations_path %>
+        <br>
+    <%= link_to "Back to travel section", travel_path %>
     <br>
-     <%# <% if current_user && current_user.admin? %>
+    <br>
+     <% if current_user %>
     <%= button_to "Edit this location", edit_location_path(@location), method: :get   %>
+    <br>
     <%= button_to "Destroy this location", @location, method: :delete %>
-    <%# <% end %>
+     <% end %>
 </div>

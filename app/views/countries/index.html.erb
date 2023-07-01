@@ -1,15 +1,17 @@
 <div class="container">
 <p style="color: green"><%= notice %></p>
-<br>
-<h1>countries</h1>
-<hr>
-
+ <br>
+  <h1 class="grand-title" style="text-align: center;">COUNTRIES</h1>
+  <hr>
       <% @countries.each do |country| %>
       <ol style="list-style-type: none">
      <li class="country-list"><%= link_to country.name, country_path(country), :method => "get"  %></li>
      </ol>
     </p>
   <% end %>
-
+<br>
+<% if current_user %>
 <%= button_to "New country", new_country_path, :method => "get"   %>
+<% end %>
+<br>
 </div>

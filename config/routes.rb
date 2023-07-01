@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   resources :pages
-  get '/destinations', to: 'pages#destinations'
+  get '/travel', to: 'pages#travel'
+  get '/admin', to: 'pages#admin'
   get '/about', to: 'pages#about'
   get '/inspiration', to: 'pages#inspiration'
   get '/recipes', to: 'pages#recipes'

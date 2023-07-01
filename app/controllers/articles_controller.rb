@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[ show index print ]
   before_action :set_article, only: %i[ print show edit update destroy ]
   before_action :set_countries
   before_action :set_locations
@@ -11,15 +12,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
-
-
    if  @article.country_id.present?
     @location_name = Location.find(@article.location_id)
     @country_name = Country.find(@article.country_id)
    else
-
    end
-
   end
 
   # GET /articles/new
@@ -30,6 +27,10 @@ class ArticlesController < ApplicationController
   def newrecipe
     @article = Article.new
   end
+
+  def print
+  end
+
 
   # GET /articles/1/edit
   def edit
@@ -79,9 +80,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def print
-
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,22 +1,36 @@
 <div class="container">
 <p style="color: green"><%= notice %></p>
 
-<h1>locations</h1>
+  <br>
+  <h1 class="grand-title" style="text-align: center;">LOCATIONS</h1>
+  <hr>
 
-      <% @countries.each do |country| %>
-      <ol style="list-style-type: none">
-     <li class="country-list"><%= link_to country.name, country_path(country), :method => "get"  %></li>
-     </ol>
-     <hr>
-      <ul style="list-style-type: square">
-     <%  country.locations.each do |location| %>
-     <li class="location-list" ><%= link_to location.name, location_path(location), :method => "get"  %></li>
-        <% end %>
-     <hr>
+    <div class="destination-tabs">
+        <% @countries.each do |country| %>
+      <div class="destination-entry">
 
-     </ul>
-        <% end %>
+      <a class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+   <%= country.name %></a>
 
 
+            <ul class="dropdown-menu" >
+          <%  country.locations.each do |location| %>
+            <li class="dropdown-item location-list" ><%= link_to location.name, location_path(location), :method => "get"  %></li>
+
+
+
+          <% end %>
+          <hr>
+            <li class="dropdown-item location-list" ><%= link_to "View all posts", country_path(country), :method => "get"  %></li>
+            </ul>
+      </div>
+      <% end %>
+    </div>
+<br>
+<hr>
+<br>
+<% if current_user %>
 <%= button_to "New location", new_location_path, :method => "get"%>
+<% end %>
+<br>
 </div>

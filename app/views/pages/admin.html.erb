@@ -1,0 +1,27 @@
+<div class="container">
+<br>
+  <% if current_user %>
+    <p>Hello <%= current_user.email %> </p>
+      <%= link_to countries_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light">Edit countries</button>
+      <% end %>
+        <br>
+        <br>
+      <%= link_to locations_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light">Edit locations</button>
+      <% end %>
+        <br>
+        <br>
+      <%= link_to articles_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light">Edit articles</button>
+      <% end %>
+        <br>
+        <br>
+    <% else %>
+       <p>Are you lost?</p>
+       <%= link_to root_path, style: "text-decoration: none;" do %>
+        View home page
+        <% end %>
+  <% end %>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete  %>
+</div>
