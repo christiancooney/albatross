@@ -11,12 +11,14 @@
     <br>
     <%= f.input :country_id, collection: @countries %>
     <%= f.input :location_id, collection: @locations %>
-
-
 <br>
-
-
     </div>
+    <div class="d-flex gap-5 flex-wrap" style="width: 1300px;">
+
+    <%= f.input :country, label: "Country Search Tags"  %>
+    <%= f.input :city, label: "Location or Recipe Search Tags eg,. London Fulham or Bread"  %>
+    </div>
+
 
         <div class="d-flex gap-5 flex-wrap" style="width: 1300px;">
 

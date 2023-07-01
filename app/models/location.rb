@@ -4,6 +4,7 @@ class Location < ApplicationRecord
   has_many :countries
   has_many :articles
 
-  include PgSearch::Model
-  multisearchable against: [:name]
+
+
+
 end

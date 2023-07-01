@@ -2,7 +2,7 @@
 <br>
  <h1 class="grand-title" style="text-align: center;">LATEST POSTS</h1>
      <hr>
-
+  <% if @articles.present? %>
   <div class="d-flex home-wrap">
     <% @articles.each do |article| %>
     <div class="home-cards">
@@ -46,6 +46,19 @@
       </div>
       <% end %>
       <% end %>
+
   </div>
+
+        <% else %><br>
+  <p>No results have been found.</p>
+<br>
+
+ <p> Please search again or return to the homepage</p>
+<br>
+<br>
+
+<%= button_to "HOME", root_path, :method => "get"  %>
   <br>
+  <% end %>
+
 </div>

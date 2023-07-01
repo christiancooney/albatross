@@ -1,0 +1,16 @@
+
+.search-bar {
+  padding-right: 30px;
+  display: grid;
+  align-items: center;
+  .dropdown-menu {
+    width: 200px;
+    border: none;
+    background-color: transparent;
+    transform: translate3d(-150px, -10px, 0px) !important;
+  }
+  .form-control {
+    width: 250px;
+    height: 60px;
+  }
+}

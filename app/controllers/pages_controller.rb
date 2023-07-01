@@ -5,6 +5,10 @@ class PagesController < ApplicationController
     @articles = Article.all
     # @articles = Article.all.where.not(category: "Recipe")
     @countries = Country.all
+
+    if params["search"].present?
+      @articles = Article.global_search(params['search']["query"])
+    end
   end
 
   def travel
