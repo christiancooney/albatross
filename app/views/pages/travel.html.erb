@@ -26,10 +26,34 @@
     </div>
 
 
+<div class="container mt-4" data-controller="filter">
+    <div class="mb-3 d-flex search-and-filters">
+      <%= form_with url: travel_path, method: :get, class: "d-flex search-style" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Destination, activity, etc..."
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary", id: "search-button" %>
+      <% end %>
+      <div class="d-flex justify-content-center filter-buttons">
 
+       <%=link_to "Restaurant", travel_path(filter: "Restaurant"), class: "button-17", id: "#{"selected" if params[:filter] == "Restaurant"}" %>
+
+
+       <%=link_to "Travel", travel_path(filter: "Travel"), class: "button-17", id: "#{"selected" if params[:filter] == "Travel"}" %>
+
+       <%=link_to "Reset filters", travel_path, class: "button-17", id: "#{"selected" if params[:filter] == "All travel posts"}" %>
+    </div>
+    </div>
+    <% if @articles.empty? %>
+      <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No posts fit your search.. Please try again</h2>
+
+        <% end %>
+      </div>
     <hr>
     <div class="d-flex destination">
-      <% @articles.each do |article| %>
+      <% @articles.reverse_each do |article| %>
         <div class="destination-cards">
            <%= link_to article_path(article), style: "text-decoration: none;" do %>
         <% if article.imagecover.attached? %>

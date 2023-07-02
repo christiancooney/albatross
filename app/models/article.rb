@@ -55,4 +55,25 @@ class Article < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+      # Search bar logic
+  include PgSearch::Model
+  pg_search_scope :recipe_search,
+  against: %i[category subcategory title
+    feature subfeature cuisine recipe_title1 recipe_title2
+    recipe_title3 recipe_title4 recipe_title5 recipe_title6
+    recipe_list1 recipe_list2 recipe_list3 recipe_list4
+    recipe_list5 recipe_list6],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+  include PgSearch::Model
+  pg_search_scope :travel_search,
+  against: %i[category subcategory title
+    feature subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+
 end

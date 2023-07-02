@@ -1,0 +1,38 @@
+<div class="d-flex destination">
+      <% @recipes.reverse_each do |article| %>
+        <div class="destination-cards">
+           <%= link_to article_path(article), style: "text-decoration: none;" do %>
+        <% if article.imagecover.attached? %>
+          <%= image_tag article.imagecover %>
+        <% end %>
+        <div class="d-card-middle">
+        </div>
+          <div class="d-card-text">
+            <h4> <%= article.title  %></h4>
+
+                  <div class="d-flex justify-content-between italic-cards">
+                <% case article.subcategory %>
+            <% when "Drinks" %>
+            <h6>Drinks</h6>
+              <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
+            <% when "Starters" %>
+            <h6>Starters</h6>
+              <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
+            <% when "Mains" %>
+            <h6>Mains</h6>
+              <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
+            <% when "Sweets" %>
+            <h6>Sweets</h6>
+              <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
+            <% end %>
+
+            <%# <p><%= article.date.to_formatted_s(:long) %>
+         <p>by <%= article.author  %></p>
+          </div>
+
+          </div>
+      </div>
+      <% end %>
+      <% end %>
+
+      </div>

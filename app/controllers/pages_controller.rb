@@ -14,8 +14,15 @@ class PagesController < ApplicationController
   def travel
     @articles = Article.all.where.not(category: "Recipe")
     @countries = Country.all.order(:name)
+    if params[:query].present?
+      @articles = Article.travel_search(params[:query])
+    elsif params[:filter].present?
+      @articles = Article.travel_search(params[:filter])
+
 
   end
+end
+
 
   def about
   end
@@ -28,6 +35,16 @@ class PagesController < ApplicationController
 
   def recipes
     @recipes = Article.where(category: "Recipe")
+
+    if params[:query].present?
+      @recipes = Article.recipe_search(params[:query])
+    elsif params[:filter].present?
+      @recipes = Article.recipe_search(params[:filter])
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def starters

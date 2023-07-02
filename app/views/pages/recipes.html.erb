@@ -2,52 +2,143 @@
  <br>
  <h1 class="grand-title" style="text-align: center;"> ALL RECIPES</h1>
 <hr>
+<%= simple_form_for :search, url: recipes_path, method: "GET", remote: true do |recipe| %>
+starters
+<% end %>
+
+<ul style="display: none;" class="filter-wrap dmc_pfa_secondary_group_t dmc-xpndr-w dmc-registered inherited-styles-for-exported-element" data-pfa_id="recipe_index" data-pfa_type="taxonomy">
+  <li class="filter-item term-id-5">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-5" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="5" type="checkbox">
+      <label for="filter-taxonomy-5">appetizer</label>
+    </div>
+  </li>
+  <li class="filter-item term-id-3585">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-3585" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="3585" type="checkbox">
+      <label for="filter-taxonomy-3585">basics <span class="term-count">(4)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-10">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-10" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="10" type="checkbox">
+      <label for="filter-taxonomy-10">beverage <span class="term-count">(72)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-19">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-19" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="19" type="checkbox">
+      <label for="filter-taxonomy-19">breakfast <span class="term-count">(103)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-4">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-4" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="4" type="checkbox">
+      <label for="filter-taxonomy-4">dessert <span class="term-count">(69)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-22">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-22" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="22" type="checkbox">
+      <label for="filter-taxonomy-22">main course <span class="term-count">(221)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-3489">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-3489" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="3489" type="checkbox">
+      <label for="filter-taxonomy-3489">pasta <span class="term-count">(34)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-8">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-8" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="8" type="checkbox">
+      <label for="filter-taxonomy-8">salad <span class="term-count">(101)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-246">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-246" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="246" type="checkbox">
+      <label for="filter-taxonomy-246">sandwich <span class="term-count">(10)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-386">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-386" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="386" type="checkbox">
+      <label for="filter-taxonomy-386">sauce <span class="term-count">(88)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-17">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-17" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="17" type="checkbox">
+      <label for="filter-taxonomy-17">side dish <span class="term-count">(196)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-6">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-6" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="6" type="checkbox">
+      <label for="filter-taxonomy-6">snack <span class="term-count">(86)</span></label>
+    </div>
+  </li>
+  <li class="filter-item term-id-27">
+    <div class="filter-item-inner">
+      <input class="dmc_pfa_item" id="filter-taxonomy-27" data-pfa_item="checkbox" data-pfa_taxonomy="category" data-pfa_term_id="27" type="checkbox">
+      <label for="filter-taxonomy-27">soup <span class="term-count">(50)</span></label>
+    </div>
+  </li>
+</ul>
+
+
+
+
+  <div class="container mt-4" data-controller="filter">
+    <div class="mb-3 d-flex search-and-filters">
+      <%= form_with url: recipes_path, method: :get, class: "d-flex search-style" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a recipe..."
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary", id: "search-button" %>
+      <% end %>
+      <div class="d-flex justify-content-center filter-buttons">
+       <%=link_to "Starters", recipes_path(filter: "Starters"), class: "button-17", id: "#{"selected" if params[:filter] == "Starters"}" %>
+       <%=link_to "Mains", recipes_path(filter: "Mains"), class: "button-17", id: "#{"selected" if params[:filter] == "Mains"}" %>
+       <%=link_to "Sweets", recipes_path(filter: "Sweets"), class: "button-17", id: "#{"selected" if params[:filter] == "Sweets"}" %>
+       <%=link_to "Drinks", recipes_path(filter: "Drinks"), class: "button-17", id: "#{"selected" if params[:filter] == "Drinks"}" %>
+       <%=link_to "Sides", recipes_path(filter: "Sides"), class: "button-17", id: "#{"selected" if params[:filter] == "Sides"}" %>
+       <%=link_to "Bread", recipes_path(filter: "Bread"), class: "button-17", id: "#{"selected" if params[:filter] == "Bread"}" %>
+       <%=link_to "Snacks", recipes_path(filter: "Snacks"), class: "button-17", id: "#{"selected" if params[:filter] == "Snacks"}" %>
+       <%=link_to "Reset filters", recipes_path, class: "button-17", id: "#{"selected" if params[:filter] == "All Recipes"}" %>
+    </div>
+    </div>
+    <% if @recipes.empty? %>
+      <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No recipes fit your search.. Please try again</h2>
+
+        <% end %>
+      </div>
+
+  </div>
+
+
 <div class="tabs">
-    <a href="/recipes/starters">starters</a>
-    <a href="/recipes/mains">mains</a>
-    <a href="/recipes/sweets">sweets</a>
-    <a href="/recipes/drinks">drinks</a>
-    <a href="/recipes/snacks">snacks</a>
+    <a href="/recipes/starters">Starters</a>
+    <a href="/recipes/mains">Mains</a>
+    <a href="/recipes/sweets">Sweets</a>
+    <a href="/recipes/drinks">Drinks</a>
+    <a href="/recipes/snacks">Snacks</a>
     </div>
 <hr>
-<div class="d-flex destination">
-      <% @recipes.each do |article| %>
-        <div class="destination-cards">
-           <%= link_to article_path(article), style: "text-decoration: none;" do %>
-        <% if article.imagecover.attached? %>
-          <%= image_tag article.imagecover %>
-        <% end %>
-        <div class="d-card-middle">
-        </div>
-          <div class="d-card-text">
-            <h4> <%= article.title  %></h4>
 
-                  <div class="d-flex justify-content-between italic-cards">
-                <% case article.subcategory %>
-            <% when "Drinks" %>
-            <h6>Drinks</h6>
-              <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
-            <% when "Starters" %>
-            <h6>Starters</h6>
-              <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
-            <% when "Mains" %>
-            <h6>Mains</h6>
-              <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
-            <% when "Sweets" %>
-            <h6>Sweets</h6>
-              <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
-            <% end %>
 
-            <%# <p><%= article.date.to_formatted_s(:long) %>
-         <p>by <%= article.author  %></p>
-          </div>
+<div class="col-xs-12 col-sm-8">
+ <div id="recipes">
+   <%= render 'recipe', recipes: @recipes %>
+ </div>
+</div>
 
-          </div>
-      </div>
-      <% end %>
-      <% end %>
 
-      </div>
+
+
       <br>
 
       </div>
