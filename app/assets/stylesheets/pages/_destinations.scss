@@ -13,7 +13,30 @@
 .accordion-button {
 background-color: transparent;
 }
+.accordion-header {
+  display: grid;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  }
 
+  .accordion-button:not(.collapsed) {
+  box-shadow: none;
+  background-color: transparent;
+  color: $khaki;
+
+  }
+  .accordion-item:last-of-type {
+    border: none;
+    background-color: transparent;
+  }
+
+
+  .accordion-button.collapsed {
+    box-shadow: none;
+    background-color: transparent;
+
+    }
 .destination-accordion {
   padding: 10px;
 }
@@ -21,8 +44,13 @@ background-color: transparent;
 .destination-entry {
   width: 170px;
   padding: 10px;
+}
+.destination-entry-large {
+  width: 170px;
+  padding: 10px;
 
 }
+
 .destination-tabs {
   display: flex;
 flex-wrap: wrap;
@@ -33,6 +61,9 @@ flex-wrap: wrap;
 }
 
 
+
+
+
 @media screen and (max-width: 930px) {
   .destination-tabs {
     display: grid;
@@ -41,7 +72,11 @@ flex-wrap: wrap;
     }
   }
 
-
+.small-screen-menu-travel {
+  .dropdown-toggle {
+float: right;
+  }
+}
 
 
 // @media screen and (max-width: 930px) {

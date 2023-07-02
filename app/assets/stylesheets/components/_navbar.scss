@@ -79,6 +79,10 @@ display: grid;
     display: none;
   }
 
+  .destination-entry-large{
+    display: none;
+  }
+
   #logo {
     justify-content: center;
     width: 200px;
@@ -90,6 +94,10 @@ display: grid;
   .small-screen-menu {
     display: contents;
     float: right;
+
+  }
+  .small-screen-menu-travel {
+    display: contents;
 
   }
   .nav-social {
@@ -105,6 +113,9 @@ display: none !important;
 
 @media screen and (min-width: 1300px) {
   .small-screen-menu {
+    display: none;
+  }
+  .small-screen-menu-travel {
     display: none;
   }
 }

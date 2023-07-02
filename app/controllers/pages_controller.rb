@@ -14,10 +14,10 @@ class PagesController < ApplicationController
   def travel
     @articles = Article.all.where.not(category: "Recipe")
     @countries = Country.all.order(:name)
-    if params[:query].present?
-      @articles = Article.travel_search(params[:query])
+    if params["search"].present?
+      @articles = Article.all.where.not(category: "Recipe").travel_search(params['search']["query"])
     elsif params[:filter].present?
-      @articles = Article.travel_search(params[:filter])
+      @articles = Article.all.where.not(category: "Recipe").travel_search(params[:filter])
 
 
   end
@@ -36,15 +36,23 @@ end
   def recipes
     @recipes = Article.where(category: "Recipe")
 
-    if params[:query].present?
-      @recipes = Article.recipe_search(params[:query])
+    if params["search"].present?
+      @recipes = Article.where(category: "Recipe").recipe_search(params['search']["query"])
     elsif params[:filter].present?
-      @recipes = Article.recipe_search(params[:filter])
+      @recipes = Article.where(category: "Recipe").recipe_search(params[:filter])
     end
-    respond_to do |format|
-      format.html
-      format.js
-    end
+
+  @filters = %i[ starters main sweets sides snacks drinks]
+
+      # if params["search"]
+      #   @filter = params["search"]["categories"].concat(params["search"]["strengths"]).flatten.reject(&:blank?)
+      #   @recipes = @filter.empty? ? Article.where(category: "Recipe") : Article.where(category: "Recipe").tagged_with(@filter, any: true)
+      # else
+      #   @recipes = Article.where(category: "Recipe")
+      # end
+
+
+
   end
 
   def starters

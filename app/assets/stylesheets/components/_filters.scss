@@ -1,89 +1,24 @@
-
-  *, ul {
-    box-sizing: border-box;
-  }
-
-  input {
-    font-family: sans-serif;
-    font-size: 100%;
-    line-height: 1.15;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-top: 0;
-    overflow: visible;
-  }
-
-  .inherited-styles-for-exported-element {
-    color: #23443e;
-    font-family: proxima-nova;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1;
-  }
+.filter-buttons-recipe {
+  font-size: 16px;
+  li {
+    padding-bottom: 5px;
+    }
 
   ul {
-    list-style: none;
-    margin: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  [type=checkbox] {
-    box-sizing: border-box;
     padding: 0;
-  }
+    list-style-type: none;
 
-  input:focus::-webkit-input-placeholder {
-    font-size: 0;
   }
+}
 
-  .filter-wrap {
-    padding-top: 15px;
-  }
-
-  .filter-item {
-    margin-bottom: 18px;
-  }
-
-  .filter-item label {
-    cursor: pointer;
-    font-family: proxima-nova;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1.7px;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .filter-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .filter-item .filter-item-inner {
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-  }
-
-  .filter-item input[type=checkbox] {
-    -webkit-box-flex: 0;
-    appearance: none;
-    border: 1px solid rgba(183, 188, 177, .75);
-    cursor: pointer;
-    flex: 0 0 auto;
-    height: 17px;
-    margin-right: 10px;
-    width: 17px;
-  }
-
-  .filter-item input[type=checkbox]:checked {
-    background-color: #dbd2a0;
-    border-color: #dbd2a0;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .dmc-xpndr-w {
-      display: block !important;
+.filter-buttons-travel {
+  font-size: 16px;
+  li {
+    padding-bottom: 5px;
     }
-  }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+    }
+}

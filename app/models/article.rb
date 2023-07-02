@@ -69,11 +69,12 @@ class Article < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :travel_search,
-  against: %i[category subcategory title
+  against: %i[country city category subcategory title
     feature subfeature ],
   using: {
     tsearch: {prefix: true}
   }
 
+  $categories = %i[ starters main sweets sides snacks drinks]
 
 end

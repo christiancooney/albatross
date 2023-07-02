@@ -2,10 +2,9 @@
  <br>
  <h1 class="grand-title" style="text-align: center;"> ALL RECIPES</h1>
 <hr>
-<%= simple_form_for :search, url: recipes_path, method: "GET", remote: true do |recipe| %>
-starters
-<% end %>
 
+
+<%#
 <ul style="display: none;" class="filter-wrap dmc_pfa_secondary_group_t dmc-xpndr-w dmc-registered inherited-styles-for-exported-element" data-pfa_id="recipe_index" data-pfa_type="taxonomy">
   <li class="filter-item term-id-5">
     <div class="filter-item-inner">
@@ -85,39 +84,11 @@ starters
       <label for="filter-taxonomy-27">soup <span class="term-count">(50)</span></label>
     </div>
   </li>
-</ul>
+</ul> %>
 
 
 
 
-  <div class="container mt-4" data-controller="filter">
-    <div class="mb-3 d-flex search-and-filters">
-      <%= form_with url: recipes_path, method: :get, class: "d-flex search-style" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a recipe..."
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary", id: "search-button" %>
-      <% end %>
-      <div class="d-flex justify-content-center filter-buttons">
-       <%=link_to "Starters", recipes_path(filter: "Starters"), class: "button-17", id: "#{"selected" if params[:filter] == "Starters"}" %>
-       <%=link_to "Mains", recipes_path(filter: "Mains"), class: "button-17", id: "#{"selected" if params[:filter] == "Mains"}" %>
-       <%=link_to "Sweets", recipes_path(filter: "Sweets"), class: "button-17", id: "#{"selected" if params[:filter] == "Sweets"}" %>
-       <%=link_to "Drinks", recipes_path(filter: "Drinks"), class: "button-17", id: "#{"selected" if params[:filter] == "Drinks"}" %>
-       <%=link_to "Sides", recipes_path(filter: "Sides"), class: "button-17", id: "#{"selected" if params[:filter] == "Sides"}" %>
-       <%=link_to "Bread", recipes_path(filter: "Bread"), class: "button-17", id: "#{"selected" if params[:filter] == "Bread"}" %>
-       <%=link_to "Snacks", recipes_path(filter: "Snacks"), class: "button-17", id: "#{"selected" if params[:filter] == "Snacks"}" %>
-       <%=link_to "Reset filters", recipes_path, class: "button-17", id: "#{"selected" if params[:filter] == "All Recipes"}" %>
-    </div>
-    </div>
-    <% if @recipes.empty? %>
-      <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No recipes fit your search.. Please try again</h2>
-
-        <% end %>
-      </div>
-
-  </div>
 
 
 <div class="tabs">
@@ -127,18 +98,69 @@ starters
     <a href="/recipes/drinks">Drinks</a>
     <a href="/recipes/snacks">Snacks</a>
     </div>
+    <%# <div class="search-bar-recipe">
+        <%= form_with url: recipes_path, method: :get, class: "d-flex search-style" do %>
+      <%# <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Ingredient, cuisine, etc..."
+      %>
+      <%# <%= submit_tag "Search", class: "btn btn-primary", id: "search-button" %>
+      <%# <% end %>
+    <%# </div> %>
 <hr>
+    <div class="search-bar dropup">
+<a class="dropdown-toggle dropup" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-search"></i>
+              </a>
+            <ul class="dropdown-menu up-drop" >
+              <li class="dropdown-item location-list" >  <%= simple_form_for :search, url: recipes_path, method: :get do |f| %>
+              <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search ingredients, etc..."></li>
+<% end %>
+</ul>
+</div>
+<div class="row">
+  <div class="col-sm-auto" data-controller="filter">
+    <div class="search-and-filters">
+ <%= turbo_frame_tag "recipes" do %>
 
 
-<div class="col-xs-12 col-sm-8">
+      <div class="filter-buttons-recipe">
+      <br>
+<h6>Filters</h6>
+<hr>
+<ul>
+      <li> <%=link_to "Vegan", recipes_path(filter: "Vegan"), class: "button-16", id: "#{"selected" if params[:filter] == "Vegan"}" %></li>
+       <li> <%=link_to "Vegetarian", recipes_path(filter: "Vegetarian"), class: "button-16", id: "#{"selected" if params[:filter] == "Vegetarian"}" %></li>
+       <li> <%=link_to "Dairy Free", recipes_path(filter: "Dairy Free"), class: "button-16", id: "#{"selected" if params[:filter] == "Dairy Free"}" %></li>
+       <li> <%=link_to "Gluten Free", recipes_path(filter: "Gluten Free"), class: "button-16", id: "#{"selected" if params[:filter] == "Gluten Free"}" %></li>
+
+       <hr>
+      <li>    <%=link_to "Bread", recipes_path(filter: "Bread"), class: "button-16", id: "#{"selected" if params[:filter] == "Bread"}" %></li>
+       <li> <%=link_to "Brunch", recipes_path(filter: "Brunch"), class: "button-16", id: "#{"selected" if params[:filter] == "Brunch"}" %></li>
+<hr>
+     <li>  <%=link_to "Reset filters", recipes_path, class: "button-16" %></li>
+       </ul>
+    </div>
+    </div>
+      </div>
+
+
+<div class="col">
  <div id="recipes">
    <%= render 'recipe', recipes: @recipes %>
+    <% if @recipes.empty? %>
+      <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No recipes fit your search. Please try again</h2>
+      <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;"> <%=link_to "Reset filters", recipes_path, class: "button-16" %></h4>
+
+
+        <% end %>
  </div>
 </div>
+<% end %>
 
-
-
+</div>
 
       <br>
 
-      </div>
+  </div>
