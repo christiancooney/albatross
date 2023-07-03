@@ -41,18 +41,6 @@ end
     elsif params[:filter].present?
       @recipes = Article.where(category: "Recipe").recipe_search(params[:filter])
     end
-
-  @filters = %i[ starters main sweets sides snacks drinks]
-
-      # if params["search"]
-      #   @filter = params["search"]["categories"].concat(params["search"]["strengths"]).flatten.reject(&:blank?)
-      #   @recipes = @filter.empty? ? Article.where(category: "Recipe") : Article.where(category: "Recipe").tagged_with(@filter, any: true)
-      # else
-      #   @recipes = Article.where(category: "Recipe")
-      # end
-
-
-
   end
 
   def starters
