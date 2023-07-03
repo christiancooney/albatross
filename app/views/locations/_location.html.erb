@@ -1,40 +1,44 @@
 <div class="container">
-  <div id="<%= dom_id location %>">
-    <div class="col-4">
-      <h1> <%=  location.name %></h1>
-      <div class="d-flex destination">
-        <% location.articles.each do |article|%>
+  <div class="d-flex destination">
+        <% @locationfilter.each do |article|%>
+
         <div class="destination-cards">
        <%= link_to article_path(article), style: "text-decoration: none;" do %>
         <% if article.imagecover.attached? %>
           <%= image_tag article.imagecover %>
         <% end %>
         <div class="d-card-middle">
-          <div class="d-card-text">
+      </div>
+       <div class="d-card-text">
+            <h4> <%= article.title  %></h4>
+             <div class="d-flex justify-content-between italic-cards">
               <% case article.category %>
             <% when "Health" %>
-              <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i>
+            <h6>Health</h6>
+              <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
             <% when "Life" %>
-              <i class="fa-solid fa-mountain fa-fw circle-icon"></i>
+            <h6>Life</h6>
+              <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
             <% when "Recipe" %>
-              <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i>
+            <h6>Recipe</h6>
+              <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
             <% when "Restaurant" %>
-              <i class="fa-solid fa-utensils fa-fw circle-icon"></i>
+            <h6>Restaurant</h6>
+              <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
             <% when "Style" %>
-              <i class="fa-solid fa-shirt fa-fw circle-icon"></i>
+            <h6>Style</h6>
+              <%# <i class="fa-solid fa-shirt fa-fw circle-icon"></i> %>
               <% when "Travel" %>
-              <i class="fa-solid fa-suitcase fa-fw circle-icon"></i>
+              <h6>Travel</h6>
+              <%# <i class="fa-solid fa-suitcase fa-fw circle-icon"></i> %>
             <% end %>
-            <br>
-            <h5> <%= article.title  %></h5>
-            <p><%= article.date.to_formatted_s(:long) %> <br>
-            by <%= article.author  %> </p>
+
+            <%# <p><%= article.date.to_formatted_s(:long) %>
+         <p>by <%= article.author  %></p>
           </div>
-        </div>
+          </div>
       </div>
       <% end %>
       <% end %>
         </div>
       </div>
-    </div>
-  </div>

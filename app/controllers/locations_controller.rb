@@ -13,8 +13,14 @@ class LocationsController < ApplicationController
 
   # GET /locations/1 or /locations/1.json
   def show
-
-  end
+    if params["search"].present?
+      @locationfilter = Article.where(location_id:(params[:id])).location_search(params['search']["query"])
+    elsif params[:filter].present?
+      @locationfilter = Article.where(location_id:(params[:id])).location_search(params[:filter])
+    else
+      @locationfilter = @location.articles
+    end
+end
 
   # GET /locations/new
   def new

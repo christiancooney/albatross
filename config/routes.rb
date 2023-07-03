@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/recipes/starters', to: 'pages#starters'
   get '/recipes/mains', to: 'pages#mains'
   get '/recipes/sweets', to: 'pages#sweets'
+  get '/recipes/sides', to: 'pages#sides'
   get '/recipes/drinks', to: 'pages#drinks'
   get '/recipes/snacks', to: 'pages#snacks'
   get '/merchandise', to: 'pages#merchandise'

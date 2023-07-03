@@ -1,0 +1,31 @@
+<div class="d-flex destination">
+      <% @sides.reverse_each do |article| %>
+        <div class="destination-cards">
+           <%= link_to article_path(article), style: "text-decoration: none;" do %>
+        <% if article.imagecover.attached? %>
+          <%= image_tag article.imagecover %>
+        <% end %>
+        <div class="d-card-middle">
+        </div>
+          <div class="d-card-text">
+                  <h4> <%= article.title  %></h4>
+                  <div class="d-flex justify-content-between italic-cards">
+              <% case article.cuisine %>
+            <% when "Med" %>
+              <h6>Mediteranean</h6>
+            <% when "Asian" %>
+              <h6>Asian</h6>
+            <% when "Middle Eastern" %>
+              <h6>Middle Eastern</h6>
+            <% end %>
+
+            <%# <p><%= article.date.to_formatted_s(:long) %>
+         <p>by <%= article.author  %></p>
+          </div>
+
+          </div>
+      </div>
+      <% end %>
+      <% end %>
+
+      </div>

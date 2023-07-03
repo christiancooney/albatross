@@ -49,9 +49,17 @@
         <hr>
       <% end %>
 <% if current_user %>
-    <%= button_to "Destroy this country", @country, method: :delete %>
-    <br>
-       <%= button_to "Edit this country", edit_country_path(@country), method: :get   %>
 
+       <%= link_to "Edit this country", edit_country_path(@country), method: :get   %>
+<br>
+<br>
+       <%= link_to "New location", new_location_path, method: :get   %>
+
+      <br>
+      <br>
+      <br>
+      <br>
+         <%= link_to "Delete this country & posts", @country, method: :delete %>
+    <br>
 <% end %>
 </div>

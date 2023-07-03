@@ -1,22 +1,52 @@
 <div class="container">
 <br>
   <% if current_user %>
+  <br>
     <p>Hello <%= current_user.email %> </p>
-      <%= link_to countries_path, style: "text-decoration: none;" do %>
-      <button class="btn btn-light">Edit countries</button>
-      <% end %>
-        <br>
-        <br>
-      <%= link_to locations_path, style: "text-decoration: none;" do %>
-      <button class="btn btn-light">Edit locations</button>
-      <% end %>
-        <br>
-        <br>
+
+      <h6>Articles</h6>
+      <hr>
+      <div class="d-flex">
       <%= link_to articles_path, style: "text-decoration: none;" do %>
-      <button class="btn btn-light">Edit articles</button>
+      <button class="btn btn-light m-3 admin-button">Edit articles</button>
       <% end %>
-        <br>
-        <br>
+
+
+         <%= link_to new_article_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light m-3 admin-button">New article</button>
+      <% end %>
+      </div>
+     <hr>
+
+
+<h6>Countries</h6>
+<hr>
+         <div class="d-flex">
+      <%= link_to countries_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light m-3 admin-button">Edit countries</button>
+      <% end %>
+
+    <%= link_to new_country_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light m-3 admin-button">New country</button>
+      <% end %>
+   </div>
+   <hr>
+<h6>Locations</h6>
+<hr>
+         <div class="d-flex">
+
+      <%= link_to locations_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light m-3 admin-button">Edit locations</button>
+      <% end %>
+
+    <%= link_to new_location_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light m-3 admin-button">New location</button>
+      <% end %>
+      <hr>
+
+      </div>
+
+
     <% else %>
        <p>Are you lost?</p>
        <%= link_to root_path, style: "text-decoration: none;" do %>

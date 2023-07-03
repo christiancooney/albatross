@@ -1,5 +1,11 @@
 <div class="container">
   <br>
+  <% if current_user %>
+ <%= link_to new_article_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light">New article</button>
+      <% end %>
+      <br>
+<% end %>
   <h1 class="grand-title" style="text-align: center;"> ALL RECIPES</h1>
   <hr>
 
@@ -8,6 +14,7 @@
     <a href="/recipes/mains">Mains</a>
     <a href="/recipes/sweets">Sweets</a>
     <a href="/recipes/drinks">Drinks</a>
+    <a href="/recipes/sides">Sides</a>
     <a href="/recipes/snacks">Snacks</a>
   </div>
   <hr>
@@ -32,6 +39,7 @@
             <hr>
             <li class="dropdown-item location-list" ><%=link_to "Bread", recipes_path(filter: "Bread"), class: "button-16", id: "#{"selected" if params[:filter] == "Bread"}" %></li>
             <li class="dropdown-item location-list" ><%=link_to "Brunch", recipes_path(filter: "Brunch"), class: "button-16", id: "#{"selected" if params[:filter] == "Brunch"}" %></li>
+            <li class="dropdown-item location-list" ><%=link_to "Seafood", recipes_path(filter: "Seafood"), class: "button-16", id: "#{"selected" if params[:filter] == "Seafood"}" %></li>
             <hr>
             <li class="dropdown-item location-list" > <%=link_to "Reset filters", recipes_path, class: "button-16" %></li>
         </ul>
@@ -54,6 +62,7 @@
             <hr>
             <li> <%=link_to "Bread", recipes_path(filter: "Bread"), class: "button-16", id: "#{"selected" if params[:filter] == "Bread"}" %></li>
             <li> <%=link_to "Brunch", recipes_path(filter: "Brunch"), class: "button-16", id: "#{"selected" if params[:filter] == "Brunch"}" %></li>
+            <li> <%=link_to "Seafood", recipes_path(filter: "Seafood"), class: "button-16", id: "#{"selected" if params[:filter] == "Seafood"}" %></li>
             <hr>
             <li>  <%=link_to "Reset filters", recipes_path, class: "button-16" %></li>
           </ul>

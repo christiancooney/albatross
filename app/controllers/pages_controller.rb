@@ -45,20 +45,54 @@ end
 
   def starters
     @starters = Article.where(subcategory: "Starters")
+    if params["search"].present?
+      @starters = Article.where(subcategory: "Starters").drink_search(params['search']["query"])
+    elsif params[:filter].present?
+      @starters = Article.where(subcategory: "Starters").drink_search(params[:filter])
+    end
   end
 
   def mains
     @mains = Article.where(subcategory: "Mains")
+    if params["search"].present?
+      @mains = Article.where(subcategory: "Mains").drink_search(params['search']["query"])
+    elsif params[:filter].present?
+      @mains = Article.where(subcategory: "Mains").drink_search(params[:filter])
+    end
   end
   def sweets
     @sweets = Article.where(subcategory: "Sweets")
+    if params["search"].present?
+      @sweets = Article.where(subcategory: "Sweets").drink_search(params['search']["query"])
+    elsif params[:filter].present?
+      @sweets = Article.where(subcategory: "Sweets").drink_search(params[:filter])
+    end
   end
   def drinks
     @drinks = Article.where(subcategory: "Drinks")
+    if params["search"].present?
+      @drinks = Article.where(subcategory: "Drinks").drink_search(params['search']["query"])
+    elsif params[:filter].present?
+      @drinks = Article.where(subcategory: "Drinks").drink_search(params[:filter])
+    end
   end
   def snacks
     @snacks = Article.where(subcategory: "Snacks")
+    if params["search"].present?
+      @snacks = Article.where(subcategory: "Snacks").drink_search(params['search']["query"])
+    elsif params[:filter].present?
+      @snacks = Article.where(subcategory: "Snacks").drink_search(params[:filter])
+    end
   end
+  def sides
+    @sides = Article.where(subcategory: "Sides")
+    if params["search"].present?
+      @sides = Article.where(subcategory: "Sides").drink_search(params['search']["query"])
+    elsif params[:filter].present?
+      @sides = Article.where(subcategory: "Sides").drink_search(params[:filter])
+    end
+  end
+
 
   def merchandise
   end

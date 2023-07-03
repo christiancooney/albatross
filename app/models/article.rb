@@ -74,6 +74,71 @@ class Article < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
+  include PgSearch::Model
+  pg_search_scope :location_search,
+  against: %i[country city category subcategory title
+    feature subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+
+
+  include PgSearch::Model
+  pg_search_scope :drink_search,
+  against: %i[country city category subcategory title
+    feature subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+  include PgSearch::Model
+  pg_search_scope :sides_search,
+  against: %i[country city category subcategory title
+    feature subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+  include PgSearch::Model
+  pg_search_scope :starters_search,
+  against: %i[country city category subcategory title
+    feature subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+  include PgSearch::Model
+  pg_search_scope :mains_search,
+  against: %i[country city category subcategory title
+    feature subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+  include PgSearch::Model
+  pg_search_scope :sweets_search,
+  against: %i[country city category subcategory title
+    feature subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+  include PgSearch::Model
+  pg_search_scope :snacks_search,
+  against: %i[country city category subcategory title
+    feature subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+
+
+
+
+
+
+
 
   $categories = %i[ starters main sweets sides snacks drinks]
 

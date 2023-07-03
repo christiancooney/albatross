@@ -1,5 +1,11 @@
 <div class="container home-page">
 <br>
+  <% if current_user %>
+ <%= link_to new_article_path, style: "text-decoration: none;" do %>
+      <button class="btn btn-light left-side-button">New article</button>
+      <% end %>
+
+<% end %>
  <h1 class="grand-title" style="text-align: center;">LATEST POSTS</h1>
      <hr>
   <% if @articles.present? %>

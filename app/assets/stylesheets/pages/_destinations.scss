@@ -6,8 +6,16 @@
 
 
 .location-list {
-  margin-left: 10px;
+  margin-left: 5px;
+  padding: 10px;
   list-style: none;
+}
+
+.locations-dropper {
+padding: 0;
+  hr {
+    margin: 0;
+  }
 }
 
 .accordion-button {
