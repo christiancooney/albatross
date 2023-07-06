@@ -25,7 +25,9 @@
     <%= f.input :category, collection: [ "Health", "Life", "Recipe", "Restaurant", "Style", "Travel"] %>
     <%= f.input :subcategory, collection: [ "Drinks", "Starters", "Mains", "Sweets", "Sides", "Snacks", "Beauty", "Fashion", "Interiors"] %>
     <%= f.input :feature, collection: [ "Health", "Life", "Recipe", "Restaurant", "Style", "Travel"] %>
-    <%= f.input :subfeature, collection: [ "Ignore for now"] %>
+
+
+    <%= f.input :subfeature, collection: [ "Dairy Free", "Gluten Free", "Vegan", "Vegatarian"], as: :check_boxes %>
     <%= f.input :cuisine, collection: [ "Med", "Asian", "Middle Eastern"] %>
     </div>
 

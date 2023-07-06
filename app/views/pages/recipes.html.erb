@@ -55,10 +55,10 @@
             <h6>Filters</h6>
             <hr>
            <ul>
-            <li> <%=link_to "Vegan", recipes_path(filter: "Vegan"), class: "button-16", id: "#{"selected" if params[:filter] == "Vegan"}" %></li>
-            <li> <%=link_to "Vegetarian", recipes_path(filter: "Vegetarian"), class: "button-16", id: "#{"selected" if params[:filter] == "Vegetarian"}" %></li>
-            <li> <%=link_to "Dairy Free", recipes_path(filter: "Dairy Free"), class: "button-16", id: "#{"selected" if params[:filter] == "Dairy Free"}" %></li>
-            <li> <%=link_to "Gluten Free", recipes_path(filter: "Gluten Free"), class: "button-16", id: "#{"selected" if params[:filter] == "Gluten Free"}" %></li>
+            <li> <%=link_to "Vegan", recipes_path(dietary_filter: "Vegan"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Vegan"}" %></li>
+            <li> <%=link_to "Vegetarian", recipes_path(dietary_filter: "Vegetarian"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Vegetarian"}" %></li>
+            <li> <%=link_to "Dairy Free", recipes_path(dietary_filter: "Dairy Free"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Dairy Free"}" %></li>
+            <li> <%=link_to "Gluten Free", recipes_path(dietary_filter: "Gluten Free"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Gluten Free"}" %></li>
             <hr>
             <li> <%=link_to "Bread", recipes_path(filter: "Bread"), class: "button-16", id: "#{"selected" if params[:filter] == "Bread"}" %></li>
             <li> <%=link_to "Brunch", recipes_path(filter: "Brunch"), class: "button-16", id: "#{"selected" if params[:filter] == "Brunch"}" %></li>

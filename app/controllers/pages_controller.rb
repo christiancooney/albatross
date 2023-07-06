@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     if params["search"].present?
       @articles = Article.global_search(params['search']["query"])
     end
+
   end
 
   def travel
@@ -18,9 +19,14 @@ class PagesController < ApplicationController
       @articles = Article.all.where.not(category: "Recipe").travel_search(params['search']["query"])
     elsif params[:filter].present?
       @articles = Article.all.where.not(category: "Recipe").travel_search(params[:filter])
-
+  end
+  if turbo_frame_request?
+    render partial: "destination", locals: { destination: @articles }
+  else
+     render :travel
 
   end
+
 end
 
 
@@ -40,7 +46,9 @@ end
       @recipes = Article.where(category: "Recipe").recipe_search(params['search']["query"])
     elsif params[:filter].present?
       @recipes = Article.where(category: "Recipe").recipe_search(params[:filter])
-    end
+    elsif params[:dietary_filter].present?
+      @recipes = Article.where(category: "Recipe").dietary_search(params[:dietary_filter])
+  end
   end
 
   def starters

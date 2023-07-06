@@ -44,7 +44,9 @@
       <i class="fas fa-search"></i>
     </a>
       <ul class="dropdown-menu up-drop" >
-        <li class="dropdown-item location-list" >  <%= simple_form_for :search, url: travel_path, method: :get do |f| %>
+
+
+        <li class="dropdown-item location-list" >  <%= simple_form_for :search, url: travel_path, method: :get, data: {turbo_frame: "destination"} do |f| %>
           <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search cities, etc..."></li>
         <% end %>
       </ul>
@@ -66,7 +68,6 @@
     <div class="row">
       <div class="col-sm-auto filters-panel" data-controller="filter">
         <div class="search-and-filters">
-          <%= turbo_frame_tag "travel" do %>
           <div class="filter-buttons-travel large-screen-menu">
             <br>
             <h6>Filters</h6>
@@ -87,14 +88,15 @@
 
       <div class="col">
        <div id="travel-render">
-        <%= render 'destination', articles: @articles %>
+        <%= render partial: 'destination'%>
+
         <% if @articles.empty? %>
           <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No posts fit your search. Please try again</h2>
           <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">   <%=link_to "Reset filters", travel_path, class: "button-16" %></h4>
         <% end %>
       </div>
     </div>
-    <% end %>
+
   </div>
   <br>
 </div>

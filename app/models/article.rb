@@ -68,6 +68,13 @@ class Article < ApplicationRecord
   }
 
   include PgSearch::Model
+  pg_search_scope :dietary_search,
+  against: %i[ subfeature ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+  include PgSearch::Model
   pg_search_scope :travel_search,
   against: %i[country city category subcategory title
     feature subfeature ],
