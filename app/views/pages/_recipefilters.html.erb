@@ -20,6 +20,12 @@
     <div class="ml-auto small-screen-menu-travel">
       <a class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Filters</a>
       <ul class="dropdown-menu" >
+         <% if request.path == recipes_drinks_path %>
+             <li class="dropdown-item location-list" > <%=link_to "Alcoholic", url_for(dietary_filter: "Alcoholic"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Alcoholic"}" %></li>
+             <li class="dropdown-item location-list" > <%=link_to "Non-Alchololic", url_for(dietary_filter: "Non-Alchololic"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Non-Alchololic"}" %></li>
+            <% end %>
+         <% if request.path != recipes_drinks_path %>
+
         <li class="dropdown-item location-list" > <%=link_to "Vegan", url_for(dietary_filter: "Vegan"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Vegan"}" %></li>
         <li class="dropdown-item location-list" > <%=link_to "Vegetarian", url_for(dietary_filter: "Vegetarian"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Vegetarian"}" %></li>
         <li class="dropdown-item location-list" ><%=link_to "Dairy Free", url_for(dietary_filter: "Dairy Free"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Dairy Free"}" %></li>
@@ -28,6 +34,7 @@
         <% if request.path != recipes_sweets_path %>
         <hr>
         <li class="dropdown-item location-list" ><%=link_to "Bread", url_for(filter: "Bread"), class: "button-16", id: "#{"selected" if params[:filter] == "Bread"}" %></li>
+        <li class="dropdown-item location-list" ><%=link_to "One Pot", url_for(filter: "One Pot"), class: "button-16", id: "#{"selected" if params[:filter] == "One Pot"}" %></li>
         <li class="dropdown-item location-list" ><%=link_to "Pasta", url_for(filter: "Pasta"), class: "button-16", id: "#{"selected" if params[:filter] == "Pasta"}" %></li>
         <li class="dropdown-item location-list" ><%=link_to "Salad", url_for(filter: "Salad"), class: "button-16", id: "#{"selected" if params[:filter] == "Salad"}" %></li>
         <li class="dropdown-item location-list" ><%=link_to "Seafood", url_for(dietary_filter: "Seafood"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Seafood"}" %></li>
@@ -36,6 +43,7 @@
         <li class="dropdown-item location-list" > <%=link_to "Reset filters", url_for, class: "button-16" %></li>
         <% if request.path != recipes_path %>
         <li class="dropdown-item location-list" > <%=link_to "Back to all recipes", recipes_path, class: "button-16" %></li>
+        <% end %>
         <% end %>
       </ul>
 
@@ -52,17 +60,36 @@
            <ul>
             <%# <li> <%=link_to "Vegan", recipes_path(vegan_filter: :vegan != true), class: "button-16", id: "#{"selected" if params[:vegan_filter] == "true"}" %>
             <%# <li> <%=link_to "Vegetarian", recipes_path(vegetarian_filter: :vegetarian != true), class: "button-16", id: "#{"selected" if params[:vegetarian_filter] == "true"}" %>
+
+            <% if request.path == recipes_drinks_path %>
+            <li> <%=link_to "Alcoholic", url_for(dietary_filter: "Alcoholic"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Alcoholic"}" %></li>
+            <li> <%=link_to "Non-Alchololic", url_for(dietary_filter: "Non-Alchololic"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Non-Alchololic"}" %></li>
+            <% end %>
+
+            <% if request.path != recipes_drinks_path %>
             <li> <%=link_to "Vegan", url_for(dietary_filter: "Vegan"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Vegan"}" %></li>
             <li> <%=link_to "Vegetarian", url_for(dietary_filter: "Vegetarian"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Vegetarian"}" %></li>
             <li> <%=link_to "Dairy Free", url_for(dietary_filter: "Dairy Free"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Dairy Free"}" %></li>
             <li> <%=link_to "Gluten Free", url_for(dietary_filter: "Gluten Free"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Gluten Free"}" %></li>
             <li> <%=link_to "Nut Free", url_for(dietary_filter: "Nut Free"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Nut Free"}" %></li>
+
             <% if request.path != recipes_sweets_path %>
             <hr>
             <li> <%=link_to "Bread", url_for(filter: "Bread"), class: "button-16", id: "#{"selected" if params[:filter] == "Bread"}" %></li>
-            <li> <%=link_to "Brunch", url_for(filter: "Brunch"), class: "button-16", id: "#{"selected" if params[:filter] == "Brunch"}" %></li>
+            <li><%=link_to "One Pot", url_for(filter: "One Pot"), class: "button-16", id: "#{"selected" if params[:filter] == "One Pot"}" %></li>
+            <li><%=link_to "Pasta", url_for(filter: "Pasta"), class: "button-16", id: "#{"selected" if params[:filter] == "Pasta"}" %></li>
+            <li><%=link_to "Salad", url_for(filter: "Salad"), class: "button-16", id: "#{"selected" if params[:filter] == "Salad"}" %></li>
             <li> <%=link_to "Seafood", url_for(dietary_filter: "Seafood"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Seafood"}" %></li>
             <% end %>
+
+            <% if request.path == recipes_sweets_path %>
+            <hr>
+            <li> <%=link_to "Cake", url_for(filter: "Cake"), class: "button-16", id: "#{"selected" if params[:filter] == "Cake"}" %></li>
+            <li> <%=link_to "Deserts", url_for(filter: "Deserts"), class: "button-16", id: "#{"selected" if params[:filter] == "Deserts"}" %></li>
+            <li> <%=link_to "Bars", url_for(filter: "Bars"), class: "button-16", id: "#{"selected" if params[:filter] == "Bars"}" %></li>
+            <% end %>
+            <% end %>
+
             <hr>
             <li>  <%=link_to "Reset filters", url_for, class: "button-16" %></li>
             <% if request.path != recipes_path %>

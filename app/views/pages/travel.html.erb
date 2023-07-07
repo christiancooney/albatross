@@ -89,7 +89,8 @@
       <div class="col">
        <div id="travel-render">
         <%= render partial: 'destination'%>
-
+<br>
+<br>
         <% if @articles.empty? %>
           <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No posts fit your search. Please try again</h2>
           <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">   <%=link_to "Reset filters", travel_path, class: "button-16" %></h4>
