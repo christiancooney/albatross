@@ -5,171 +5,176 @@
     <%= f.input :title %>
 
     <div class="d-flex gap-5 flex-wrap" style="width: 1300px;">
-    <%= f.input :date, as: :date, html5: true %>
-    <br>
-       <%= f.input :author, collection: [ "Christian", "Rosie"] %>
-    <br>
-    <%= f.input :country_id, collection: @countries %>
-    <%= f.input :location_id, collection: @locations %>
-<br>
+      <%= f.input :date, as: :date, html5: true %>
+      <%= f.input :author, collection: [ "Christian", "Rosie"] %>
+
     </div>
+
     <div class="d-flex gap-5 flex-wrap" style="width: 1300px;">
+      <%= f.input :category, collection: [ "Health", "Life", "Recipe", "Restaurant", "Style", "Travel"] %>
+      <%= f.input :subcategory, collection: [ "Drinks", "Starters", "Mains", "Sweets", "Sides", "Snacks", "Beauty", "Fashion", "Interiors"] %>
+      <%= f.input :feature, collection: [ "Health", "Life", "Recipe", "Restaurant", "Style", "Travel"] %>
 
-    <%= f.input :country, label: "Country Search Tags"  %>
-    <%= f.input :city, label: "Location or Recipe Search Tags eg,. London Fulham or Bread"  %>
+
     </div>
-
-
-        <div class="d-flex gap-5 flex-wrap" style="width: 1300px;">
-
-    <%= f.input :category, collection: [ "Health", "Life", "Recipe", "Restaurant", "Style", "Travel"] %>
-    <%= f.input :subcategory, collection: [ "Drinks", "Starters", "Mains", "Sweets", "Sides", "Snacks", "Beauty", "Fashion", "Interiors"] %>
-    <%= f.input :feature, collection: [ "Health", "Life", "Recipe", "Restaurant", "Style", "Travel"] %>
-
-
-    <%= f.input :subfeature, collection: [ "Dairy Free", "Gluten Free", "Vegan", "Vegatarian"], as: :check_boxes %>
-    <%= f.input :cuisine, collection: [ "Med", "Asian", "Middle Eastern"] %>
-    </div>
-
-         <div class="d-flex gap-5 flex-wrap" style="width: 1300px;">
-
-    <%= f.input :price, collection: 1..4 %> /4
-    <%= f.input :atmosphere, as: :float %> /10
-    <%= f.input :drinks, as: :float  %> /10
-    <%= f.input :food, as: :float %> /10
-    <%= f.input :service, as: :float  %> /10
-    <%= f.input :value, as: :float  %> /10
-    </div>
-
-
-              <p>Cover Image Upload</p>
+    <hr>
+    <p>Cover Image Upload</p>
     <%= f.file_field :imagecover, direct_upload: true %><hr>
-    <%= f.input :text1, label: "Introduction" %> <hr>
-
+    <p>Introduction</p>
+    <%= f.input :text1, label: "Intro" %> <hr>
 
     <div class="row">
-    <div class="col article-split">
-
-    <h3>New Travel Article</h3>
-    <hr>
-
-    <p>Image Upload</p>
-    <%= f.file_field :image1, direct_upload: true %><hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image2, direct_upload: true %> <hr>
-    <%= f.input :text2, label: "Paragraph 2"  %><hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image3, direct_upload: true %><hr>
-    <%= f.input :text3, label: "Paragraph 3"  %> <hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image4, direct_upload: true %> <hr>
-    <%= f.input :text4, label: "Paragraph 4"  %> <hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image5, direct_upload: true %> <hr>
-    <%= f.input :text5, label: "Paragraph 5"  %><hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image6, direct_upload: true %><hr>
-    <%= f.input :text6, label: "Paragraph 6"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image7, direct_upload: true %><hr>
-    <%= f.input :text7, label: "Paragraph 7"  %><hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image8, direct_upload: true %><hr>
-    <%= f.input :text8, label: "Paragraph 8"  %><hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image9, direct_upload: true %><hr>
-    <%= f.input :text9, label: "Paragraph 9"  %><hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image10, direct_upload: true %><hr>
-    <%= f.input :text10, label: "Paragraph 10"  %><hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image11, direct_upload: true %><hr>
-    <%= f.input :text11, label: "Paragraph 11"  %><hr>
-      <p>Image Upload</p>
-    <%= f.file_field :image12, direct_upload: true %><hr>
-    <%= f.input :text12, label: "Paragraph 12"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image13, direct_upload: true %><hr>
-    <%= f.input :text13, label: "Paragraph 13"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image14, direct_upload: true %><hr>
-    <%= f.input :text14, label: "Paragraph 14"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image15, direct_upload: true %><hr>
-    <%= f.input :text15, label: "Paragraph 15"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image16, direct_upload: true %><hr>
-    <%= f.input :text16, label: "Paragraph 16"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image17, direct_upload: true %><hr>
-    <%= f.input :text17, label: "Paragraph 17"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image18, direct_upload: true %><hr>
-    <%= f.input :text18, label: "Paragraph 18"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image19, direct_upload: true %><hr>
-    <%= f.input :text19, label: "Paragraph 19"  %><hr>
-
-  </div>
-
       <div class="col article-split">
+        <h3>New Travel Article</h3>
+        <%= f.input :travel_tags, label: "Travel Tags"  %><hr>
+        <hr>
+        <%= f.input :country_id, collection: @countries %>
+        <%= f.input :country, label: "Country Search Tags eg. United Kingdom UK England"  %>
+        <%= f.input :location_id, collection: @locations %>
+        <%= f.input :city, label: "Location Search Tags eg. London Hackney Wick East London"  %>
+        <p>Type of holiday?</p>
+        <div class="d-flex flex-wrap  boolean-filters">
+        <%= f.input :city_break, label: "City break?"  %>
+        <%= f.input :active_holiday, label: "Active? "  %>
+        <%= f.input :beach_holiday, label: "Beach? "  %>
+        <%= f.input :adventure_holiday, label: "Adventure? "  %>
+        <%= f.input :multi_destination_holiday, label: "Multi-Destination?"  %>
+        </div>
+        <hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image2, direct_upload: true %> <br> <br>
+        <%= f.input :text2, label: "Paragraph 2"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image3, direct_upload: true %><br><br>
+        <%= f.input :text3, label: "Paragraph 3"  %> <hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image4, direct_upload: true %><br><br>
+        <%= f.input :text4, label: "Paragraph 4"  %> <hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image5, direct_upload: true %><br><br>
+        <%= f.input :text5, label: "Paragraph 5"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image6, direct_upload: true %><br><br>
+        <%= f.input :text6, label: "Paragraph 6"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image7, direct_upload: true %><br><br>
+        <%= f.input :text7, label: "Paragraph 7"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image8, direct_upload: true %><br><br>
+        <%= f.input :text8, label: "Paragraph 8"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image9, direct_upload: true %><br><br>
+        <%= f.input :text9, label: "Paragraph 9"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image10, direct_upload: true %><br><br>
+        <%= f.input :text10, label: "Paragraph 10"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image11, direct_upload: true %><br><br>
+        <%= f.input :text11, label: "Paragraph 11"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image12, direct_upload: true %><br><br>
+        <%= f.input :text12, label: "Paragraph 12"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image13, direct_upload: true %><br><br>
+        <%= f.input :text13, label: "Paragraph 13"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image14, direct_upload: true %><br><br>
+        <%= f.input :text14, label: "Paragraph 14"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image15, direct_upload: true %><br><br>
+        <%= f.input :text15, label: "Paragraph 15"  %><hr>
+
+
+        <hr>
+        <p>Restaurant/Bar Review Summary</p>
+        <div class="d-flex flex-wrap review-summary-forms">
+
+        <%= f.input :price, collection: 1..4, label: "Price / 4" %>
+        <%= f.input :food, as: :float, label: "Food / 10"  %>
+        <%= f.input :drinks, as: :float, label: "Drinks / 10"   %>
+        <%= f.input :atmosphere, as: :float, label: "Atmosphere / 10"  %>
+        <%= f.input :service, as: :float, label: "Service / 10"   %>
+        <%= f.input :value, as: :float, label: "Value for money / 10"   %>
+    </div>
+    <hr>
+    </div>
+
+    <div class="col article-split">
       <h3>New Recipe Article</h3>
-      <hr>
+        <%= f.input :recipe_tags, label: "Recipe Tags"  %>
+        <hr>
+        <%= f.input :cuisine, collection: [ "Med", "Asian", "Middle Eastern", "British"] %>
+        <hr>
+        <p>Dietary filters?</p>
+        <div class="d-flex flex-wrap boolean-filters">
+          <%= f.input :subfeature, collection: [ "Alcoholic", "Non-Alcholic", "Dairy Free", "Gluten Free", "Nut Free", "Seafood", "Vegan", "Vegetarian"],  as: :check_boxes %>
 
-        <%= f.input :recipe_title1, label: "Ingredients List Title" %><hr>
-        <%= f.input :recipe_list1, label: "Ingredients List" %><hr>
-        <%= f.input :recipe_title2, label: "Ingredients List Title" %><hr>
-        <%= f.input :recipe_list2, label: "Ingredients List" %><hr>
-        <%= f.input :recipe_title3, label: "Ingredients List Title" %><hr>
-        <%= f.input :recipe_list3, label: "Ingredients List" %><hr>
-        <%= f.input :recipe_title4, label: "Ingredients List Title" %><hr>
-        <%= f.input :recipe_list4, label: "Ingredients List" %><hr>
-        <%= f.input :recipe_title5, label: "Ingredients List Title" %><hr>
-        <%= f.input :recipe_list5, label: "Ingredients List" %><hr>
-        <%= f.input :recipe_title6, label: "Ingredients List Title" %><hr>
-        <%= f.input :recipe_list6, label: "Ingredients List" %><hr>
-          <p>Image Upload</p>
-    <%= f.file_field :image20, direct_upload: true %><hr>
-    <%= f.input :text20, label: "Paragraph 1" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image21, direct_upload: true %><hr>
-    <%= f.input :text21, label: "Paragraph 2"  %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image22, direct_upload: true %><hr>
-    <%= f.input :text22, label: "Paragraph 3" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image23, direct_upload: true %><hr>
-    <%= f.input :text23, label: "Paragraph 4" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image24, direct_upload: true %><hr>
-    <%= f.input :text24, label: "Paragraph 5" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image25, direct_upload: true %><hr>
-    <%= f.input :text25, label: "Paragraph 6" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image26, direct_upload: true %><hr>
-    <%= f.input :text26, label: "Paragraph 7" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image27, direct_upload: true %><hr>
-    <%= f.input :text27, label: "Paragraph 8" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image28, direct_upload: true %><hr>
-    <%= f.input :text28, label: "Paragraph 9" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image29, direct_upload: true %><hr>
-    <%= f.input :text29, label: "Paragraph 10" %><hr>
-    <p>Image Upload</p>
-    <%= f.file_field :image30, direct_upload: true %><hr>
-    <%= f.input :text30, label: "Paragraph 11" %><hr>
+        </div>
 
+        <hr>
+        <p>Ingredients List 1</p>
+        <%= f.input :recipe_title1, label: "Title" %>
+        <%= f.input :recipe_list1, label: "Ingredients" %><hr>
+          <p>Ingredients List 2</p>
+        <%= f.input :recipe_title2, label: "Title" %>
+        <%= f.input :recipe_list2, label: "Ingredients" %><hr>
+          <p>Ingredients List 3</p>
+
+        <%= f.input :recipe_title3, label: "Title" %>
+        <%= f.input :recipe_list3, label: "Ingredients" %><hr>
+          <p>Ingredients List 4</p>
+
+        <%= f.input :recipe_title4, label: "Title" %>
+        <%= f.input :recipe_list4, label: "Ingredients" %><hr>
+          <p>Ingredients List 5</p>
+
+        <%= f.input :recipe_title5, label: "Title" %>
+        <%= f.input :recipe_list5, label: "Ingredients" %><hr>
+          <p>Ingredients List 6</p>
+
+        <%= f.input :recipe_title6, label: "Title" %>
+        <%= f.input :recipe_list6, label: "Ingredients" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image20, direct_upload: true %><br><br>
+        <%= f.input :text20, label: "Paragraph/Method 1" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image21, direct_upload: true %><br><br>
+        <%= f.input :text21, label: "Paragraph/Method 2"  %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image22, direct_upload: true %><br><br>
+        <%= f.input :text22, label: "Paragraph/Method 3" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image23, direct_upload: true %><br><br>
+        <%= f.input :text23, label: "Paragraph/Method 4" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image24, direct_upload: true %><br><br>
+        <%= f.input :text24, label: "Paragraph/Method 5" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image25, direct_upload: true %><br><br>
+        <%= f.input :text25, label: "Paragraph/Method 6" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image26, direct_upload: true %><br><br>
+        <%= f.input :text26, label: "Paragraph/Method 7" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image27, direct_upload: true %><br><br>
+        <%= f.input :text27, label: "Paragraph/Method 8" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image28, direct_upload: true %><br><br>
+        <%= f.input :text28, label: "Paragraph/Method 9" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image29, direct_upload: true %><br><br>
+        <%= f.input :text29, label: "Paragraph/Method 10" %><hr>
+        <p>Image Upload</p>
+        <%= f.file_field :image30, direct_upload: true %><br><br>
+        <%= f.input :text30, label: "Paragraph 11" %><hr>
       </div>
 
-  </div>
+    </div>
   </div>
 </div>
 
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
 <% end %>

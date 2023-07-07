@@ -3,56 +3,13 @@
  <br><h1 class="grand-title" style="text-align: center;"> DRINKS</h1>
 <hr>
 
-<div class="search-bar-travel dropup">
-    <a class="dropdown-toggle dropup" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fas fa-search"></i>
-    </a>
-      <ul class="dropdown-menu up-drop" >
-        <li class="dropdown-item location-list" >  <%= simple_form_for :search, url: recipes_drinks_path, method: :get do |f| %>
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search ingredients, etc..."></li>
-        <% end %>
-      </ul>
-    <div class="ml-auto small-screen-menu-travel">
-      <a class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Filters</a>
-        <ul class="dropdown-menu" >
-            <li class="dropdown-item location-list" > <%=link_to "Non-Alcoholic", recipes_drinks_path(filter: "Non-Alcoholic"), class: "button-16", id: "#{"selected" if params[:filter] == "Non-Alcoholic"}" %></li>
-            <li class="dropdown-item location-list" > <%=link_to "Alcoholic", recipes_drinks_path(filter: "Alcoholic"), class: "button-16", id: "#{"selected" if params[:filter] == "Alcoholic"}" %></li>
-            <li class="dropdown-item location-list" > <%=link_to "Christmas", recipes_drinks_path(filter: "Christmas"), class: "button-16", id: "#{"selected" if params[:filter] == "Christmas"}" %></li>
-            <li class="dropdown-item location-list" > <%=link_to "Summer", recipes_drinks_path(filter: "Summer"), class: "button-16", id: "#{"selected" if params[:filter] == "Summer"}" %></li>
-            <hr>
-            <li class="dropdown-item location-list" > <%=link_to "Reset filters", recipes_drinks_path, class: "button-16" %></li>
-            <li class="dropdown-item location-list" > <%=link_to "Back to all recipes", recipes_path, class: "button-16" %></li>
+ <%= render 'recipefilters' %>
 
-        </ul>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-auto filters-panel" data-controller="filter">
-        <div class="search-and-filters">
-
-          <div class="filter-buttons-travel large-screen-menu">
-            <br>
-            <h6>Filters</h6>
-            <hr>
-           <ul>
-            <li> <%=link_to "Non-Alcoholic", recipes_drinks_path(filter: "Non-Alcoholic"), class: "button-16", id: "#{"selected" if params[:filter] == "Non-Alcoholic"}" %></li>
-            <li> <%=link_to "Alcoholic", recipes_drinks_path(filter: "Alcoholic"), class: "button-16", id: "#{"selected" if params[:filter] == "Alcoholic"}" %></li>
-            <li> <%=link_to "Christmas", recipes_drinks_path(filter: "Christmas"), class: "button-16", id: "#{"selected" if params[:filter] == "Christmas"}" %></li>
-            <li> <%=link_to "Summer", recipes_drinks_path(filter: "Summer"), class: "button-16", id: "#{"selected" if params[:filter] == "Summer"}" %></li>
-            <hr>
-            <li>  <%=link_to "Reset filters", recipes_drinks_path, class: "button-16" %></li>
-            <li> <%=link_to "Back to all recipes", recipes_path, class: "button-16" %></li>
-
-          </ul>
-         </div>
-       </div>
-      </div>
   <div class="col">
    <div id="recipes">
     <%= render 'drinks', drinks: @drinks %>
     <% if @drinks.empty? %>
-      <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No drinks fit your search. Please try again</h2>
+      <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No Drinks fit your search. Please try again</h2>
       <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;"> <%=link_to "Reset filters", recipes_drinks_path, class: "button-16" %></h4>
     <% end %>
     </div>

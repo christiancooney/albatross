@@ -37,6 +37,7 @@ class Article < ApplicationRecord
   has_many :locations
 
 
+
   include PgSearch::Model
   multisearchable against: %i[country city title category subcategory
   feature subfeature cuisine recipe_title1 recipe_title2
@@ -73,6 +74,19 @@ class Article < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
+
+
+  include PgSearch::Model
+  pg_search_scope :travel_type_search,
+  against: %i[ city_break active_holiday beach_holiday adventure_holiday multi_destination_holiday ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+
+
+
+
 
   include PgSearch::Model
   pg_search_scope :travel_search,

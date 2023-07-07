@@ -19,15 +19,8 @@ class PagesController < ApplicationController
       @articles = Article.all.where.not(category: "Recipe").travel_search(params['search']["query"])
     elsif params[:filter].present?
       @articles = Article.all.where.not(category: "Recipe").travel_search(params[:filter])
+    end
   end
-  if turbo_frame_request?
-    render partial: "destination", locals: { destination: @articles }
-  else
-     render :travel
-
-  end
-
-end
 
 
   def about
@@ -41,13 +34,27 @@ end
 
   def recipes
     @recipes = Article.where(category: "Recipe")
-
     if params["search"].present?
       @recipes = Article.where(category: "Recipe").recipe_search(params['search']["query"])
     elsif params[:filter].present?
       @recipes = Article.where(category: "Recipe").recipe_search(params[:filter])
     elsif params[:dietary_filter].present?
       @recipes = Article.where(category: "Recipe").dietary_search(params[:dietary_filter])
+    # elsif params[:vegetarian_filter].present?
+    #   @recipes = Article.where(category: "Recipe").dietary_search(params[:vegetarian_filter])
+    # elsif params[:vegan_filter].present?
+    #   @recipes = Article.where(category: "Recipe").dietary_search(params[:vegan_filter])
+    # elsif params[:gluten_filter].present?
+    #   @recipes = Article.where(category: "Recipe").dietary_search(params[:gluten_filter])
+    # elsif params[:nut_filter].present?
+    #   @recipes = Article.where(category: "Recipe").dietary_search(params[:nut_filter])
+    # elsif params[:pesca_filter].present?
+    #   @recipes = Article.where(category: "Recipe").dietary_search(params[:pesca_filter])
+    # elsif params[:alcohol_filter].present?
+    #   @recipes = Article.where(category: "Recipe").dietary_search(params[:alcohol_filter])
+    # elsif params[:alcoholfree_filter].present?
+    #   @recipes = Article.where(category: "Recipe").dietary_search(params[:alcoholfree_filter])
+
   end
   end
 
@@ -57,6 +64,8 @@ end
       @starters = Article.where(subcategory: "Starters").drink_search(params['search']["query"])
     elsif params[:filter].present?
       @starters = Article.where(subcategory: "Starters").drink_search(params[:filter])
+    elsif params[:dietary_filter].present?
+      @starters = Article.where(subcategory: "Starters").dietary_search(params[:dietary_filter])
     end
   end
 
@@ -66,6 +75,8 @@ end
       @mains = Article.where(subcategory: "Mains").drink_search(params['search']["query"])
     elsif params[:filter].present?
       @mains = Article.where(subcategory: "Mains").drink_search(params[:filter])
+    elsif params[:dietary_filter].present?
+      @mains = Article.where(subcategory: "Mains").dietary_search(params[:dietary_filter])
     end
   end
   def sweets
@@ -74,6 +85,8 @@ end
       @sweets = Article.where(subcategory: "Sweets").drink_search(params['search']["query"])
     elsif params[:filter].present?
       @sweets = Article.where(subcategory: "Sweets").drink_search(params[:filter])
+    elsif params[:dietary_filter].present?
+      @sweets = Article.where(subcategory: "Sweets").dietary_search(params[:dietary_filter])
     end
   end
   def drinks
@@ -82,6 +95,8 @@ end
       @drinks = Article.where(subcategory: "Drinks").drink_search(params['search']["query"])
     elsif params[:filter].present?
       @drinks = Article.where(subcategory: "Drinks").drink_search(params[:filter])
+    elsif params[:dietary_filter].present?
+      @drinks = Article.where(subcategory: "Drinks").dietary_search(params[:dietary_filter])
     end
   end
   def snacks
@@ -90,14 +105,19 @@ end
       @snacks = Article.where(subcategory: "Snacks").drink_search(params['search']["query"])
     elsif params[:filter].present?
       @snacks = Article.where(subcategory: "Snacks").drink_search(params[:filter])
+    elsif params[:dietary_filter].present?
+      @snacks = Article.where(subcategory: "Snacks").dietary_search(params[:dietary_filter])
     end
   end
+
   def sides
     @sides = Article.where(subcategory: "Sides")
     if params["search"].present?
       @sides = Article.where(subcategory: "Sides").drink_search(params['search']["query"])
     elsif params[:filter].present?
       @sides = Article.where(subcategory: "Sides").drink_search(params[:filter])
+    elsif params[:dietary_filter].present?
+      @sides = Article.where(subcategory: "Sides").dietary_search(params[:dietary_filter])
     end
   end
 
