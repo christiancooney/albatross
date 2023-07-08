@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[ home travel recipes about starters mains sweets drinks snacks]
+  skip_before_action :authenticate_user!, only: %i[ home travel recipes about starters mains sweets drinks sides snacks brunch ]
 
   def home
     @articles = Article.all
@@ -56,6 +56,17 @@ class PagesController < ApplicationController
     #   @recipes = Article.where(category: "Recipe").dietary_search(params[:alcoholfree_filter])
 
   end
+  end
+
+  def brunch
+    @brunch = Article.where(subcategory: "Brunch")
+    if params["search"].present?
+      @brunch = Article.where(subcategory: "Brunch").drink_search(params['search']["query"])
+    elsif params[:filter].present?
+      @brunch = Article.where(subcategory: "Brunch").drink_search(params[:filter])
+    elsif params[:dietary_filter].present?
+      @brunch = Article.where(subcategory: "Brunch").dietary_search(params[:dietary_filter])
+    end
   end
 
   def starters

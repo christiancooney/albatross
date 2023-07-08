@@ -6,7 +6,7 @@
     width: 200px;
     border: none;
     background-color: transparent;
-    transform: translate3d(-145px, -5px, 0px) !important;
+    transform: translate3d(-185px, -5px, 0px) !important;
   }
   .up-drop {
     width: 200px;
@@ -15,6 +15,7 @@
     background-color: transparent;
     transform: translate3d(-30px, -10px, 0px) !important;
   }
+
   .form-control {
     width: 250px;
     height: 50px;
@@ -38,11 +39,20 @@
     background-color: transparent;
     transform: translate3d(20px, 50px, 0px) !important;
   }
+  .dropdown-search {
+
+    border: none;
+    background-color: transparent;
+  }
+
   .form-control {
-    width: 250px;
+    width: 220px;
     height: 50px;
   }
+
 }
+
+
 
 .search-and-filters {
  .filter-buttons {

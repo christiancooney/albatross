@@ -1,11 +1,7 @@
 .print {
   background-color: white;
 
-img {
-  float: right;
-  width: 200px;
-  height: 200px;
-}
+
 
 ul {
   padding-left: 30px;
@@ -23,3 +19,58 @@ h5 {
 .card {
 padding: 10px;
 }
+
+.printcard {
+
+  img {
+    float: right;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.print-ingredients {
+  padding-right: 30px;
+  ul {
+    padding-left: 10px;
+  }
+}
+
+
+.print-ingredients-list {
+  font-size: 14px;
+  padding-right: 30px;
+  ul {
+    padding-left: 10px;
+  }
+}
+
+.print-method-print {
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.print-white-bg {
+  background-color: white;
+}
+
+.print-logo {
+display: grid;
+}
+.print-logo-img {
+text-align: center;
+  }
+
+
+@media screen and (max-width: 600px) {
+  .print-ingredients-list {
+ width: 45%;
+ padding: 5px;
+  }
+
+  .print-method-print {
+    width: 45%;
+ padding: 5px;
+  }
+
+  }

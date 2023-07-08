@@ -8,16 +8,28 @@
         <div class="d-card-middle">
         </div>
           <div class="d-card-text">
-        <h4> <%= article.title  %></h4>
-                  <div class="d-flex justify-content-between italic-cards">
+          <h4> <%= article.title  %></h4>
+            <div class="d-flex justify-content-between italic-cards">
               <% case article.cuisine %>
-            <% when "Med" %>
-              <h6>Mediteranean</h6>
-            <% when "Asian" %>
-              <h6>Asian</h6>
-            <% when "Middle Eastern" %>
-              <h6>Middle Eastern</h6>
-            <% end %>
+                <% when "Asian" %>
+                  <h6>Asian</h6>
+                <% when "Indian" %>
+                  <h6>Indian</h6>
+                <% when "Italian" %>
+                  <h6>Italian</h6>
+                <% when "Greek" %>
+                  <h6>Greek</h6>
+                <% when "Frendh" %>
+                <h6>French</h6>
+                <% when "Med" %>
+                <h6>Mediteranean</h6>
+                <% when "Mexican" %>
+                <h6>Mexican</h6>
+                <% when "Middle Eastern" %>
+                  <h6>Middle Eastern</h6>
+                <% when "Modern" %>
+                  <h6>Modern</h6>
+                <% end %>
 
             <%# <p><%= article.date.to_formatted_s(:long) %>
          <p>by <%= article.author  %></p>

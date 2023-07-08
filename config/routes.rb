@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/inspiration', to: 'pages#inspiration'
   get '/recipes', to: 'pages#recipes'
+  get '/recipes/brunch', to: 'pages#brunch'
   get '/recipes/starters', to: 'pages#starters'
   get '/recipes/mains', to: 'pages#mains'
   get '/recipes/sweets', to: 'pages#sweets'

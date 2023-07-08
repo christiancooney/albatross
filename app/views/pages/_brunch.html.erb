@@ -1,5 +1,5 @@
 <div class="d-flex destination">
-      <% @drinks.reverse_each do |article| %>
+      <% @brunch.reverse_each do |article| %>
         <div class="destination-cards">
            <%= link_to article_path(article), style: "text-decoration: none;" do %>
         <% if article.imagecover.attached? %>
@@ -8,17 +8,15 @@
         <div class="d-card-middle">
         </div>
           <div class="d-card-text">
-            <h4> <%= article.title  %></h4>
-
+                  <h4> <%= article.title  %></h4>
                   <div class="d-flex justify-content-between italic-cards">
-                  <% if article.subfeature.include?("Juice") %>
-            <h6>Juice</h6>
- <% elsif article.subfeature.include?("Non-Alcoholic") %>
-            <h6>Non-Alcoholic</h6>
-            <% elsif article.subfeature.include?("Alcoholic") %>
-            <h6>Alcoholic</h6>
-            <% elsif article.subfeature.include?("Smoothie") %>
-            <h6>Smoothie</h6>
+              <% case article.cuisine %>
+            <% when "Med" %>
+              <h6>Mediteranean</h6>
+            <% when "Asian" %>
+              <h6>Asian</h6>
+            <% when "Middle Eastern" %>
+              <h6>Middle Eastern</h6>
             <% end %>
 
             <%# <p><%= article.date.to_formatted_s(:long) %>

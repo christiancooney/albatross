@@ -114,7 +114,7 @@ class ArticlesController < ApplicationController
         :recipe_title5, :recipe_list5, :recipe_title6, :recipe_list6,
         :method1, :method2, :method3, :method4, :method5, :method6, :method7,
         :method8, :method9, :method10, :price, :atmosphere, :drinks, :food,
-        :service, :value, :recipe_tags, :travel_tags, :vegan, :vegetarian,
+        :service, :value, :recipe_tags, :dietary_tags, :holiday_tags, :travel_tags, :vegan, :vegetarian,
         :gluten_free, :dairy_free, :nut_free, :seafood, :alcohol,
         :alcohol_free, :city_break, :active_holiday, :beach_holiday,
         :adventure_holiday, :multi_destination_holiday, subfeature: []

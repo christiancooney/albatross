@@ -51,17 +51,17 @@
 
 </div>
   <div class="ml-auto small-screen-menu">
-              <a class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <p>MENU</p>
+              <a class=" dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
               </a>
             <ul class="dropdown-menu" >
-              <li class="dropdown-item location-list" ><%= link_to "HOME", root_path, :method => "get"  %></li>
-              <li class="dropdown-item location-list" ><%= link_to "TRAVEL", travel_path, :method => "get"  %></li>
-              <li class="dropdown-item location-list" ><%= link_to "RECIPES", recipes_path, :method => "get"  %></li>
-              <li class="dropdown-item location-list" ><%= link_to "ABOUT", about_path, :method => "get"  %></li>
-              <li class="dropdown-item location-list" ><a href="https://www.instagram.com/thealbatrosstravelblog/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-              <li class="dropdown-item location-list" ><%= simple_form_for :search, url: root_path, method: :get do |f| %>
-              <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search...">
+              <li class="dropdown-item navbar-small-list" ><%= link_to "HOME", root_path, :method => "get"  %></li>
+              <li class="dropdown-item navbar-small-list" ><%= link_to "TRAVEL", travel_path, :method => "get"  %></li>
+              <li class="dropdown-item navbar-small-list" ><%= link_to "RECIPES", recipes_path, :method => "get"  %></li>
+              <li class="dropdown-item navbar-small-list" ><%= link_to "ABOUT", about_path, :method => "get"  %></li>
+              <li class="dropdown-item navbar-small-list" ><a href="https://www.instagram.com/thealbatrosstravelblog/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li class="dropdown-item navbar-small-list" ><%= simple_form_for :search, url: root_path, method: :get do |f| %>
+              <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search all posts...">
               <% end %>
               </li>
           </div>

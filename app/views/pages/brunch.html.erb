@@ -1,0 +1,19 @@
+<div class="container">
+ <br><h1 class="grand-title" style="text-align: center;">BRUNCH</h1>
+<hr>
+    <%= render 'recipefilters' %>
+
+  <div class="col">
+   <div id="recipes">
+    <%= render 'brunch' %>
+    <% if @brunch.empty? %>
+      <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No Brunch recipes fit your search. Please try again</h2>
+      <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;"> <%=link_to "Reset filters", recipes_brunch_path, class: "button-16" %></h4>
+    <% end %>
+    </div>
+  </div>
+
+  </div>
+
+  <br>
+</div>

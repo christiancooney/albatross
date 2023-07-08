@@ -1,36 +1,42 @@
-<div class="container print">
+    <div class="print-logo">
+     <%= link_to root_path, class: "print-logo-img" do %>
+       <%= image_tag "ALWg.png", id: "logo" %>
+      <% end %>
+    </div>
+<div class="container-xl print-white-bg">
   <%= button_to 'Print', "#", :onclick => 'window.print();return false;'%>
   <%= link_to "Back to recipe", article_path %>
   <div id="<%= dom_id @article %>">
     <div class="print-card">
        <h1 class="grand-title"><%= @article.title %></h1>
         <hr>
-      <% if @article.image1.attached? %>
-      <%= image_tag @article.image1 %>
-      <% end %>
 
       <%  if  @article.category == "Recipe" %>
       <div class="printcard">
-
-    <div class="row">
-     <div class="col-4 print-ingredients">
-        <h4>Ingredients</h4>
+      <%# <% if @article.imagecover.attached? %>
+      <%# <%= image_tag @article.imagecover %>
+      <%# <% end %>
+  <div class="row">
+      <div class="col-sm-auto print-ingredients-list">
+    <h4>Ingredients</h4>
+    <hr>
         <h5><%=simple_format @article.recipe_title1 %></h5>
         <ul><%=simple_format @article.recipe_list1 %></ul>
         <h5><%=simple_format @article.recipe_title2 %></h5>
-        <ul><%=simple_format @article.recipe_list2 %></ul>
+        <ul> <%=simple_format @article.recipe_list2 %></ul>
         <h5><%=simple_format @article.recipe_title3 %></h5>
-       <ul> <%=simple_format @article.recipe_list3 %></ul>
-       <h5> <%=simple_format @article.recipe_title4 %></h5>
+        <ul> <%=simple_format @article.recipe_list3 %></ul>
+        <h5> <%=simple_format @article.recipe_title4 %></h5>
         <ul><%=simple_format @article.recipe_list4 %></ul>
-        <h5><%=simple_format @article.recipe_title5 %></h5>
-        <ul><%=simple_format @article.recipe_list5 %></ul>
-        <h5><%=simple_format @article.recipe_title6 %></h6>
-        <ul><%=simple_format @article.recipe_list6 %></ul>
-      </div>
+        <h5> <%=simple_format @article.recipe_title5 %></h5>
+        <ul> <%=simple_format @article.recipe_list5 %></ul>
+        <h5><%=simple_format @article.recipe_title6 %></h5>
+        <ul> <%=simple_format @article.recipe_list6 %></ul>
+    </div>
 
-      <div class="col-6 print-method">
+      <div class="col-sm print-method-print">
       <h4>Method</h4>
+      <hr>
    <%= simple_format @article.text20 %>
     <%= simple_format @article.text21 %>
     <%= simple_format @article.text22 %>
