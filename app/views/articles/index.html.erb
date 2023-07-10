@@ -8,7 +8,7 @@
   <% end %>
 
   <div class="d-flex destination">
-    <% @articles.each do |article| %>
+    <% @articles.reverse_each do |article| %>
     <div class="destination-cards">
       <%= link_to article_path(article), style: "text-decoration: none;" do %>
       <% if article.imagecover.attached? %>

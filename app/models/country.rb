@@ -5,4 +5,5 @@ class Country < ApplicationRecord
   has_many :locations, -> { order "name ASC" }
 
 
+
 end

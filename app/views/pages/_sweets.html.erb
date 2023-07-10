@@ -1,5 +1,5 @@
 <div class="d-flex destination">
-      <% @sweets.reverse_each do |article| %>
+      <% @sweets.order(date: :desc).each do |article| %>
         <div class="destination-cards">
            <%= link_to article_path(article), style: "text-decoration: none;" do %>
         <% if article.imagecover.attached? %>

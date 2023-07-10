@@ -1,32 +1,16 @@
-<div class="container home-page">
+         <div class="d-flex destination">
+        <div class="destination-cards">
 
-
-<br>
-  <% if current_user %>
- <%= link_to new_article_path, style: "text-decoration: none;" do %>
-      <button class="btn btn-light left-side-button">New article</button>
-      <% end %>
-
-<% end %>
- <h1 class="grand-title" style="text-align: center;">LATEST POSTS</h1>
-     <hr>
-  <% if @articles.present? %>
-  <div class="d-flex home-wrap">
-    <% @articles.order(date: :desc).each do |article| %>
-    <div class="home-cards">
-      <%= link_to article_path(article), style: "text-decoration: none;" do %>
+         <%= link_to article_path(article), style: "text-decoration: none;" do %>
         <% if article.imagecover.attached? %>
           <%= image_tag article.imagecover %>
         <% end %>
-        <div class="home-middle">
-        </div>
-          <div class="home-text">
-
+        <div class="d-card-middle">
+      </div>
+       <div class="d-card-text">
             <h4> <%= article.title  %></h4>
-  <%# <p><%= article.date.to_formatted_s(:long) %>
-
-               <div class="d-flex justify-content-between italic-cards">
-               <% case article.category %>
+             <div class="d-flex justify-content-between italic-cards">
+              <% case article.category %>
             <% when "Health" %>
             <h6>Health</h6>
               <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
@@ -47,27 +31,12 @@
               <%# <i class="fa-solid fa-suitcase fa-fw circle-icon"></i> %>
             <% end %>
 
-            <p>by <%= article.author  %></p>
-
+            <%# <p><%= article.date.to_formatted_s(:long) %>
+         <p>by <%= article.author  %></p>
           </div>
           </div>
       </div>
       <% end %>
       <% end %>
-
-  </div>
-
-        <% else %><br>
-  <p>No results have been found.</p>
-<br>
-
- <p> Please search again or return to the homepage</p>
-<br>
-<br>
-
-<%= button_to "HOME", root_path, :method => "get"  %>
-  <br>
-  <% end %>
-  <br>
-
-</div>
+      </div>
+        <hr>

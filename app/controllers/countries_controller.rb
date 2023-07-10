@@ -6,11 +6,50 @@ class CountriesController < ApplicationController
 
   # GET /countries or /countries.json
   def index
-    @countries = Country.all.order(:name)
+    @countries = Country.all
   end
 
   # GET /countries/1 or /countries/1.json
   def show
+    if params["search"].present?
+      @art = Article.where(country_id:(params[:id])).country_search(params['search']["query"])
+    elsif params[:filter].present?
+      @art = Article.where(country_id:(params[:id])).country_search(params[:filter])
+
+    end
+
+
+
+
+    # if params["search"].present?
+
+
+    #   @locationfilter = Article.where(country_id:(params[:id])).country_search(params['search']["query"])
+    # elsif params[:filter].present?
+    #   @locationfilter = Article.where(country_id:(params[:id])).country_search(params[:filter])
+    # else
+    #   @countryfilter = @country.locations.each do |location|
+    #    location.articles.each do |article|
+    #     @article = article
+    #   end
+    # end
+    #   @locationfil = @location
+
+    # end
+
+
+    # if params["search"].present?
+    #   @locationfilter = Article.where(country_id:(params[:id])).country_search(params['search']["query"])
+    # elsif params[:filter].present?
+    #   @locationfilter = Article.where(country_id:(params[:id])).country_search(params[:filter])
+    # else
+    #   @countryfilter = @country.locations.each do |location|
+    #     @location = location
+    #     end
+    #   @locationfilter = @location.articles
+    # end
+
+
   end
 
   # GET /countries/new

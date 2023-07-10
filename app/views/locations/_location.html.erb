@@ -1,6 +1,6 @@
 <div class="container">
   <div class="d-flex destination">
-        <% @locationfilter.each do |article|%>
+        <% @locationfilter.order(date: :desc).each do |article|%>
 
         <div class="destination-cards">
        <%= link_to article_path(article), style: "text-decoration: none;" do %>

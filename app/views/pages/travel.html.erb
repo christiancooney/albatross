@@ -39,51 +39,9 @@
   </div>
   <hr>
 
-  <div class="search-bar-travel dropdown">
-    <a class="dropdown-toggle dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="fas fa-search"></i>
-    </a>
-      <ul class="dropdown-menu dropdown-search" >
+        <%= render partial: 'travelfilters'%>
 
- <%= simple_form_for :search, url: travel_path, method: :get, data: {turbo_frame: "destination"} do |f| %>
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search cities, etc...">
-        <% end %>
-      </ul>
-    <div class="ml-auto small-screen-menu-travel">
-      <a class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Filters</a>
-        <ul class="dropdown-menu" >
-          <li class="dropdown-item location-list" ><%=link_to "Travel", travel_path(filter: "Travel"), class: "button-16", id: "#{"selected" if params[:filter] == "Travel"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "City Breaks", travel_path(filter: "City Breaks"), class: "button-16", id: "#{"selected" if params[:filter] == "City Breaks"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "Beach", travel_path(filter: "Beach"), class: "button-16", id: "#{"selected" if params[:filter] == "Beach"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "Active", travel_path(filter: "Active"), class: "button-16", id: "#{"selected" if params[:filter] == "Active"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "Restaurants", travel_path(filter: "Restaurant"), class: "button-16", id: "#{"selected" if params[:filter] == "Restaurant"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "Bars", travel_path(filter: "Bars"), class: "button-16", id: "#{"selected" if params[:filter] == "Bars"}" %></li>
-          <hr>
-          <li class="dropdown-item location-list" ><%=link_to "Reset filters", travel_path, class: "button-16" %></li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-sm-auto filters-panel" data-controller="filter">
-        <div class="search-and-filters">
-          <div class="filter-buttons-travel large-screen-menu">
-            <br>
-            <h6>Filters</h6>
-            <hr>
-           <ul>
-              <li> <%=link_to "Travel", travel_path(filter: "Travel"), class: "button-16", id: "#{"selected" if params[:filter] == "Travel"}" %></li>
-              <li> <%=link_to "City Breaks", travel_path(filter: "City Breaks"), class: "button-16", id: "#{"selected" if params[:filter] == "City Breaks"}" %></li>
-              <li> <%=link_to "Beach", travel_path(filter: "Beach"), class: "button-16", id: "#{"selected" if params[:filter] == "Beach"}" %></li>
-              <li> <%=link_to "Active", travel_path(filter: "Active"), class: "button-16", id: "#{"selected" if params[:filter] == "Active"}" %></li>
-              <li> <%=link_to "Restaurants", travel_path(filter: "Restaurant"), class: "button-16", id: "#{"selected" if params[:filter] == "Restaurant"}" %></li>
-              <li> <%=link_to "Bars", travel_path(filter: "Bars"), class: "button-16", id: "#{"selected" if params[:filter] == "Bars"}" %></li>
-              <hr>
-              <li> <%=link_to "Reset filters", travel_path, class: "button-16" %></li>
-            </ul>
-         </div>
-       </div>
-      </div>
 
       <div class="col">
        <div id="travel-render">

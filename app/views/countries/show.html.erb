@@ -1,65 +1,123 @@
-<div class="container center">
-<br>
-<h1><%= @country.name %></h1>
-<hr>
-  <%  @country.locations.each do |location| %>
- <h2> <%= link_to  location.name, location_path(location), :method => "get"  %></h2>
+<div class="container destinations">
+  <br>
 
-         <div class="d-flex destination">
-    <% location.articles.each do |article|%>
+  <h1 class="grand-title" style="text-align: center;"><%= @country.name %></h1>
+  <hr>
+
+   <%= render partial: 'pages/travelfilters'%>
+
+
+
+<div class="col">
+  <div class="container">
+
+
+
+    <% if params[:filter].present? || params["search"].present? %>
+        <%  @country.locations.each do |location| %>
+        <hr>
+        <h1 class="grand-title-country"><%= link_to  location.name, location_path(location), :method => "get"  %></h1>
+          <hr>
+            <% @art.order(date: :desc).each do |article| %>
+          <% if article.location_id == location.id %>
+            <div class="d-flex destination-country-show">
+              <div class="destination-cards">
+              <%= link_to article_path(article), style: "text-decoration: none;" do %>
+                <% if article.imagecover.attached? %>
+                  <%= image_tag article.imagecover %>
+                <% end %>
+              <div class="d-card-middle">
+              </div>
+              <div class="d-card-text">
+                <h4> <%= article.title  %></h4>
+                <div class="d-flex justify-content-between italic-cards">
+                  <% case article.category %>
+                    <% when "Health" %>
+                    <h6>Health</h6>
+                    <% when "Life" %>
+                    <h6>Life</h6>
+                    <% when "Recipe" %>
+                    <h6>Recipe</h6>
+                    <% when "Restaurant" %>
+                    <h6>Restaurant</h6>
+                    <% when "Style" %>
+                    <h6>Style</h6>
+                      <% when "Travel" %>
+                      <h6>Travel</h6>
+                    <% end %>
+                    <p>by <%= article.author  %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <% end %>
+          </div>
+          <% end %>
+            <% if @art.empty? %>
+            <h5 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No posts fit your search. Please try again</h5>
+            <h5 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;"> <%=link_to "Reset filters", country_path, class: "button-16" %></h5>
+        <% end %>
+        <% end %>
+      <% end %>
+
+
+
+
+
+<%  if params[:filter].blank? && params["search"].blank?  %>
+      <%  @country.locations.each do |location| %>
+        <hr>
+        <h1 class="grand-title-country"><%= link_to  location.name, location_path(location), :method => "get"  %></h1>
+        <hr>
+      <div class="d-flex destination-country-show">
+     <% location.articles.order(date: :desc).each do |article|%>
         <div class="destination-cards">
          <%= link_to article_path(article), style: "text-decoration: none;" do %>
-        <% if article.imagecover.attached? %>
-          <%= image_tag article.imagecover %>
-        <% end %>
-        <div class="d-card-middle">
-      </div>
-       <div class="d-card-text">
-            <h4> <%= article.title  %></h4>
-             <div class="d-flex justify-content-between italic-cards">
+          <% if article.imagecover.attached? %>
+            <%= image_tag article.imagecover %>
+          <% end %>
+          <div class="d-card-middle">
+          </div>
+         <div class="d-card-text">
+          <h4> <%= article.title  %></h4>
+            <div class="d-flex justify-content-between italic-cards">
               <% case article.category %>
-            <% when "Health" %>
-            <h6>Health</h6>
-              <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
-            <% when "Life" %>
-            <h6>Life</h6>
-              <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
-            <% when "Recipe" %>
-            <h6>Recipe</h6>
-              <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
-            <% when "Restaurant" %>
-            <h6>Restaurant</h6>
-              <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
-            <% when "Style" %>
-            <h6>Style</h6>
-              <%# <i class="fa-solid fa-shirt fa-fw circle-icon"></i> %>
-              <% when "Travel" %>
-              <h6>Travel</h6>
-              <%# <i class="fa-solid fa-suitcase fa-fw circle-icon"></i> %>
-            <% end %>
-
-            <%# <p><%= article.date.to_formatted_s(:long) %>
-         <p>by <%= article.author  %></p>
+                <% when "Health" %>
+                <h6>Health</h6>
+                <% when "Life" %>
+                <h6>Life</h6>
+                <% when "Recipe" %>
+                <h6>Recipe</h6>
+                <% when "Restaurant" %>
+                <h6>Restaurant</h6>
+                <% when "Style" %>
+                <h6>Style</h6>
+                <% when "Travel" %>
+                <h6>Travel</h6>
+              <% end %>
+              <p>by <%= article.author  %></p>
+            </div>
           </div>
-          </div>
-      </div>
+       </div>
       <% end %>
       <% end %>
       </div>
-        <hr>
       <% end %>
-<% if current_user %>
+    <% end %>
+  </div>
 
-       <%= link_to "Edit this country", edit_country_path(@country), method: :get   %>
 <br>
-<br>
-       <%= link_to "New location", new_location_path, method: :get   %>
-
-      <br>
-      <br>
-      <br>
-      <br>
-         <%= link_to "Delete this country & posts", @country, method: :delete %>
+  <% if current_user %>
+    <%= link_to "Edit this country", edit_country_path(@country), method: :get   %>
     <br>
-<% end %>
+    <br>
+    <%= link_to "New location", new_location_path, method: :get   %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%= link_to "Delete this country & posts", @country, method: :delete %>
+    <br>
+  <% end %>
+</div>
 </div>

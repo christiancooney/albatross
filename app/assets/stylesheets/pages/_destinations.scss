@@ -69,16 +69,10 @@ flex-wrap: wrap;
 }
 
 
-
-
-
-@media screen and (max-width: 930px) {
-  .destination-tabs {
-    display: grid;
-    justify-content: center;
-    text-align: center;
-    }
-  }
+.destination-country-show {
+  padding-left: 20px;
+  flex-wrap: wrap;
+}
 
 .small-screen-menu-travel {
   .dropdown-toggle {
@@ -88,7 +82,22 @@ float: right;
   .dropdown-menu {
     width: 50% !important;
       }
+
+
 }
+
+@media screen and (max-width: 930px) {
+  .destination-tabs {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    }
+    .destination-country-show {
+      padding-left: 0px;
+
+    }
+  }
+
 
 
 // @media screen and (max-width: 930px) {
