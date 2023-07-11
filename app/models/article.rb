@@ -36,12 +36,6 @@ class Article < ApplicationRecord
   has_many :countries
   has_many :locations
 
-  include PgSearch::Model
-  multisearchable against: %i[name name country city title category subcategory
-    feature subfeature cuisine recipe_title1 recipe_title2
-    recipe_title3 recipe_title4 recipe_title5 recipe_title6
-    recipe_list1 recipe_list2 recipe_list3 recipe_list4
-    recipe_list5 recipe_list6]
 
 
 
@@ -128,6 +122,13 @@ class Article < ApplicationRecord
   }
 
   include PgSearch::Model
+  pg_search_scope :cuisine_search,
+  against: %i[cuisine ],
+  using: {
+    tsearch: {prefix: true}
+  }
+
+  include PgSearch::Model
   pg_search_scope :starters_search,
   against: %i[country city category subcategory title
     feature subfeature ],
@@ -164,7 +165,7 @@ class Article < ApplicationRecord
 
 
 
-
+  $cuisines = [ "Asian", "Greek", "Indian", "Italian", "French", "Med", "Mexican", "Middle Eastern", "Modern" ]
 
 
   $categories = %i[ starters main sweets sides snacks drinks]

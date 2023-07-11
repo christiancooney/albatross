@@ -80,7 +80,10 @@ float: right;
   }
 
   .dropdown-menu {
-    width: 50% !important;
+    width: 100% !important;
+    li {
+      padding: 8px;
+    }
       }
 
 
