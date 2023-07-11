@@ -3,6 +3,7 @@
        <%  if  @article.category == "Recipe" %>
     <button class="print-link-button", id="upper-print-link"><a href= "#print-card-link" class="bottom">Skip to recipe card  <i class="fa-solid fa-angle-down"></i></a></button>
 <% end %>
+<br>
 <p> <%= article.date.to_formatted_s(:long) %></p>
      <h1 class="grand-title"><%= article.title %></h1>
      <hr>

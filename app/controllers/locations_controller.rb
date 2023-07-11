@@ -5,7 +5,6 @@ class LocationsController < ApplicationController
   before_action :set_countries
   before_action :set_articles
 
-
   # GET /locations or /locations.json
   def index
     @locations = Location.all.order(:name)
@@ -14,11 +13,11 @@ class LocationsController < ApplicationController
   # GET /locations/1 or /locations/1.json
   def show
     if params["search"].present?
-      @locationfilter = Article.where(location_id:(params[:id])).location_search(params['search']["query"])
+      @pagy, @locationfilter = pagy(Article.where(location_id:(params[:id])).location_search(params['search']["query"]))
     elsif params[:filter].present?
-      @locationfilter = Article.where(location_id:(params[:id])).location_search(params[:filter])
+      @pagy, @locationfilter = pagy(Article.where(location_id:(params[:id])).location_search(params[:filter]))
     else
-      @locationfilter = @location.articles
+      @pagy, @locationfilter = pagy(@location.articles)
     end
 end
 

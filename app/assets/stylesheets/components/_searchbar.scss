@@ -78,3 +78,19 @@ width: 300px;
 .sidebar {
   float: left;
 }
+
+.pagy-bar {
+  display: flex;
+
+  justify-content: center;
+  position:relative;
+bottom: 0;
+
+}
+
+.pagination {
+  --bs-pagination-disabled-border-color: rgb(121,121,115) !important;
+//  --bs-pagination-disabled-bg: rgba(104, 124, 104, 0.718)!important;
+ --bs-pagination-disabled-bg: rgb(175, 175, 175) !important;
+
+}

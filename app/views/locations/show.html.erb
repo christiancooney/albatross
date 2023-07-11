@@ -23,7 +23,7 @@
           <li class="dropdown-item location-list" ><%=link_to "Bars", location_path(filter: "Bars"), class: "button-16", id: "#{"selected" if params[:filter] == "Bars"}" %></li>
           <hr>
           <li class="dropdown-item location-list" ><%=link_to "Reset filters", location_path, class: "button-16" %></li>
-          <li class="dropdown-item location-list" > <%=link_to "Back to travel section", travel_path, class: "button-16" %></li>
+          <li class="dropdown-item location-list" > <%=link_to "Back to all Travel", travel_path, class: "button-16" %></li>
         </ul>
       </div>
     </div>
@@ -45,7 +45,7 @@
               <li> <%=link_to "Bars", location_path(filter: "Bars"), class: "button-16", id: "#{"selected" if params[:filter] == "Bars"}" %></li>
               <hr>
               <li> <%=link_to "Reset filters", location_path, class: "button-16" %></li>
-              <li> <%=link_to "Back to travel section", travel_path, class: "button-16" %></li>
+              <li> <%=link_to "Back to all Travel", travel_path, class: "button-16" %></li>
             </ul>
          </div>
        </div>
@@ -54,14 +54,14 @@
       <div class="col">
        <div id="travel-render">
         <%= render 'location' %>
+       </div>
+      </div>
+    </div>
         <% if @locationfilter.empty? %>
           <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No posts fit your search. Please try again</h2>
           <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;"> <%=link_to "Reset filters", location_path, class: "button-16" %></h4>
         <% end %>
-       </div>
-      </div>
       <% end %>
-    </div>
     <br>
     <br>
     <% if current_user %>
@@ -70,4 +70,8 @@
     <br>
     <%= link_to "Delete this location", @location, method: :delete %>
     <% end %>
+  </div>
+
+      <div class="pagy-bar">
+<%== pagy_bootstrap_nav(@pagy) %>
   </div>

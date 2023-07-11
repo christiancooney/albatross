@@ -1,26 +1,27 @@
 <div class="container destinations">
   <br>
 
-  <h1 class="grand-title" style="text-align: center;"><%= @country.name %></h1>
+  <h1 class="grand-title" style="text-align: center;"><%= @country.name.upcase %></h1>
   <hr>
 
-   <%= render partial: 'pages/travelfilters'%>
+  <h5 style="text-align: center;">LATEST POSTS</h5>
+
 
 
 
 <div class="col">
-  <div class="container">
+  <div class="container center">
 
 
 
     <% if params[:filter].present? || params["search"].present? %>
         <%  @country.locations.each do |location| %>
         <hr>
-        <h1 class="grand-title-country"><%= link_to  location.name, location_path(location), :method => "get"  %></h1>
+        <h1 class="grand-title-country"><%= link_to  location.name.upcase, location_path(location), :method => "get"  %></h1>
           <hr>
-            <% @art.order(date: :desc).each do |article| %>
-          <% if article.location_id == location.id %>
+            <% @art.order(date: :desc).limit(16).each do |article| %>
             <div class="d-flex destination-country-show">
+          <% if article.location_id == location.id %>
               <div class="destination-cards">
               <%= link_to article_path(article), style: "text-decoration: none;" do %>
                 <% if article.imagecover.attached? %>
@@ -70,7 +71,7 @@
         <h1 class="grand-title-country"><%= link_to  location.name, location_path(location), :method => "get"  %></h1>
         <hr>
       <div class="d-flex destination-country-show">
-     <% location.articles.order(date: :desc).each do |article|%>
+     <% location.articles.order(date: :desc).limit(6).each do |article|%>
         <div class="destination-cards">
          <%= link_to article_path(article), style: "text-decoration: none;" do %>
           <% if article.imagecover.attached? %>
@@ -102,9 +103,18 @@
       <% end %>
       <% end %>
       </div>
+      <%# <% if @art.count >= 2 %>
+<br>
+      <% if location.articles.count >= 6 %>
+        <h1 class="title-country-location"><%= link_to  "Click to view more #{location.name} articles", location_path(location), :method => "get"  %></h1>
+<% else %>
+<br>
+<h5><%= "We hope to have more articles for #{location.name} coming soon"%></h5>
+      <% end %>
+      <br>
+      <br>
       <% end %>
     <% end %>
-  </div>
 
 <br>
   <% if current_user %>
@@ -118,6 +128,9 @@
     <br>
     <%= link_to "Delete this country & posts", @country, method: :delete %>
     <br>
+    <br>
+    <br>
   <% end %>
+  </div>
 </div>
 </div>

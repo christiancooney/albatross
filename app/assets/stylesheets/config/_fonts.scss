@@ -18,27 +18,40 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // $my-font: "Font Name";
 h1,h2,h3,h4,h5,h6,p,a,li {
   font-family: 'Playfair Display', serif !important;
-  color: black;
+  color: rgb(48,48,48);
 }
 
 
 p,a,button {
   font-family: 'Lora', serif;
-    color: black;
+    color: rgb(48,48,48);
 }
 
 a {
  text-decoration: none !important;
- color: black !important;
+ color: rgb(48,48,48) !important;
 }
 
 .grand-title {
   font-size: 30px;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  color: rgb(48,48,48);
 
 }
 .grand-title-country {
   font-size: 30px;
-  padding-left: 20px;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+color: rgb(48,48,48);
+}
+
+.title-country-location {
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  color: rgb(48,48,48);
+
 }
 // .first-letter {
 //   font-size: 60px;

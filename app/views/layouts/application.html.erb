@@ -25,10 +25,11 @@
     <div class="main">
       <%= yield %>
     </div>
+
 <% unless current_page? "/articles/#{params[:id]}/print" %>
 
   <%= render "shared/footer" %>
 <% end %>
-
   </body>
+
 </html>

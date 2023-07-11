@@ -2,9 +2,8 @@
 
  <br><h1 class="grand-title" style="text-align: center;"> STARTERS</h1>
 <hr>
-
+  <div class="row">
  <%= render 'recipefilters' %>
-
   <div class="col">
    <div id="recipes">
     <%= render 'starters', recipes: @starters %>
@@ -17,5 +16,7 @@
 
   </div>
 
-  <br>
 </div>
+<div class="pagy-bar">
+<%== pagy_bootstrap_nav(@pagy) %>
+  </div>

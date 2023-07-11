@@ -3,12 +3,12 @@
  <br><h1 class="grand-title" style="text-align: center;"> SNACKS</h1>
 <hr>
 
-    <%= render 'recipefilters' %>
 
-
-
+  <div class="row">
+ <%= render 'recipefilters' %>
   <div class="col">
    <div id="recipes">
+
     <%= render 'snacks', recipes: @snacks %>
     <% if @snacks.empty? %>
       <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No Snacks fit your search. Please try again</h2>
@@ -19,5 +19,7 @@
 
   </div>
 
-  <br>
 </div>
+<div class="pagy-bar">
+<%== pagy_bootstrap_nav(@pagy) %>
+  </div>

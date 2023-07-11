@@ -1,8 +1,8 @@
 <div class="container">
  <br><h1 class="grand-title" style="text-align: center;">BRUNCH</h1>
 <hr>
-    <%= render 'recipefilters' %>
-
+ <%= render 'recipefilters' %>
+  <div class="row">
   <div class="col">
    <div id="recipes">
     <%= render 'brunch' %>
@@ -14,6 +14,12 @@
   </div>
 
   </div>
-
+  <br>
+<div class="pagy-bar">
+<br>
+<br>
+<%== pagy_bootstrap_nav(@pagy) %>
+<br>
+  </div>
   <br>
 </div>

@@ -1,8 +1,8 @@
 class CountriesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ show index ]
   before_action :set_country, only: %i[ show edit update destroy ]
-  before_action :set_articles
-  before_action :set_locations
+  before_action :set_articles, only: %i[ show edit update destroy ]
+  before_action :set_locations, only: %i[ show edit update destroy ]
 
   # GET /countries or /countries.json
   def index
@@ -15,40 +15,10 @@ class CountriesController < ApplicationController
       @art = Article.where(country_id:(params[:id])).country_search(params['search']["query"])
     elsif params[:filter].present?
       @art = Article.where(country_id:(params[:id])).country_search(params[:filter])
+    else
+      @art = Article.where(country_id:(params[:id]))
 
     end
-
-
-
-
-    # if params["search"].present?
-
-
-    #   @locationfilter = Article.where(country_id:(params[:id])).country_search(params['search']["query"])
-    # elsif params[:filter].present?
-    #   @locationfilter = Article.where(country_id:(params[:id])).country_search(params[:filter])
-    # else
-    #   @countryfilter = @country.locations.each do |location|
-    #    location.articles.each do |article|
-    #     @article = article
-    #   end
-    # end
-    #   @locationfil = @location
-
-    # end
-
-
-    # if params["search"].present?
-    #   @locationfilter = Article.where(country_id:(params[:id])).country_search(params['search']["query"])
-    # elsif params[:filter].present?
-    #   @locationfilter = Article.where(country_id:(params[:id])).country_search(params[:filter])
-    # else
-    #   @countryfilter = @country.locations.each do |location|
-    #     @location = location
-    #     end
-    #   @locationfilter = @location.articles
-    # end
-
 
   end
 

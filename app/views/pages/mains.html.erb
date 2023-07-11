@@ -3,10 +3,11 @@
  <br><h1 class="grand-title" style="text-align: center;"> MAINS</h1>
 <hr>
 
+  <div class="row">
  <%= render 'recipefilters' %>
-
   <div class="col">
    <div id="recipes">
+
     <%= render 'mains', recipes: @mains %>
     <% if @mains.empty? %>
       <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No Mains fit your search. Please try again</h2>
@@ -14,8 +15,10 @@
     <% end %>
     </div>
   </div>
-
   </div>
 
-  <br>
+
 </div>
+<div class="pagy-bar">
+<%== pagy_bootstrap_nav(@pagy) %>
+  </div>

@@ -7,8 +7,10 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
-  end
+      # if params[:query].present?
+      #   @pagy, @articles = pagy(Articles.search_articles(params[:query]))
+        @pagy, @articles = pagy(Articles.all)
+    end
 
   # GET /articles/1 or /articles/1.json
   def show

@@ -58,16 +58,24 @@
   </div>
 
         <% else %><br>
+        <div class="fill-page-empty">
   <p>No results have been found.</p>
 <br>
 
  <p> Please search again or return to the homepage</p>
 <br>
 <br>
-
 <%= button_to "HOME", root_path, :method => "get"  %>
+
+<br>
+
+</div>
+
   <br>
   <% end %>
   <br>
 
+</div>
+<div class="pagy-bar">
+<%== pagy_bootstrap_nav(@pagy) %>
 </div>
