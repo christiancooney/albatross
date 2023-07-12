@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_164717) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_12_171614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -132,6 +132,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_164717) do
     t.boolean "beach_holiday"
     t.boolean "adventure_holiday"
     t.boolean "multi_destination_holiday"
+    t.text "dietary_tags"
+    t.text "holiday_tags"
+    t.text "dietary_markers"
+    t.text "drink_markers"
+    t.text "sweet_markers"
+    t.text "summary"
+    t.text "website"
+    t.text "address"
     t.index ["country_id"], name: "index_articles_on_country_id"
     t.index ["location_id"], name: "index_articles_on_location_id"
   end

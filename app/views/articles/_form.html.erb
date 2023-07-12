@@ -27,6 +27,7 @@
       <div class="col article-split">
         <h3>New Travel Article</h3>
         <%= f.input :travel_tags, label: "Travel Tags"  %><hr>
+        <%= f.input :holiday_tags, collection: ["City Breaks", "Beach", "Active", "Restaurants", "Bars"],  as: :check_boxes %>
         <hr>
         <%= f.input :country_id, collection: @countries %>
         <%= f.input :country, label: "Country Search Tags eg. United Kingdom UK England"  %>
@@ -95,7 +96,10 @@
         <%= f.input :atmosphere, as: :float, label: "Atmosphere / 10"  %>
         <%= f.input :service, as: :float, label: "Service / 10"   %>
         <%= f.input :value, as: :float, label: "Value for money / 10"   %>
+
     </div>
+        <%= f.input :website, label: "Website"   %>
+        <%= f.input :address, label: "Address"   %>
     <hr>
     </div>
 
@@ -104,11 +108,15 @@
         <%= f.input :recipe_tags, label: "Recipe Tags"  %>
         <%# <%= f.input :dietary_tags, label: "Recipe Tags"  %>
         <hr>
-        <%= f.input :cuisine, collection: [ "Asian", "Indian", "Italian", "Greek", "French", "Med",  "Mexican", "Middle Eastern", "Modern"] %>
+        <%= f.input :cuisine, collection: [ "Asian", "Indian", "Italian", "Greek", "French", "Mediterranean",  "Mexican", "Middle Eastern", "Modern"] %>
         <hr>
         <p>Dietary filters?</p>
         <div class="d-flex flex-wrap boolean-filters">
-          <%= f.input :subfeature, collection: [ "Dairy Free", "Gluten Free", "Nut Free", "Seafood", "Vegan", "Vegetarian", "Alcoholic", "Non-Alcoholic", "Juice", "Smoothie"],  as: :check_boxes %>
+
+
+          <%= f.input :dietary_tags, collection: ["Dairy Free", "Gluten Free", "Nut Free", "Seafood", "Vegan"],  as: :check_boxes %>
+          <%= f.input :drink_markers, collection: ["Alcoholic", "Non-Alcoholic", "Juice", "Smoothie"],  as: :check_boxes %>
+          <%= f.input :sweet_markers, collection: [  "Bars", "Cakes", "Cookies", "Desserts"],  as: :check_boxes %>
 
         </div>
 

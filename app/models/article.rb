@@ -165,7 +165,7 @@ class Article < ApplicationRecord
 
 
 
-  $cuisines = [ "Asian", "Greek", "Indian", "Italian", "French", "Med", "Mexican", "Middle Eastern", "Modern" ]
+  $cuisines = [ "Asian", "Greek", "Indian", "Italian", "French", "Mediterranean", "Mexican", "Middle Eastern", "Modern" ]
 
 
   $categories = %i[ starters main sweets sides snacks drinks]

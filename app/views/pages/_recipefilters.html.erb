@@ -105,17 +105,14 @@
             <li><%=link_to "Pasta", url_for(filter: "Pasta"), class: "button-16", id: "#{"selected" if params[:filter] == "Pasta"}" %></li>
             <li><%=link_to "Salad", url_for(filter: "Salad"), class: "button-16", id: "#{"selected" if params[:filter] == "Salad"}" %></li>
             <li> <%=link_to "Seafood", url_for(dietary_filter: "Seafood"), class: "button-16", id: "#{"selected" if params[:dietary_filter] == "Seafood"}" %></li>
-                        <hr>
-                        <% $cuisines.each do |cuisine| %>
+            <hr>
+            <% $cuisines.each do |cuisine| %>
             <li> <%=link_to "#{cuisine}", url_for(cuisine_filter: "#{cuisine}"), class: "button-16", id: "#{"selected" if params[:cuisine_filter] == "#{cuisine}"}" %></li>
-
-                        <% end %>
+            <% end %>
 
             <%# <li> <%=link_to "Bread", url_for(cuisine_filter: "Bread"), class: "button-16", id: "#{"selected" if params[:cuisine_filter] == "Bread"}" %></li>
 
-
             <% end %>
-
             <% if request.path == recipes_sweets_path %>
             <hr>
             <li> <%=link_to "Cake", url_for(filter: "Cake"), class: "button-16", id: "#{"selected" if params[:filter] == "Cake"}" %></li>

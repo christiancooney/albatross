@@ -10,8 +10,8 @@
 
 
   <%  if  @article.country_id.present? %>
-  <h5><%= @location_name.name %>,
-     <%= @country_name.name %></h5>
+ <h5> <%= link_to @location_name.name, location_path(@location_name) %>, <%= link_to @country_name.name, country_path(@country_name) %></h5>
+
     <% end %>
 
 
@@ -449,8 +449,17 @@
  <p><%=  article.food %> / 10 </p>
  <p><%=  article.value %> / 10 </p>
 </div>
+<hr>
+
+  <%= link_to "#{article.address}", "https://www.google.com/maps/place/#{article.address}", target: "_blank", id: "address-spacer"%>
+<br>
+<br>
+  <%= link_to "#{article.website}", article.website, target: "_blank" %>
+
+
+
+
 </div>
 <% end %>
 
 <% end %>
-</div>

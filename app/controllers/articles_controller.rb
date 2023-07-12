@@ -119,8 +119,10 @@ class ArticlesController < ApplicationController
         :service, :value, :recipe_tags, :dietary_tags, :holiday_tags, :travel_tags, :vegan, :vegetarian,
         :gluten_free, :dairy_free, :nut_free, :seafood, :alcohol,
         :alcohol_free, :city_break, :active_holiday, :beach_holiday,
-        :adventure_holiday, :multi_destination_holiday, subfeature: []
-      )
+        :adventure_holiday, :multi_destination_holiday,
+        :dietary_tags, :holiday_tags, :dietary_markers, :drink_markers,
+        :sweet_markers, :summary, :website, :address, subfeature: []
+       )
     end
 
 
