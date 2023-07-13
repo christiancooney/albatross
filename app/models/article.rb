@@ -33,19 +33,22 @@ class Article < ApplicationRecord
   has_one_attached :image28
   has_one_attached :image29
   has_one_attached :image30
-  has_many :countries
-  has_many :locations
-
-
-
+  has_one :countries
+  has_one :locations, -> { order "name ASC" }
 
   include PgSearch::Model
+  has_one :countries
+  has_one :locations
   pg_search_scope :global_search,
     against: %i[ country city title category subcategory
       feature subfeature cuisine recipe_title1 recipe_title2
       recipe_title3 recipe_title4 recipe_title5 recipe_title6
       recipe_list1 recipe_list2 recipe_list3 recipe_list4
-      recipe_list5 recipe_list6]
+      recipe_list5 recipe_list6 location_id country_id],
+      using: {
+        tsearch: {prefix: true}
+      }
+
 
 
       # Search bar logic
