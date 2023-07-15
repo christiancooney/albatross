@@ -32,20 +32,20 @@
               <div class="d-card-text">
                 <h4> <%= article.title  %></h4>
                 <div class="d-flex justify-content-between italic-cards">
-                  <% case article.category %>
-                    <% when "Health" %>
-                    <h6>Health</h6>
-                    <% when "Life" %>
-                    <h6>Life</h6>
-                    <% when "Recipe" %>
-                    <h6>Recipe</h6>
-                    <% when "Restaurant" %>
-                    <h6>Restaurant</h6>
-                    <% when "Style" %>
-                    <h6>Style</h6>
-                      <% when "Travel" %>
-                      <h6>Travel</h6>
-                    <% end %>
+                    <div class="d-flex justify-content-between italic-cards">
+                      <% if article.holiday_tags.to_s.include?("Active") %>
+                        <h6>Active</h6>
+                      <% elsif article.holiday_tags.to_s.include?("Beach") %>
+                      <h6>Beach</h6>
+                      <% elsif article.holiday_tags.to_s.include?("City Breaks") %>
+                        <h6>City Break</h6>
+                      <% elsif article.holiday_tags.to_s.include?("Island") %>
+                        <h6>Island</h6>
+                      <% elsif article.holiday_tags.to_s.include?("Restaurants") %>
+                        <h6>Restaurant</h6>
+                      <% elsif article.holiday_tags.to_s.include?("Bars") %>
+                        <h6>Bars</h6>
+                      <% end %>
                     <p>by <%= article.author  %></p>
                   </div>
                 </div>

@@ -18,15 +18,13 @@ class PagesController < ApplicationController
     if params["search"].present?
       @pagy,  @articles = pagy(Article.all.where.not(category: "Recipe").travel_search(params['search']["query"]))
     elsif params[:filter].present?
-      @pagy,  @articles = pagy(Article.all.where.not(category: "Recipe").travel_search(params[:filter]))
+      @pagy,  @articles = pagy(Article.all.where.not(category: "Recipe").travel_type_search(params[:filter]))
     end
   end
 
 
   def about
   end
-
-
 
   def admin
   end
@@ -58,16 +56,15 @@ class PagesController < ApplicationController
     #   @recipes = Article.where(category: "Recipe").dietary_search(params[:alcohol_filter])
     # elsif params[:alcoholfree_filter].present?
     #   @recipes = Article.where(category: "Recipe").dietary_search(params[:alcoholfree_filter])
-
   end
   end
 
   def brunch
     @pagy, @brunch = pagy(Article.where(subcategory: "Brunch"))
     if params["search"].present?
-      @pagy, @brunch = pagy(Article.where(subcategory: "Brunch").drink_search(params['search']["query"]))
+      @pagy, @brunch = pagy(Article.where(subcategory: "Brunch").recipe_search(params['search']["query"]))
     elsif params[:filter].present?
-      @pagy, @brunch = pagy(Article.where(subcategory: "Brunch").drink_search(params[:filter]))
+      @pagy, @brunch = pagy(Article.where(subcategory: "Brunch").recipe_search(params[:filter]))
     elsif params[:dietary_filter].present?
       @pagy, @brunch = pagy(Article.where(subcategory: "Brunch").dietary_search(params[:dietary_filter]))
     elsif params[:cuisine_filter].present?
@@ -78,9 +75,9 @@ class PagesController < ApplicationController
   def starters
     @pagy, @starters = pagy(Article.where(subcategory: "Starters"))
     if params["search"].present?
-      @pagy, @starters = pagy(Article.where(subcategory: "Starters").drink_search(params['search']["query"]))
+      @pagy, @starters = pagy(Article.where(subcategory: "Starters").recipe_search(params['search']["query"]))
     elsif params[:filter].present?
-      @pagy, @starters = pagy(Article.where(subcategory: "Starters").drink_search(params[:filter]))
+      @pagy, @starters = pagy(Article.where(subcategory: "Starters").recipe_search(params[:filter]))
     elsif params[:dietary_filter].present?
       @pagy, @starters = pagy(Article.where(subcategory: "Starters").dietary_search(params[:dietary_filter]))
     elsif params[:cuisine_filter].present?
@@ -91,9 +88,9 @@ class PagesController < ApplicationController
   def mains
     @pagy, @mains = pagy(Article.where(subcategory: "Mains"))
     if params["search"].present?
-      @pagy, @mains = pagy(Article.where(subcategory: "Mains").drink_search(params['search']["query"]))
+      @pagy, @mains = pagy(Article.where(subcategory: "Mains").recipe_search(params['search']["query"]))
     elsif params[:filter].present?
-      @pagy, @mains = pagy(Article.where(subcategory: "Mains").drink_search(params[:filter]))
+      @pagy, @mains = pagy(Article.where(subcategory: "Mains").recipe_search(params[:filter]))
     elsif params[:dietary_filter].present?
       @pagy, @mains = pagy(Article.where(subcategory: "Mains").dietary_search(params[:dietary_filter]))
     elsif params[:cuisine_filter].present?
@@ -103,9 +100,9 @@ class PagesController < ApplicationController
   def sweets
     @pagy, @sweets = pagy(Article.where(subcategory: "Sweets"))
     if params["search"].present?
-      @pagy, @sweets = pagy(Article.where(subcategory: "Sweets").drink_search(params['search']["query"]))
+      @pagy, @sweets = pagy(Article.where(subcategory: "Sweets").sweets_search(params['search']["query"]))
     elsif params[:filter].present?
-      @pagy, @sweets = pagy(Article.where(subcategory: "Sweets").drink_search(params[:filter]))
+      @pagy, @sweets = pagy(Article.where(subcategory: "Sweets").sweets_search(params[:filter]))
     elsif params[:dietary_filter].present?
       @pagy, @sweets = pagy(Article.where(subcategory: "Sweets").dietary_search(params[:dietary_filter]))
     elsif params[:cuisine_filter].present?
@@ -125,9 +122,9 @@ class PagesController < ApplicationController
   def snacks
     @pagy, @snacks = pagy(Article.where(subcategory: "Snacks"))
     if params["search"].present?
-      @pagy, @snacks = pagy(Article.where(subcategory: "Snacks").drink_search(params['search']["query"]))
+      @pagy, @snacks = pagy(Article.where(subcategory: "Snacks").recipe_search(params['search']["query"]))
     elsif params[:filter].present?
-      @pagy, @snacks = pagy(Article.where(subcategory: "Snacks").drink_search(params[:filter]))
+      @pagy, @snacks = pagy(Article.where(subcategory: "Snacks").recipe_search(params[:filter]))
     elsif params[:dietary_filter].present?
       @pagy, @snacks = pagy(Article.where(subcategory: "Snacks").dietary_search(params[:dietary_filter]))
     elsif params[:cuisine_filter].present?
@@ -138,9 +135,9 @@ class PagesController < ApplicationController
   def sides
     @pagy, @sides = pagy(Article.where(subcategory: "Sides"))
     if params["search"].present?
-      @pagy, @sides = pagy(Article.where(subcategory: "Sides").drink_search(params['search']["query"]))
+      @pagy, @sides = pagy(Article.where(subcategory: "Sides").recipe_search(params['search']["query"]))
     elsif params[:filter].present?
-      @pagy, @sides = pagy(Article.where(subcategory: "Sides").drink_search(params[:filter]))
+      @pagy, @sides = pagy(Article.where(subcategory: "Sides").recipe_search(params[:filter]))
     elsif params[:dietary_filter].present?
       @pagy, @sides = pagy(Article.where(subcategory: "Sides").dietary_search(params[:dietary_filter]))
     elsif params[:cuisine_filter].present?

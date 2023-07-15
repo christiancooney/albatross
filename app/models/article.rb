@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
   validates :date, :category, :imagecover, presence: true
-
   has_one_attached :imagecover
   has_one_attached :image1
   has_one_attached :image2
@@ -33,144 +32,94 @@ class Article < ApplicationRecord
   has_one_attached :image28
   has_one_attached :image29
   has_one_attached :image30
-  has_one :countries
-  has_one :locations, -> { order "name ASC" }
-
+  has_many :countries
+  has_many :locations, -> { order "name ASC" }
+  # Global Search
   include PgSearch::Model
   has_one :countries
   has_one :locations
   pg_search_scope :global_search,
-    against: %i[ country city title category subcategory
-      feature subfeature cuisine recipe_title1 recipe_title2
-      recipe_title3 recipe_title4 recipe_title5 recipe_title6
-      recipe_list1 recipe_list2 recipe_list3 recipe_list4
-      recipe_list5 recipe_list6 location_id country_id],
-      using: {
-        tsearch: {prefix: true}
-      }
-
-
-
-      # Search bar logic
-  include PgSearch::Model
-  pg_search_scope :recipe_search,
-  against: %i[category subcategory title
+  against: %i[ country city title category subcategory
     feature subfeature cuisine recipe_title1 recipe_title2
     recipe_title3 recipe_title4 recipe_title5 recipe_title6
     recipe_list1 recipe_list2 recipe_list3 recipe_list4
-    recipe_list5 recipe_list6],
-  using: {
-    tsearch: {prefix: true}
-  }
-
-  include PgSearch::Model
-  pg_search_scope :dietary_search,
-  against: %i[ subfeature ],
-  using: {
-    tsearch: {prefix: true}
-  }
-
-
+    recipe_list5 recipe_list6 location_id country_id],
+    using: {
+      tsearch: {prefix: true}
+    }
+# Travel Searches
   include PgSearch::Model
   pg_search_scope :travel_type_search,
-  against: %i[ city_break active_holiday beach_holiday adventure_holiday multi_destination_holiday ],
+  against: %i[ holiday_tags ],
   using: {
     tsearch: {prefix: true}
   }
-
-
-
-
-
-
   include PgSearch::Model
   pg_search_scope :travel_search,
   against: %i[country city category subcategory title
-    feature subfeature ],
+    feature subfeature travel_tags holiday_tags ],
   using: {
     tsearch: {prefix: true}
   }
-
-
   include PgSearch::Model
   pg_search_scope :location_search,
   against: %i[country city category subcategory title
-    feature subfeature ],
-  using: {
-    tsearch: {prefix: true}
-  }
-
+    feature subfeature holiday_tags travel_tags],
+    using: {
+      tsearch: {prefix: true}
+    }
   include PgSearch::Model
   pg_search_scope :country_search,
   against: %i[country city category subcategory title
-    feature subfeature ],
-  using: {
-    tsearch: {prefix: true}
-  }
-
+    feature subfeature holiday_tags travel_tags],
+    using: {
+      tsearch: {prefix: true}
+    }
+# Recipes Searches
   include PgSearch::Model
-  pg_search_scope :drink_search,
-  against: %i[country city category subcategory title
-    feature subfeature ],
+  pg_search_scope :recipe_search,
+  against: %i[category subcategory title
+  feature subfeature cuisine recipe_title1 recipe_title2
+  recipe_title3 recipe_title4 recipe_title5 recipe_title6
+  recipe_list1 recipe_list2 recipe_list3 recipe_list4
+  recipe_list5 recipe_list6 ],
   using: {
-    tsearch: {prefix: true}
+  tsearch: {prefix: true}
   }
-
   include PgSearch::Model
-  pg_search_scope :sides_search,
-  against: %i[country city category subcategory title
-    feature subfeature ],
+  pg_search_scope :dietary_search,
+  against: %i[ dietary_tags  ],
   using: {
-    tsearch: {prefix: true}
+  tsearch: {prefix: true}
   }
-
   include PgSearch::Model
   pg_search_scope :cuisine_search,
-  against: %i[cuisine ],
+  against: %i[ cuisine ],
   using: {
-    tsearch: {prefix: true}
+  tsearch: {prefix: true}
   }
-
   include PgSearch::Model
-  pg_search_scope :starters_search,
-  against: %i[country city category subcategory title
-    feature subfeature ],
+  pg_search_scope :drink_search,
+  against: %i[title feature subfeature cuisine recipe_title1 recipe_title2
+    recipe_title3 recipe_title4 recipe_title5 recipe_title6
+    recipe_list1 recipe_list2 recipe_list3 recipe_list4
+    recipe_list5 recipe_list6 drink_markers ],
   using: {
     tsearch: {prefix: true}
   }
-
-  include PgSearch::Model
-  pg_search_scope :mains_search,
-  against: %i[country city category subcategory title
-    feature subfeature ],
-  using: {
-    tsearch: {prefix: true}
-  }
-
   include PgSearch::Model
   pg_search_scope :sweets_search,
-  against: %i[country city category subcategory title
-    feature subfeature ],
+  against: %i[sweet_markers title feature subfeature cuisine recipe_title1 recipe_title2
+    recipe_title3 recipe_title4 recipe_title5 recipe_title6
+    recipe_list1 recipe_list2 recipe_list3 recipe_list4
+    recipe_list5 recipe_list6 ],
   using: {
     tsearch: {prefix: true}
   }
-
-  include PgSearch::Model
-  pg_search_scope :snacks_search,
-  against: %i[country city category subcategory title
-    feature subfeature ],
-  using: {
-    tsearch: {prefix: true}
-  }
-
-
-
-
-
-
   $cuisines = [ "Asian", "Greek", "Indian", "Italian", "French", "Mediterranean", "Mexican", "Middle Eastern", "Modern" ]
-
-
+  $holiday_tags = ["Active", "Beach", "City Breaks", "Island", "Restaurants", "Bars"]
   $categories = %i[ starters main sweets sides snacks drinks]
-
+  $dietary_tags = ["Dairy Free", "Gluten Free", "Nut Free", "Seafood", "Vegetarian", "Vegan"]
+  $drink_markers = ["Alcoholic", "Non-Alcoholic", "Juice", "Smoothie"]
+  $sweet_markers = [ "Slices & Bars", "Cakes", "Cookies", "Desserts"]
 end

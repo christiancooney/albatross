@@ -11,12 +11,9 @@
     <div class="ml-auto small-screen-menu-travel">
       <a class=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Filters</a>
         <ul class="dropdown-menu" >
-          <li class="dropdown-item location-list" ><%=link_to "Travel", url_for(filter: "Travel"), class: "button-16", id: "#{"selected" if params[:filter] == "Travel"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "City Breaks", url_for(filter: "City Breaks"), class: "button-16", id: "#{"selected" if params[:filter] == "City Breaks"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "Beach", url_for(filter: "Beach"), class: "button-16", id: "#{"selected" if params[:filter] == "Beach"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "Active", url_for(filter: "Active"), class: "button-16", id: "#{"selected" if params[:filter] == "Active"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "Restaurants", url_for(filter: "Restaurant"), class: "button-16", id: "#{"selected" if params[:filter] == "Restaurant"}" %></li>
-          <li class="dropdown-item location-list" ><%=link_to "Bars", url_for(filter: "Bars"), class: "button-16", id: "#{"selected" if params[:filter] == "Bars"}" %></li>
+        <% $holiday_tags.each do |tag| %>
+          <li class="dropdown-item location-list" ><%=link_to "#{tag}", url_for(filter: "#{tag}"), class: "button-16", id: "#{"selected" if params[:filter] == "#{tag}"}" %></li>
+         <% end %>
           <hr>
           <li class="dropdown-item location-list" ><%=link_to "Reset filters", url_for, class: "button-16" %></li>
         </ul>
@@ -31,15 +28,13 @@
             <h6>Filters</h6>
             <hr>
            <ul>
-              <li> <%=link_to "Travel", url_for(filter: "Travel"), class: "button-16", id: "#{"selected" if params[:filter] == "Travel"}" %></li>
-              <li> <%=link_to "City Breaks", url_for(filter: "City Breaks"), class: "button-16", id: "#{"selected" if params[:filter] == "City Breaks"}" %></li>
-              <li> <%=link_to "Beach", url_for(filter: "Beach"), class: "button-16", id: "#{"selected" if params[:filter] == "Beach"}" %></li>
-              <li> <%=link_to "Active", url_for(filter: "Active"), class: "button-16", id: "#{"selected" if params[:filter] == "Active"}" %></li>
-              <li> <%=link_to "Restaurants", url_for(filter: "Restaurant"), class: "button-16", id: "#{"selected" if params[:filter] == "Restaurant"}" %></li>
-              <li> <%=link_to "Bars", url_for(filter: "Bars"), class: "button-16", id: "#{"selected" if params[:filter] == "Bars"}" %></li>
-              <hr>
+      <% $holiday_tags.each do |tag| %>
+          <li ><%=link_to "#{tag}", url_for(filter: "#{tag}"), class: "button-16", id: "#{"selected" if params[:filter] == "#{tag}"}" %></li>
+         <% end %>
+          <hr>
               <li> <%=link_to "Reset filters", url_for, class: "button-16" %></li>
             </ul>
          </div>
        </div>
+      </div>
       </div>

@@ -11,14 +11,15 @@
             <h4> <%= article.title  %></h4>
 
                   <div class="d-flex justify-content-between italic-cards">
-                  <% if article.subfeature.include?("Juice") %>
+                  <% if article.drink_markers.to_s.include?("Juice") %>
             <h6>Juice</h6>
- <% elsif article.subfeature.include?("Non-Alcoholic") %>
+ <% elsif article.drink_markers.to_s.include?("Non-Alcoholic") %>
             <h6>Non-Alcoholic</h6>
-            <% elsif article.subfeature.include?("Alcoholic") %>
+            <% elsif article.drink_markers.to_s.include?("Alcoholic") %>
             <h6>Alcoholic</h6>
-            <% elsif article.subfeature.include?("Smoothie") %>
+            <% elsif article.drink_markers.to_s.include?("Smoothie") %>
             <h6>Smoothie</h6>
+
             <% end %>
 
             <%# <p><%= article.date.to_formatted_s(:long) %>

@@ -7,17 +7,14 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-      # if params[:query].present?
-      #   @pagy, @articles = pagy(Articles.search_articles(params[:query]))
-        @pagy, @articles = pagy(Articles.all)
-    end
+    @pagy, @articles = pagy(Article.all)
+  end
 
   # GET /articles/1 or /articles/1.json
   def show
-   if  @article.country_id.present?
+   if @article.country_id.present?
     @location_name = Location.find(@article.location_id)
     @country_name = Country.find(@article.country_id)
-   else
    end
   end
 
@@ -119,9 +116,14 @@ class ArticlesController < ApplicationController
         :service, :value, :recipe_tags, :dietary_tags, :holiday_tags, :travel_tags, :vegan, :vegetarian,
         :gluten_free, :dairy_free, :nut_free, :seafood, :alcohol,
         :alcohol_free, :city_break, :active_holiday, :beach_holiday,
-        :adventure_holiday, :multi_destination_holiday,
-        :dietary_tags, :holiday_tags, :dietary_markers, :drink_markers,
-        :sweet_markers, :summary, :website, :address, subfeature: []
+        :adventure_holiday, :multi_destination_holiday, :summary,
+        :website, :address,
+        drink_markers: [],
+        subfeature: [],
+        dietary_markers: [],
+        sweet_markers: [],
+        dietary_tags: [],
+        holiday_tags: []
        )
     end
 

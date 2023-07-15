@@ -41,6 +41,20 @@ box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.08);
 }
 
 
+.article-image-print-link {
+  img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+ border: 10px solid white;
+ border-bottom: 30px solid white;
+box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.08);
+
+  }
+  padding: 0px 30px 20px 0px;
+
+}
+
 .article-image-text-combo {
 display: flex;
 }
@@ -67,6 +81,13 @@ display: flex;
   img {
     width: 350px;
     height: 400px;
+  }
+}
+
+.article {
+
+  p {
+    width: 94%;
   }
 }
 }

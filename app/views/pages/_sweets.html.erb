@@ -10,21 +10,18 @@
           <div class="d-card-text">
             <h4> <%= article.title  %></h4>
 
-                  <div class="d-flex justify-content-between italic-cards">
-                <% case article.subcategory %>
-            <% when "Drinks" %>
-            <h6>Drinks</h6>
-              <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
-            <% when "Starters" %>
-            <h6>Starters</h6>
-              <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
-            <% when "Mains" %>
-            <h6>Mains</h6>
-              <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
-            <% when "Sweets" %>
-            <h6>Sweets</h6>
-              <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
+                   <div class="d-flex justify-content-between italic-cards">
+                  <% if article.sweet_markers.to_s.include?("Slices & Bars") %>
+            <h6>Slices & Bars</h6>
+ <% elsif article.sweet_markers.to_s.include?("Cakes") %>
+            <h6>Cakes</h6>
+            <% elsif article.sweet_markers.to_s.include?("Cookies") %>
+            <h6>Cookies</h6>
+            <% elsif article.sweet_markers.to_s.include?("Desserts") %>
+            <h6>Desserts</h6>
+
             <% end %>
+
 
             <%# <p><%= article.date.to_formatted_s(:long) %>
          <p>by <%= article.author  %></p>

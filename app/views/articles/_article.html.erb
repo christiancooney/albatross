@@ -1,7 +1,7 @@
   <div id="<%= dom_id article %>">
 
        <%  if  @article.category == "Recipe" %>
-    <button class="print-link-button", id="upper-print-link"><a href= "#print-card-link" class="bottom">Skip to recipe card  <i class="fa-solid fa-angle-down"></i></a></button>
+    <button class="print-link-button", id="upper-print-link"><a href= "#print-card-link" class="bottom">Recipe <i class="fa-solid fa-angle-down"></i></a></button>
 <% end %>
 <br>
 <p> <%= article.date.to_formatted_s(:long) %></p>
@@ -185,12 +185,41 @@
 
 
 <%  if  @article.category == "Recipe" %>
-  <div id="print-card-link">
-<%= button_to "Print friendly view", "/articles/ #{@article.id} /print", class:"print-link-button", method: :get %>
+<div id="print-card-link">
 
-<br>
-<div class="card">
+  <div class="card print-link-card">
+
+
+     <div class="article-image-text-combo">
+      <div class="article-image-print-link">
+      <% if article.imagecover.attached? %>
+      <%= image_tag @article.imagecover %>
+      <% end %>
+    </div>
+      <div class="article-image-description">
+      <h1><%= article.title %></h1>
+     <h6>by <%= article.author %></h6>
+     <br>
+     <h5>Prep Time: 10 mins</h5>
+     <h5>Cooking Time: 60 mins</h5>
+     <h5>Servings: 6 </h5>
+     <br>
+        <%= button_to "Print", "/articles/ #{@article.id} /print", class:"print-link-button", method: :get %>
+        <br>
+    </div>
+   </div>
+
+
+
+
+    <%# <div class="cover-image-print-link"> %>
+
+
+
+
+
   <div class="row">
+
     <h4>Ingredients</h4>
     <hr>
       <div class="col-sm-auto ingredients-list">
