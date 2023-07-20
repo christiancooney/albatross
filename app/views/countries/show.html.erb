@@ -12,7 +12,13 @@
 <div class="col">
   <div class="container center">
 
-
+      <% if @country.articles.count < 1 %>
+      <br>
+      <br>
+    <h5><%= "We hope to have more articles for #{@country.name} coming soon"%></h5>
+      <br>
+      <br>
+      <% end %>
 
     <% if params[:filter].present? || params["search"].present? %>
         <%  @country.locations.each do |location| %>
@@ -82,20 +88,21 @@
          <div class="d-card-text">
           <h4> <%= article.title  %></h4>
             <div class="d-flex justify-content-between italic-cards">
-              <% case article.category %>
-                <% when "Health" %>
-                <h6>Health</h6>
-                <% when "Life" %>
-                <h6>Life</h6>
-                <% when "Recipe" %>
-                <h6>Recipe</h6>
-                <% when "Restaurant" %>
-                <h6>Restaurant</h6>
-                <% when "Style" %>
-                <h6>Style</h6>
-                <% when "Travel" %>
-                <h6>Travel</h6>
-              <% end %>
+          <% if article.holiday_tags.to_s.include?("Active") %>
+              <h6>Active</h6>
+            <% elsif article.holiday_tags.to_s.include?("Beach") %>
+             <h6>Beach</h6>
+            <% elsif article.holiday_tags.to_s.include?("City Breaks") %>
+              <h6>City Break</h6>
+            <% elsif article.holiday_tags.to_s.include?("Island") %>
+              <h6>Island</h6>
+            <% elsif article.holiday_tags.to_s.include?("Restaurants") %>
+              <h6>Restaurant</h6>
+            <% elsif article.holiday_tags.to_s.include?("Bars") %>
+              <h6>Bars</h6>
+                <% elsif article.holiday_tags.to_s.include?("R&R") %>
+              <h6>R&R</h6>
+            <% end %>
               <p>by <%= article.author  %></p>
             </div>
           </div>
@@ -105,7 +112,7 @@
       </div>
       <%# <% if @art.count >= 2 %>
 <br>
-      <% if location.articles.count >= 6 %>
+      <% if location.articles.count > 6 %>
         <h1 class="title-country-location"><%= link_to  "View more #{location.name} posts", location_path(location), :method => "get"  %></h1>
 <% else %>
 <br>

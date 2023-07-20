@@ -62,6 +62,8 @@ background-color: transparent;
 .destination-tabs {
   display: flex;
 flex-wrap: wrap;
+justify-content: center;
+text-align: center;
 }
 
 .location-list:hover {
@@ -91,9 +93,18 @@ float: right;
 
 @media screen and (max-width: 930px) {
   .destination-tabs {
-    display: grid;
-    justify-content: center;
-    text-align: center;
+columns: 2;
+display: inherit;
+p, a {
+
+
+  font-size: 16px !important;
+}
+.destination-entry {
+  width: 120px;
+  display: inline-table;
+}
+
     }
     .destination-country-show {
       padding-left: 0px;

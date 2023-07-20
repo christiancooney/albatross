@@ -13,12 +13,14 @@
                   <div class="d-flex justify-content-between italic-cards">
                   <% if article.drink_markers.to_s.include?("Juice") %>
             <h6>Juice</h6>
- <% elsif article.drink_markers.to_s.include?("Non-Alcoholic") %>
-            <h6>Non-Alcoholic</h6>
-            <% elsif article.drink_markers.to_s.include?("Alcoholic") %>
-            <h6>Alcoholic</h6>
+ <% elsif article.drink_markers.to_s.include?("Mocktail") %>
+            <h6>Mocktail</h6>
+            <% elsif article.drink_markers.to_s.include?("Cocktail") %>
+            <h6>Cocktail</h6>
             <% elsif article.drink_markers.to_s.include?("Smoothie") %>
             <h6>Smoothie</h6>
+                   <% elsif article.drink_markers.to_s.include?("Refreshing") %>
+            <h6>Refreshing</h6>
 
             <% end %>
 

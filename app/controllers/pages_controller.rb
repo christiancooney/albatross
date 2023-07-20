@@ -23,6 +23,15 @@ class PagesController < ApplicationController
   end
 
 
+  def health
+    @pagy, @articles = pagy(Article.all.where(category: "Health"))
+    if params["search"].present?
+      @pagy,  @articles = pagy(Article.all.where(category: "Health").travel_search(params['search']["query"]))
+    elsif params[:filter].present?
+      @pagy,  @articles = pagy(Article.all.where(category: "Health").travel_type_search(params[:filter]))
+    end
+  end
+
   def about
   end
 
