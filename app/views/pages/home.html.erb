@@ -26,27 +26,30 @@
   <%# <p><%= article.date.to_formatted_s(:long) %>
 
                <div class="d-flex justify-content-between italic-cards">
-               <% case article.category %>
-            <% when "Health" %>
-            <h6>Health</h6>
-              <%# <i class="fa-solid fa-person-hiking fa-fw circle-icon"></i> %>
-            <% when "Life" %>
-            <h6>Life</h6>
-              <%# <i class="fa-solid fa-mountain fa-fw circle-icon"></i> %>
-            <% when "Recipe" %>
-            <h6>Recipe</h6>
-              <%# <i class="fa-solid fa-bowl-food fa-fw circle-icon"></i> %>
-            <% when "Restaurant" %>
-            <h6>Restaurant</h6>
-              <%# <i class="fa-solid fa-utensils fa-fw circle-icon"></i> %>
-            <% when "Style" %>
-            <h6>Style</h6>
-              <%# <i class="fa-solid fa-shirt fa-fw circle-icon"></i> %>
-              <% when "Travel" %>
-              <h6>Travel</h6>
-              <%# <i class="fa-solid fa-suitcase fa-fw circle-icon"></i> %>
-            <% end %>
 
+    <% if article.holiday_tags.to_s.include?("Active") %>
+              <h6>Active</h6>
+            <% elsif article.holiday_tags.to_s.include?("Beach") %>
+             <h6>Travel - Beach</h6>
+            <% elsif article.holiday_tags.to_s.include?("City Breaks") %>
+              <h6>Travel - City Break</h6>
+            <% elsif article.holiday_tags.to_s.include?("Island") %>
+              <h6>Travel - Island</h6>
+            <% elsif article.holiday_tags.to_s.include?("Restaurants") %>
+              <h6>Restaurant</h6>
+            <% elsif article.holiday_tags.to_s.include?("Bars") %>
+              <h6>Bars</h6>
+                <% elsif article.holiday_tags.to_s.include?("R&R") %>
+              <h6>Travel - R&R</h6>
+              <% elsif article.category.to_s.include?("Health") %>
+              <h6>Health</h6>
+              <% elsif article.category.to_s.include?("Life") %>
+              <h6>Life</h6>
+              <% elsif article.category.to_s.include?("Recipe") %>
+              <h6>Recipe</h6>
+              <% elsif article.category.to_s.include?("Style") %>
+              <h6>Style</h6>
+            <% end %>
             <p>by <%= article.author  %></p>
 
           </div>

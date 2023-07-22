@@ -13,7 +13,9 @@
  <h5> <%= link_to @location_name.name, location_path(@location_name) %>, <%= link_to @country_name.name, country_path(@country_name) %></h5>
 
     <% end %>
-
+ <% if article.holiday_tags.to_s.include?("Restaurants") %>
+        <h6>    <%=   article.cuisine %></h6>
+              <% end %>
 
     <p>By: <%= article.author %></p>
 
@@ -482,15 +484,15 @@
 </div>
 <hr>
 
-  <%= link_to "#{article.address}", "https://www.google.com/maps/place/#{article.address}", target: "_blank", id: "address-spacer"%>
-<br>
-<br>
-  <%= link_to "#{article.website}", article.website, target: "_blank" %>
+
 
 
 
 
 </div>
 <% end %>
-
+  <%= link_to "#{article.address}", "https://www.google.com/maps/place/#{article.address}", target: "_blank", id: "address-spacer"%>
+<br>
+<br>
+  <%= link_to "#{article.website}", article.website, target: "_blank" %>
 <% end %>

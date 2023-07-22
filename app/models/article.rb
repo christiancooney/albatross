@@ -54,13 +54,14 @@ class Article < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
+
   include PgSearch::Model
   pg_search_scope :travel_search,
-  against: %i[country city category subcategory title
-    feature subfeature travel_tags holiday_tags ],
-  using: {
+    against: %i[ country city category subcategory title feature subfeature travel_tags holiday_tags ],
+    using: {
     tsearch: {prefix: true}
-  }
+     }
+
   include PgSearch::Model
   pg_search_scope :location_search,
   against: %i[country city category subcategory title
@@ -122,7 +123,7 @@ class Article < ApplicationRecord
   $dietary_tags = ["Dairy Free", "Gluten Free", "Nut Free", "Seafood", "Vegetarian", "Vegan"]
   $drink_markers = ["Cocktail", "Mocktail", "Juice", "Smoothie", "Refreshing"]
   $sweet_markers = ["Slices & Bars", "Cakes", "Cookies", "Desserts"]
-  $category = ["Health", "Life", "Recipe", "Restaurant", "Style", "Travel"]
+  $category = ["Health", "Life", "Recipe", "Style", "Travel"]
   $subcategory = ["Brunch", "Drinks", "Mains", "Sides", "Snacks", "Starters", "Sweets", "Beauty", "Fashion", "Interiors"]
 
 

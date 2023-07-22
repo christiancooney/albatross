@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[ home travel recipes about starters mains sweets drinks sides snacks brunch ]
+  skip_before_action :authenticate_user!, only: %i[ home travel recipes about starters mains sweets drinks sides snacks brunch health ]
 
   def home
-    # @articles = Article.all.where.not(category: "Recipe")
     @countries = Country.all
     if params["search"].present?
       @pagy, @articles = pagy(Article.global_search(params['search']["query"]))
@@ -13,12 +12,12 @@ class PagesController < ApplicationController
   end
 
   def travel
-    @pagy, @articles = pagy(Article.all.where.not(category: "Recipe"))
+    @pagy, @articles = pagy(Article.all.where(category: "Travel" ))
     @countries = Country.all.order(:name)
     if params["search"].present?
-      @pagy,  @articles = pagy(Article.all.where.not(category: "Recipe").travel_search(params['search']["query"]))
+      @pagy,  @articles = pagy(Article.all.where(category: "Travel").travel_search(params['search']["query"]))
     elsif params[:filter].present?
-      @pagy,  @articles = pagy(Article.all.where.not(category: "Recipe").travel_type_search(params[:filter]))
+      @pagy,  @articles = pagy(Article.all.where(category: "Travel").travel_type_search(params[:filter]))
     end
   end
 
