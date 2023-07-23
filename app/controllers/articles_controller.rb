@@ -18,6 +18,20 @@ class ArticlesController < ApplicationController
    end
   end
 
+  def time_conversion(time)
+    if @article.prep_time.present?
+      @total_time = @article.prep_time + @article.cooking_time
+      if time < 60
+        "#{time} mins"
+      else
+        hours = time / 60
+        minutes = time % 60
+        "#{hours}h #{minutes} mins"
+      end
+    end
+  end
+  helper_method :time_conversion
+
   # GET /articles/new
   def new
     @article = Article.new
@@ -117,7 +131,7 @@ class ArticlesController < ApplicationController
         :gluten_free, :dairy_free, :nut_free, :seafood, :alcohol,
         :alcohol_free, :city_break, :active_holiday, :beach_holiday,
         :adventure_holiday, :multi_destination_holiday, :summary,
-        :website, :address,
+        :website, :address, :servings, :prep_time, :cooking_time, :difficulty,
         drink_markers: [],
         subfeature: [],
         dietary_markers: [],

@@ -13,7 +13,7 @@
     <div class="d-flex gap-5 flex-wrap" style="width: 1300px;">
       <%= f.input :category, collection: $category %>
       <%= f.input :subcategory, collection: $subcategory %>
-      <%= f.input :feature, collection: $category %>
+     <%= f.input :cuisine, collection: $cuisines, label: "Cuisine? For Recipes & Restaurants"   %>
 
 
     </div>
@@ -103,7 +103,16 @@
       <h3>New Recipe Article</h3>
         <%= f.input :recipe_tags, label: "Recipe Tags, helpful tags for searches"  %>
         <hr>
-        <%= f.input :cuisine, collection: $cuisines %>
+        <div class="d-flex flex-wrap review-summary-forms">
+        <%= f.input :servings %>
+        <%= f.input :prep_time, label: "Prep Time (mins)"  %>
+        <%= f.input :cooking_time, label: "Cooking Time (mins)"  %>
+
+        </div>
+
+
+
+
         <hr>
         <p>Dietary filters?</p>
         <div class="d-flex flex-wrap boolean-filters">

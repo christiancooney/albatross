@@ -2,8 +2,21 @@
 float: right;
 }
 .ingredients-list {
+  h5 {
+    text-decoration: underline;
+  }
   ul {
     padding: 0;
     margin-left: 15px;
   }
+}
+
+
+.recipe-timings {
+
+}
+
+.recipe-timing-info {
+  text-align: center;
+  padding-right: 30px;
 }

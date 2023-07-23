@@ -43,7 +43,13 @@ padding: 10px;
   ul {
     padding-left: 10px;
   }
+  h5 {
+    text-decoration: underline;
+  }
 }
+
+
+
 
 .print-method-print {
   font-size: 14px;
@@ -60,6 +66,7 @@ display: grid;
 .print-logo-img {
 text-align: center;
   }
+
 
 
 @media screen and (max-width: 600px) {

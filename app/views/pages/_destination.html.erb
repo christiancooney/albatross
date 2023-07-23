@@ -22,6 +22,8 @@
               <h6>Restaurant</h6>
             <% elsif article.holiday_tags.to_s.include?("Bars") %>
               <h6>Bars</h6>
+                <% elsif article.holiday_tags.to_s.include?("R&R") %>
+              <h6>R&R</h6>
             <% end %>
 
          <p>by <%= article.author  %></p>
