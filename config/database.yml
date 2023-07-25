@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
   database: albatross_production
-  username: albatross
+  username: albatross_travel_blog
   password: <%= ENV["ALBATROSS_DATABASE_PASSWORD"] %>

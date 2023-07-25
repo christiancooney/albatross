@@ -55,7 +55,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem 'rails-bootstrap-toggle-buttons'
 gem 'simple_form_fancy_uploads'
 gem 'pagy', '~> 6.0'
-gem "select2-rails"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
