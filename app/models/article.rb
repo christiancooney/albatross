@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  include PgSearch::Model
+
   validates :date, :category, :imagecover, presence: true
   has_one_attached :imagecover
   has_one_attached :image1
@@ -36,7 +38,6 @@ class Article < ApplicationRecord
   has_many :locations, -> { order "name ASC" }
   has_one :countries
   has_one :locations
-  include PgSearch::Model
   # Global Search
   pg_search_scope :global_search,
   against: %i[ country city title category subcategory
@@ -47,37 +48,35 @@ class Article < ApplicationRecord
     using: {
       tsearch: {prefix: true}
     }
-# Travel Searches
-  include PgSearch::Model
+# Travel Searche
+
   pg_search_scope :travel_type_search,
   against: %i[ holiday_tags ],
   using: {
     tsearch: {prefix: true}
   }
 
-  include PgSearch::Model
   pg_search_scope :travel_search,
     against: %i[ country city category subcategory title feature subfeature travel_tags holiday_tags ],
     using: {
     tsearch: {prefix: true}
      }
 
-  include PgSearch::Model
   pg_search_scope :location_search,
   against: %i[country city category subcategory title
     feature subfeature holiday_tags travel_tags],
     using: {
       tsearch: {prefix: true}
     }
-  include PgSearch::Model
+
   pg_search_scope :country_search,
   against: %i[country city category subcategory title
     feature subfeature holiday_tags travel_tags],
     using: {
       tsearch: {prefix: true}
     }
-# Recipes Searches
-  include PgSearch::Model
+# Recipes Searche
+
   pg_search_scope :recipe_search,
   against: %i[category subcategory title
   feature subfeature cuisine recipe_title1 recipe_title2
@@ -86,20 +85,20 @@ class Article < ApplicationRecord
   recipe_list5 recipe_list6 ],
   using: {
   tsearch: {prefix: true}
-  }
-  include PgSearch::Model
+}
+
   pg_search_scope :dietary_search,
   against: %i[ dietary_tags  ],
   using: {
   tsearch: {prefix: true}
-  }
-  include PgSearch::Model
+}
+
   pg_search_scope :cuisine_search,
   against: %i[ cuisine ],
   using: {
   tsearch: {prefix: true}
   }
-  include PgSearch::Model
+
   pg_search_scope :drink_search,
   against: %i[title feature subfeature cuisine recipe_title1 recipe_title2
     recipe_title3 recipe_title4 recipe_title5 recipe_title6
@@ -108,7 +107,7 @@ class Article < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
-  include PgSearch::Model
+
   pg_search_scope :sweets_search,
   against: %i[sweet_markers title feature subfeature cuisine recipe_title1 recipe_title2
     recipe_title3 recipe_title4 recipe_title5 recipe_title6
