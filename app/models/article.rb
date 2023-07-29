@@ -34,10 +34,10 @@ class Article < ApplicationRecord
   has_one_attached :image30
   has_many :countries
   has_many :locations, -> { order "name ASC" }
-  # Global Search
-  include PgSearch::Model
   has_one :countries
   has_one :locations
+  include PgSearch::Model
+  # Global Search
   pg_search_scope :global_search,
   against: %i[ country city title category subcategory
     feature subfeature cuisine recipe_title1 recipe_title2
