@@ -8,8 +8,17 @@
       <div id="recipes">
         <%= render 'drinks', drinks: @drinks %>
         <% if @drinks.empty? %>
-          <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No Drinks fit your search. Please try again</h2>
-          <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;"> <%=link_to "Reset filters", recipes_drinks_path, class: "button-16" %></h4>
+              <div class="fill-page-empty">
+                 <br>
+        <br>
+            <p>No Drinks recipes have been found.</p>
+            <br>
+            <p> Please search again or reset filters</p>
+            <br>
+            <br>
+            <h4> <%=link_to "Reset filters", recipes_drinks_path, class: "button-16" %></h4>
+            <br>
+          </div>
         <% end %>
       </div>
     </div>

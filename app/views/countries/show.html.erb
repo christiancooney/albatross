@@ -61,8 +61,17 @@
           </div>
           <% end %>
             <% if @art.empty? %>
-            <h5 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No posts fit your search. Please try again</h5>
-            <h5 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;"> <%=link_to "Reset filters", country_path, class: "button-16" %></h5>
+      <div class="fill-page-empty">
+         <br>
+        <br>
+            <p>No results have been found.</p>
+            <br>
+            <p> Please search again or reset filters</p>
+            <br>
+            <br>
+            <h4> <%=link_to "Reset filters", country_path, class: "button-16" %></h4>
+            <br>
+          </div>
         <% end %>
         <% end %>
       <% end %>

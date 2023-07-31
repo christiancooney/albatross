@@ -19,8 +19,12 @@
 
 <br>
         <% if @articles.empty? %>
-          <h2 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">No posts are available yet, we hope to have some soon</h2>
-          <%# <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">   <%=link_to "Reset filters", health_path, class: "button-16" %>
+      <div class="fill-page-empty">
+         <br>
+        <br>
+            <p> No articles have been posted yet, but will be soon. Thanks for your patience.</p>
+
+          </div>          <%# <h4 style="margin: 10% auto;width:-moz-fit-content;width:fit-content;">   <%=link_to "Reset filters", health_path, class: "button-16" %>
         <% end %>
       </div>
     </div>
