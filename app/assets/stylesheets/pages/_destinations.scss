@@ -1,18 +1,17 @@
-
 .dropdown-toggle {
   font-size: 18px;
   font-weight: bolder;
 }
 
-
 .location-list {
-  margin-left: 5px;
+  margin: 0 !important;
   padding: 10px;
   list-style: none;
 }
 
 .locations-dropper {
-padding: 0;
+  padding: 0;
+  text-align: center !important;
   hr {
     margin: 0;
   }
