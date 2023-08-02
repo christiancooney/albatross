@@ -478,7 +478,7 @@
   </div>
 
 
-<%  if  @article.category == "Restaurant" %>
+<%  if  @article.holiday_tags.to_s.include? "Restaurant" %>
  <h3>Summary</h3>
  <hr>
 
