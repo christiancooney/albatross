@@ -1,6 +1,4 @@
 class Article < ApplicationRecord
-  include PgSearch::Model
-
   validates :date, :category, :imagecover, presence: true
   has_one_attached :imagecover
   has_one_attached :image1
@@ -34,8 +32,10 @@ class Article < ApplicationRecord
   has_one_attached :image28
   has_one_attached :image29
   has_one_attached :image30
-  has_one :countries
-  has_one :locations, -> { order "name ASC" }
+  has_many :countries
+  has_many :locations
+
+  include PgSearch::Model
   # Global Search
   pg_search_scope :global_search,
   against: %i[ country city title category subcategory
@@ -114,14 +114,5 @@ class Article < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
-  $cuisines = [ "Asian", "Greek", "Indian", "Italian", "French", "Mediterranean", "Mexican", "Middle Eastern", "Modern" ]
-  $holiday_tags = ["Active", "Beach", "City Breaks", "Island", "Restaurants", "R&R", "Bars"]
-  $categories = %i[ starters main sweets sides snacks drinks]
-  $dietary_tags = ["Dairy Free", "Gluten Free", "Nut Free", "Seafood", "Vegetarian", "Vegan"]
-  $drink_markers = ["Cocktail", "Mocktail", "Juice", "Smoothie", "Refreshing"]
-  $sweet_markers = ["Slices & Bars", "Cakes", "Cookies", "Desserts"]
-  $category = ["Health", "Life", "Recipe", "Style", "Travel"]
-  $subcategory = ["Brunch", "Drinks", "Mains", "Sides", "Snacks", "Starters", "Sweets", "Health", "Beauty", "Fashion", "Interiors" ]
-
 
 end

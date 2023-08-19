@@ -53,17 +53,21 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem 'rails-bootstrap-toggle-buttons'
-gem 'simple_form_fancy_uploads'
+# gem 'simple_form_fancy_uploads'
 gem 'pagy', '~> 6.0'
 gem 'pg_search'
+gem "dotenv-rails"
 
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem "dotenv-rails"
-  gem 'pg_search'
-  gem "dotenv-rails", groups: [:development, :test]
+
+  # app wasn't performing update method, so i've blanked below to test
+
+  # gem "dotenv-rails"
+  # gem 'pg_search'
+  # gem "dotenv-rails", groups: [:development, :test]
 
 end
 
@@ -73,7 +77,7 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
-  gem 'pg_search'
+  # gem 'pg_search'
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"

@@ -93,7 +93,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
@@ -106,7 +105,6 @@ class ArticlesController < ApplicationController
     def set_locations
       @locations = Location.all
     end
-
 
     # Only allow a list of trusted parameters through.
     def article_params
@@ -138,8 +136,16 @@ class ArticlesController < ApplicationController
         sweet_markers: [],
         dietary_tags: [],
         holiday_tags: []
-       )
+      )
     end
 
+    $cuisines = [ "Asian", "Greek", "Indian", "Italian", "French", "Mediterranean", "Mexican", "Middle Eastern", "Modern" ]
+    $holiday_tags = ["Active", "Beach", "City Breaks", "Island", "Restaurants", "R&R", "Bars"]
+    $categories = %i[ starters main sweets sides snacks drinks]
+    $dietary_tags = ["Dairy Free", "Gluten Free", "Nut Free", "Seafood", "Vegetarian", "Vegan"]
+    $drink_markers = ["Cocktail", "Mocktail", "Juice", "Smoothie", "Refreshing"]
+    $sweet_markers = ["Slices & Bars", "Cakes", "Cookies", "Desserts"]
+    $category = ["Health", "Life", "Recipe", "Style", "Travel"]
+    $subcategory = ["Brunch", "Drinks", "Mains", "Sides", "Snacks", "Starters", "Sweets", "Health", "Beauty", "Fashion", "Interiors" ]
 
 end
