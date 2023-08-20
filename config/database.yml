@@ -82,3 +82,5 @@ test:
 production:
   <<: *default
   database: albatross_production
+  username: christiancooney
+  password: <%= ENV['ALBATROSS_DATABASE_PASSWORD'] %>
