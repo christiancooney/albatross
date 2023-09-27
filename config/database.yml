@@ -79,8 +79,10 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+
+
 production:
   <<: *default
   database: albatross_production
-  username: christiancooney
-  password: <%= ENV['ALBATROSS_DATABASE_PASSWORD'] %>
+  username: albatross
+  password: <%= ENV["ALBATROSS_DATABASE_PASSWORD"] %>

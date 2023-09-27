@@ -115,4 +115,13 @@ class Article < ApplicationRecord
     tsearch: {prefix: true}
   }
 
+  $cuisines = [ "Asian", "Greek", "Indian", "Italian", "French", "Mediterranean", "Mexican", "Middle Eastern", "Modern" ]
+  $holiday_tags = ["Active", "Beach", "City Breaks", "Island", "Restaurants", "R&R", "Bars"]
+  $categories = %i[starters main sweets sides snacks drinks]
+  $dietary_tags = ["Dairy Free", "Gluten Free", "Nut Free", "Seafood", "Vegetarian", "Vegan"]
+  $drink_markers = ["Cocktail", "Mocktail", "Juice", "Smoothie", "Refreshing"]
+  $sweet_markers = ["Slices & Bars", "Cakes", "Cookies", "Desserts"]
+  $category = ["Health", "Life", "Recipe", "Style", "Travel"]
+  $subcategory = ["Brunch", "Drinks", "Mains", "Sides", "Snacks", "Starters", "Sweets", "Health", "Beauty", "Fashion", "Interiors" ]
+
 end
