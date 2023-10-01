@@ -22,7 +22,7 @@ local:
 google:
   service: GCS
   project: albatross
-  credentials: <%= Rails.root.join("config/secrets/albatrossgcs.json") %>
+  credentials: 'config/secrets/albatrossgcs.json'
   bucket: albatrossbucket
 
 google_dev:
