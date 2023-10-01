@@ -57,7 +57,7 @@ gem 'rails-bootstrap-toggle-buttons'
 gem 'pagy', '~> 6.0'
 gem 'pg_search'
 gem 'dotenv-rails', groups: [:development, :test]
-gem "google-cloud-storage"
+gem "google-cloud-storage", "~> 1.11", require: false
 
 
 group :development, :test do
