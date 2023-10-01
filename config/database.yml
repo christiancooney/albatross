@@ -81,8 +81,13 @@ test:
 #
 
 
+# production:
+#   <<: *default
+#   database: albatross_production
+#   username: albatross
+#   password: <%= ENV["ALBATROSS_DATABASE_PASSWORD"] %>
+
 production:
-  <<: *default
-  database: albatross_production
-  username: albatross
-  password: <%= ENV["ALBATROSS_DATABASE_PASSWORD"] %>
+  service: google
+  bucket: albatrossbucket
+  json_key_file: config/secrets/albatrossgcs.json
