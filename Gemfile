@@ -56,7 +56,8 @@ gem 'rails-bootstrap-toggle-buttons'
 # gem 'simple_form_fancy_uploads'
 gem 'pagy', '~> 6.0'
 gem 'pg_search'
-gem "dotenv-rails"
+gem 'dotenv-rails', groups: [:development, :test]
+gem "google-cloud-storage"
 
 
 group :development, :test do
