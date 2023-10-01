@@ -330,7 +330,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass (~> 6.1)
-  google-cloud-storage
+  google-cloud-storage (~> 1.11)
   jbuilder
   jsbundling-rails
   pagy (~> 6.0)
