@@ -88,7 +88,7 @@ test:
 #   password: <%= ENV["ALBATROSS_DATABASE_PASSWORD"] %>
 
 production:
- <<: *default
+  <<: *default
   service: google
   bucket: albatrossbucket
   json_key_file: config/secrets/albatrossgcs.json
