@@ -22,7 +22,7 @@ local:
 google:
   service: GCS
   project: albatross
-  credentials: <%= ENV['GCS_CREDENTIALS'] %>
+  credentials: config/secrets/albatrossgcs.json
   bucket: albatrossbucket
 
 google_dev:
